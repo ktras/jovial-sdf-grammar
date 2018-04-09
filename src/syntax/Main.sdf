@@ -219,7 +219,7 @@ CaseAlternative
 StatusFormula
 CharacterFormula
 BitFormula
-IntegerFormula
+IntegerFormula OptIntegerFormula
 CaseBody
 CaseSelectorFormula
 ElseClause
@@ -1266,6 +1266,7 @@ context-free syntax
 %%%%%%%%%%
 
   LabelList SimpleStatement   -> Statement             {cons("SimpleStatement")}
+  LabeledSimpleStatement      -> Statement             {cons("SimpleStatement")}
   LabelList CompoundStatement -> Statement             {cons("CompoundStatement")}
 
   AssignmentStatement         -> SimpleStatement
@@ -1277,7 +1278,7 @@ context-free syntax
   GotoStatement               -> SimpleStatement
   ExitStatement               -> SimpleStatement
   StopStatement               -> SimpleStatement
-  AbortStatement              -> SimpleStatement
+  AbortStatement              -> LabeledSimpleStatement
   NullStatement               -> SimpleStatement
 
   ';'                         -> NullStatement         {cons("NullStatement")}
@@ -1290,7 +1291,7 @@ context-free syntax
 
   Label*                      -> LabelList             {cons("LabelList")}
 
-  Name                        -> StatementName         {cons("StatementName")}
+  Name                        -> StatementName
 
   'BEGIN'
     Statement+
@@ -1469,13 +1470,13 @@ context-free syntax
 
   'STOP' OptIntegerFormula ';'  -> StopStatement          {cons("StopStatement")}
 
-  IntegerFormula                -> OptIntegerFormula		       
+  IntegerFormula                -> OptIntegerFormula
   % empty %                     -> OptIntegerFormula      {cons("no-integer-formula")}
 
 %% 4.10 ABORT STATEMEMTS
 %%
 
-  'ABORT' ';'                -> AbortStatement         {cons("AbortStatement")}
+  LabelList 'ABORT' ';'         -> AbortStatement         {cons("AbortStatement")}
 
 
 %%%%%%%%%%
