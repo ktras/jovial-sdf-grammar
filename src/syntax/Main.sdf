@@ -1467,7 +1467,10 @@ context-free syntax
 %% 4.9 STOP STATEMEMTS
 %%
 
-  'STOP' IntegerFormula      -> StopStatement          {cons("StopStatement")}
+  'STOP' OptIntegerFormula ';'  -> StopStatement          {cons("StopStatement")}
+
+  IntegerFormula                -> OptIntegerFormula		       
+  % empty %                     -> OptIntegerFormula      {cons("no-integer-formula")}
 
 %% 4.10 ABORT STATEMEMTS
 %%
