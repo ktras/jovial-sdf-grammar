@@ -6,7 +6,7 @@ Main.def : Main.sdf JovialLex.sdf
 Jovial.tbl : Main.def
 	sdf2table -i $< -o $@ -m Main
 
-check :
+check : Jovial.tbl
 	sglri -p Jovial.tbl -i testfile.jov | pp-aterm
 
 clean :

@@ -1467,7 +1467,7 @@ context-free syntax
 %% 4.9 STOP STATEMEMTS
 %%
 
-  'EXIT' IntegerFormula      -> StopStatement          {cons("StopStatement")}
+  'STOP' IntegerFormula      -> StopStatement          {cons("StopStatement")}
 
 %% 4.10 ABORT STATEMEMTS
 %%
