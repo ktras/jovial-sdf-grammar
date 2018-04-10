@@ -1,0 +1,8 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("main")
+  , ProgramSimpleBody(SimpleStatement(AbortStatement(LabelList([]))))
+  , NonNestedSubroutineList([])
+  )
+)
