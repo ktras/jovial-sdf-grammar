@@ -22,7 +22,7 @@ sorts
 % 3.0    %  SubroutineDeclaration SubroutineDefinition
 
 % 4.0    %  Statement SimpleStatement NullStatement Label StatementName CompoundStatement
-            LabelList
+            LabeledSimpleStatement LabelList
 
 InterferenceControl
 TraceControl

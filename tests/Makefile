@@ -3,6 +3,7 @@ SYNTAX = ../src/syntax
 
 PASSING_TESTS = \
   1_2_3_main-program-module_b.jov \
+  1_2_3_program-body_c.jov \
   4_10_abort_stmt_a.jov \
   4_10_abort_stmt_b.jov \
   4_10_abort_stmt_c.jov 

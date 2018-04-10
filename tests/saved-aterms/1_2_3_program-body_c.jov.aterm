@@ -1,0 +1,19 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testbody")
+  , ProgramBody(
+      DeclarationList(
+        [ItemDeclaration("ivar", no-allocation-specifier(), IntegerItemDescription(no-round-or-truncate(), no-item-size()), no-item-preset())]
+      )
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ivar"]), IntegerFormula(no-sign(), IntegerLiteral("13")))
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)
