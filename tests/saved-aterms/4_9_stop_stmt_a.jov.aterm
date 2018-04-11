@@ -1,0 +1,8 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("teststop")
+  , ProgramSimpleBody(SimpleStatement(StopStatement(LabelList([]), no-integer-formula())))
+  , NonNestedSubroutineList([])
+  )
+)

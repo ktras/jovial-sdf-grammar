@@ -2,11 +2,19 @@ SGLRI = sglri
 SYNTAX = ../src/syntax
 
 PASSING_TESTS = \
-  1_2_3_main-program-module_b.jov \
-  1_2_3_program-body_c.jov \
-  4_10_abort_stmt_a.jov \
-  4_10_abort_stmt_b.jov \
-  4_10_abort_stmt_c.jov 
+  1_2_3_main-program-module_a.jov    \
+  1_2_3_main-program-module_b.jov    \
+  1_2_3_program-body_b.jov           \
+  1_2_3_program-body_c.jov           \
+  2_1_2_1_table_dimension_list_a.jov \
+  2_1_2_1_table_dimension_list_b.jov \
+  4_9_stop_stmt_a.jov                \
+  4_9_stop_stmt_b.jov                \
+  4_9_stop_stmt_c.jov                \
+  4_10_abort_stmt_a.jov              \
+  4_10_abort_stmt_b.jov              \
+  4_10_abort_stmt_c.jov              \
+  5_1_1_integer-primary.jov
 
 FAILING_TESTS =
 

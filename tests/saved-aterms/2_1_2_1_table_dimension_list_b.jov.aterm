@@ -1,0 +1,28 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("main")
+  , ProgramBody(
+      DeclarationList(
+        [ TableDeclaration(
+            "aTable"
+          , no-allocation-specifier()
+          , DimensionList(
+              [ Dimension(
+                  LowerBoundOption(IntegerFormula(no-sign(), IntegerLiteral("1")))
+                , IntegerFormula(no-sign(), IntegerLiteral("3"))
+                )
+              , DimensionSTAR()
+              ]
+            )
+          , TableDescription(no-structure-specifier(), OrdinaryEntrySpecifier(no-packing-specifier(), IntegerItemDescription(no-round-or-truncate(), no-item-size()), no-table-preset()))
+          )
+        ]
+      )
+    , [SimpleStatement(LabelList([]), NullStatement())]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

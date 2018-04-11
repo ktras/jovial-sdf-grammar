@@ -1,0 +1,13 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("main")
+  , ProgramSimpleBody(
+      SimpleStatement(
+        LabelList([])
+      , AssignmentStatement(VariableList(["ivar"]), IntegerFormula(no-sign(), IntegerLiteral("13")))
+      )
+    )
+  , NonNestedSubroutineList([])
+  )
+)

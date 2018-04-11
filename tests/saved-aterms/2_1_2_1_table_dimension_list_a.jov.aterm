@@ -1,0 +1,21 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("main")
+  , ProgramBody(
+      DeclarationList(
+        [ TableDeclaration(
+            "aTable"
+          , no-allocation-specifier()
+          , no-dimension-list()
+          , TableDescription(no-structure-specifier(), OrdinaryEntrySpecifier(no-packing-specifier(), IntegerItemDescription(no-round-or-truncate(), no-item-size()), no-table-preset()))
+          )
+        ]
+      )
+    , [SimpleStatement(LabelList([]), NullStatement())]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)
