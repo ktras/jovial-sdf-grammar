@@ -1275,8 +1275,8 @@ context-free syntax
   CaseStatement               -> SimpleStatement
   ProcedureCallStatement      -> SimpleStatement       {reject} %%AMBIGUOUS with AssignmentStatement
   ReturnStatement             -> SimpleStatement
-  GotoStatement               -> SimpleStatement
-  ExitStatement               -> SimpleStatement
+  GotoStatement               -> LabeledSimpleStatement
+  ExitStatement               -> LabeledSimpleStatement
   StopStatement               -> LabeledSimpleStatement
   AbortStatement              -> LabeledSimpleStatement
   NullStatement               -> SimpleStatement
@@ -1458,12 +1458,12 @@ context-free syntax
 %% 4.7 GOTO STATEMENTS
 %%
 
-  'GOTO' StatementName       -> GotoStatement          {cons("GotoStatement")}
+  LabelList 'GOTO' StatementName ';'      -> GotoStatement          {cons("GotoStatement")}
 
 %% 4.8 EXIT STATEMENTS
 %%
 
-  'EXIT' ';'                 -> ExitStatement          {cons("ExitStatement")}
+  LabelList 'EXIT' ';'                    -> ExitStatement          {cons("ExitStatement")}
 
 %% 4.9 STOP STATEMENTS
 %%

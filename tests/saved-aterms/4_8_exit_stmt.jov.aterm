@@ -1,0 +1,16 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testexit")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(ExitStatement(LabelList([Label("label1"), Label("label2")])))
+      , SimpleStatement(ExitStatement(LabelList([Label("label3")])))
+      , SimpleStatement(ExitStatement(LabelList([])))
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)
