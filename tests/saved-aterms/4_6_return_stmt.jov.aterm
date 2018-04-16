@@ -1,0 +1,24 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testreturn")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(ReturnStatement(LabelList([])))
+      , SimpleStatement(
+          ReturnStatement(
+            LabelList([Label("label1"), Label("label2"), Label("label3")])
+          )
+        )
+      , SimpleStatement(
+          ReturnStatement(
+            LabelList([Label("labelaa"), Label("labelbb"), Label("labelcc")])
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

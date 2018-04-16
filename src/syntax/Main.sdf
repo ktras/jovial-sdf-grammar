@@ -1280,7 +1280,7 @@ context-free syntax
   IfStatement                 -> SimpleStatement
   CaseStatement               -> SimpleStatement
   ProcedureCallStatement      -> SimpleStatement       {reject} %%AMBIGUOUS with AssignmentStatement
-  ReturnStatement             -> SimpleStatement
+  ReturnStatement             -> LabeledSimpleStatement
   GotoStatement               -> LabeledSimpleStatement
   ExitStatement               -> LabeledSimpleStatement
   StopStatement               -> LabeledSimpleStatement
@@ -1459,7 +1459,7 @@ context-free syntax
 %% 4.6 RETURN STATEMENTS
 %%
 
-  'RETURN' ';'               -> ReturnStatement        {cons("ReturnStatement")}
+  LabelList 'RETURN' ';'                  -> ReturnStatement        {cons("ReturnStatement")}
 
 %% 4.7 GOTO STATEMENTS
 %%
