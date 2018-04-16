@@ -4,7 +4,7 @@ Module(
   , Name("testbody")
   , ProgramBody(
       DeclarationList(
-        [ItemDeclaration("ivar", no-allocation-specifier(), IntegerItemDescription(no-round-or-truncate(), no-item-size()), no-item-preset())]
+        [ItemDeclaration("ivar", no-allocation-specifier(), IntegerItemDescription("S", no-round-or-truncate(), no-item-size()), no-item-preset())]
       )
     , [ SimpleStatement(
           LabelList([])

@@ -629,7 +629,7 @@ context-free syntax
   FixedTypeDescription        -> ItemTypeDescription
   BitTypeDescription          -> ItemTypeDescription
   CharacterTypeDescription    -> ItemTypeDescription
-  StatusTypeDescription       -> ItemTypeDescription
+  StatusTypeDescription       -> ItemTypeDescription     {prefer}
   PointerTypeDescription      -> ItemTypeDescription
 
   ItemTypeName                -> ItemTypeDescription     {cons("ItemTypeName")}  %% Fixes ambiguity with type names  
@@ -640,9 +640,13 @@ context-free syntax
   IntegerItemDescription      -> IntegerTypeDescription  {prefer}
   IntegerTypeName             -> IntegerTypeDescription
 
-  'S' OptRoundOrTruncate
+%%  'S'
+  SignedTypeDesc
+      OptRoundOrTruncate
       OptIntegerSize          -> IntegerItemDescription  {cons("IntegerItemDescription")}
-  'U' OptRoundOrTruncate
+%%  'U'
+  UnsignedTypeDesc
+      OptRoundOrTruncate
       OptIntegerSize          -> IntegerItemDescription  {cons("IntegerItemDescriptionU")}
 
   CompileTimeIntegerFormula   -> IntegerSize             {cons("ItemSize")}
@@ -658,6 +662,8 @@ context-free syntax
 
   FloatingItemDescription     -> FloatingTypeDescription {prefer}
   FloatingTypeName            -> FloatingTypeDescription
+
+%% 'F'
 
   'F' OptRoundOrTruncate
       Precision               -> FloatingItemDescription {cons("FloatingItemDescription")}
@@ -752,7 +758,7 @@ context-free syntax
 
   Name                       -> Status
   Letter                     -> Status
-  ReservedWord               -> Status
+  ReservedWord               -> Status  {prefer}       %%fixes ambiguity between Name and ReservedWord
 
   ItemTypeName               -> StatusTypeName
 
