@@ -11,14 +11,22 @@ exports
 
     SignedTypeDesc             %% 2.1.1.1
     UnsignedTypeDesc           %% 2.1.1.1
+    PointerTypeDesc            %% 2.1.1.7
 
   lexical syntax
 
+%%%%%%%%%%
+%% 2.1.1 ITEM DECLARATIONS AND TYPE DESCRIPTIONS
+%%%%%%%%%%
 
 %% 2.1.1.1
 %%
     'S'                     -> SignedTypeDesc
     'U'                     -> UnsignedTypeDesc
+
+%% 2.1.1.7
+%%
+    'P'                     -> PointerTypeDesc
 
 
 %%%%%%%%%%
@@ -87,6 +95,7 @@ exports
 
     SignedTypeDesc -/- [A-Za-z0-9]
     UnsignedTypeDesc -/- [A-Za-z0-9]
+    PointerTypeDesc -/- [A-Za-z0-9]
 
   context-free restrictions
 

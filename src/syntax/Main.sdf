@@ -773,11 +773,13 @@ context-free syntax
   PointerItemDescription      -> PointerTypeDescription  {prefer}
   PointerTypeName             -> PointerTypeDescription
 
-  'P' OptTypeName             -> PointerItemDescription  {cons("PointerItemDescription")}
+%%  'P'
+  PointerTypeDesc
+      OptTypeName             -> PointerItemDescription  {cons("PointerItemDescription")}
 
   ItemTypeName                -> PointerTypeName         {cons("PointerTypeName")}
 
-  ItemTypeName                -> TypeName
+  ItemTypeName                -> TypeName  {prefer}
   TableTypeName               -> TypeName
   BlockTypeName               -> TypeName
 
@@ -957,7 +959,7 @@ context-free syntax
   % empty %                       -> OptItemPreset           {cons("no-item-preset")}
 
   CompileTimeFormula              -> ItemPresetValue
-  LocFunction                     -> ItemPresetValue
+  LocFunction                     -> ItemPresetValue  {prefer}
 
   ItemPresetValue                 -> OptItemPresetValue
   % empty %                       -> ItemPresetValue         {cons("no-item-preset-value")}
