@@ -1,0 +1,8 @@
+START
+PROGRAM testgoto ;
+BEGIN
+ GOTO label1 ;
+ goto abort ;
+ Goto aa ;
+END
+TERM

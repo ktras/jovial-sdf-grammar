@@ -1,0 +1,10 @@
+START
+PROGRAM testgoto ;
+BEGIN
+ label1: label2: Stop ;
+ GOTO StopStatement ;
+ goto abort ;
+ Goto label1 ;
+ Goto ivar ;
+END
+TERM

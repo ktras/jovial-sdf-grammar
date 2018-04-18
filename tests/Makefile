@@ -6,6 +6,7 @@ PASSING_TESTS = \
   1_2_3_main-program-module_b.jov    \
   1_2_3_program-body_b.jov           \
   1_2_3_program-body_c.jov           \
+  2_1_1_6_status_type_desc.jov       \
   2_1_2_1_table_dimension_list_a.jov \
   2_1_2_1_table_dimension_list_b.jov \
   4_6_return_stmt.jov                \
