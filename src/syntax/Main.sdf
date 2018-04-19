@@ -779,7 +779,7 @@ context-free syntax
 
   ItemTypeName                -> PointerTypeName         {cons("PointerTypeName")}
 
-  ItemTypeName                -> TypeName  {prefer}
+  ItemTypeName                -> TypeName  {prefer}      %%fixes ambiguity between ItemTypeName, TableTypeName, and BlockTypeName
   TableTypeName               -> TypeName
   BlockTypeName               -> TypeName
 
@@ -959,7 +959,7 @@ context-free syntax
   % empty %                       -> OptItemPreset           {cons("no-item-preset")}
 
   CompileTimeFormula              -> ItemPresetValue
-  LocFunction                     -> ItemPresetValue  {prefer}
+  LocFunction                     -> ItemPresetValue  {prefer}  %%fixes many differe ambiguities with and within LocFunction in 2.1.1.7 Pointer Type tests
 
   ItemPresetValue                 -> OptItemPresetValue
   % empty %                       -> ItemPresetValue         {cons("no-item-preset-value")}
