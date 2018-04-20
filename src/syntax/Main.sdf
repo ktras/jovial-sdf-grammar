@@ -705,7 +705,9 @@ context-free syntax
   BitItemDescription          -> BitTypeDescription       {prefer}
   BitTypeName                 -> BitTypeDescription
 
-  'B' OptBitSize              -> BitItemDescription       {cons("BitItemDescription")}
+%%  'B' 
+  BitTypeDesc
+      OptBitSize              -> BitItemDescription       {cons("BitItemDescription")}
 
   CompileTimeIntegerFormula   -> BitSize                  {cons("ItemSize")}
 

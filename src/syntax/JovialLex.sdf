@@ -11,9 +11,11 @@ exports
 
     SignedTypeDesc             %% 2.1.1.1
     UnsignedTypeDesc           %% 2.1.1.1
+    BitTypeDesc                %% 2.1.1.5
     PointerTypeDesc            %% 2.1.1.7
 
   lexical syntax
+
 
 %%%%%%%%%%
 %% 2.1.1 ITEM DECLARATIONS AND TYPE DESCRIPTIONS
@@ -23,6 +25,10 @@ exports
 %%
     'S'                     -> SignedTypeDesc
     'U'                     -> UnsignedTypeDesc
+
+%% 2.1.1.5
+%%
+    'B'                     -> BitTypeDesc
 
 %% 2.1.1.7
 %%
@@ -79,6 +85,11 @@ exports
     [1-5]                   -> BeadSize
     [A-V]                   -> Bead
 
+%% 8.4
+%%
+   "%%" ~[\n]* "\n"         -> LAYOUT
+   "%" ~[\n]+ "%"           -> LAYOUT
+
 %% 8.5 BLANKS
 %%
     [\ \t\n\r]              -> LAYOUT
@@ -95,8 +106,9 @@ exports
 
     SignedTypeDesc -/- [A-Za-z0-9]
     UnsignedTypeDesc -/- [A-Za-z0-9]
+    BitTypeDesc -/- [A-Za-z0-9]
     PointerTypeDesc -/- [A-Za-z0-9]
 
   context-free restrictions
 
-    LAYOUT? -/- [\ \t\n\r]
+    LAYOUT? -/- [\ \t\n\r\%]
