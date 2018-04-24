@@ -1301,7 +1301,7 @@ context-free syntax
 
   Label*                      -> LabelList             {cons("LabelList")}
 
-  Name                        -> StatementName
+  Name                        -> StatementName         {cons("Name")}
 
   'BEGIN'
     Statement+

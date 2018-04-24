@@ -4,8 +4,12 @@ Module(
   , Name("testexit")
   , ProgramBody(
       DeclarationList([])
-    , [ SimpleStatement(ExitStatement(LabelList([Label("label1"), Label("label2")])))
-      , SimpleStatement(ExitStatement(LabelList([Label("label3")])))
+    , [ SimpleStatement(
+          ExitStatement(
+            LabelList([Label(Name("label1")), Label(Name("label2"))])
+          )
+        )
+      , SimpleStatement(ExitStatement(LabelList([Label(Name("label3"))])))
       , SimpleStatement(ExitStatement(LabelList([])))
       ]
     , []

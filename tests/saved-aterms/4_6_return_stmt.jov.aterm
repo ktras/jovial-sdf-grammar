@@ -7,12 +7,16 @@ Module(
     , [ SimpleStatement(ReturnStatement(LabelList([])))
       , SimpleStatement(
           ReturnStatement(
-            LabelList([Label("label1"), Label("label2"), Label("label3")])
+            LabelList(
+              [Label(Name("label1")), Label(Name("label2")), Label(Name("label3"))]
+            )
           )
         )
       , SimpleStatement(
           ReturnStatement(
-            LabelList([Label("labelaa"), Label("labelbb"), Label("labelcc")])
+            LabelList(
+              [Label(Name("labelaa")), Label(Name("labelbb")), Label(Name("labelcc"))]
+            )
           )
         )
       ]

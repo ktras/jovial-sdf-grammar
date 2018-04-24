@@ -4,8 +4,12 @@ Module(
   , Name("main")
   , ProgramBody(
       DeclarationList([])
-    , [ SimpleStatement(AbortStatement(LabelList([Label("label1"), Label("label2")])))
-      , SimpleStatement(AbortStatement(LabelList([Label("label3")])))
+    , [ SimpleStatement(
+          AbortStatement(
+            LabelList([Label(Name("label1")), Label(Name("label2"))])
+          )
+        )
+      , SimpleStatement(AbortStatement(LabelList([Label(Name("label3"))])))
       , SimpleStatement(AbortStatement(LabelList([])))
       ]
     , []

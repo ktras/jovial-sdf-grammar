@@ -5,11 +5,14 @@ Module(
   , ProgramBody(
       DeclarationList([])
     , [ SimpleStatement(
-          StopStatement(LabelList([Label("label1"), Label("label2")]), no-integer-formula())
+          StopStatement(
+            LabelList([Label(Name("label1")), Label(Name("label2"))])
+          , no-integer-formula()
+          )
         )
       , SimpleStatement(
           StopStatement(
-            LabelList([Label("label3")])
+            LabelList([Label(Name("label3"))])
           , IntegerFormula(no-sign(), IntegerLiteral("1"))
           )
         )
