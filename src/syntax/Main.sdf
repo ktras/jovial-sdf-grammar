@@ -1052,7 +1052,7 @@ context-free syntax
 
 %% 2.3 STATEMENT NAME DECLARATIONS
 %%
-'LABEL' {StatementName ','}+ ':'  -> StatementNameDeclaration {cons("StatementNameDeclaration")}
+'LABEL' {StatementName ','}+ ';'  -> StatementNameDeclaration {cons("StatementNameDeclaration")}
 
 %% 2.4 DEFINE DECLARATIONS
 %%
