@@ -705,7 +705,7 @@ context-free syntax
   BitItemDescription          -> BitTypeDescription       {prefer}
   BitTypeName                 -> BitTypeDescription
 
-%%  'B' 
+%%  'B'
   BitTypeDesc
       OptBitSize              -> BitItemDescription       {cons("BitItemDescription")}
 
@@ -961,7 +961,7 @@ context-free syntax
   % empty %                       -> OptItemPreset           {cons("no-item-preset")}
 
   CompileTimeFormula              -> ItemPresetValue
-  LocFunction                     -> ItemPresetValue  {prefer}  %%fixes many differe ambiguities with and within LocFunction in 2.1.1.7 Pointer Type tests
+  LocFunction                     -> ItemPresetValue  {prefer}  %%fixes many different ambiguities with and within LocFunction in 2.1.1.7 Pointer Type tests
 
   ItemPresetValue                 -> OptItemPresetValue
   % empty %                       -> ItemPresetValue         {cons("no-item-preset-value")}
@@ -1297,7 +1297,12 @@ context-free syntax
     LabelList
   'END'                       -> NullStatement         {cons("NullBlockStatement")}
 
-  StatementName ':'           -> Label                 {cons("Label")}
+%% StatementName changed to Name when cons("Name") was added to StatementName
+%% Otherwise terms like Name(Label("label_string")) would appear.
+%%
+%% StatementName ':'          -> Label                 {cons("Label")}
+%%
+  Name ':'                    -> Label                 {cons("Label")}
 
   Label*                      -> LabelList             {cons("LabelList")}
 

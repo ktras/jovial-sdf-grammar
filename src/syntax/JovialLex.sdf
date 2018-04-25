@@ -87,7 +87,6 @@ exports
 
 %% 8.4
 %%
-   "%%" ~[\n]* "\n"         -> LAYOUT
    "%" ~[\n]+ "%"           -> LAYOUT
 
 %% 8.5 BLANKS
