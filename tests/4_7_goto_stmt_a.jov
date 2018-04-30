@@ -2,7 +2,6 @@ START
 PROGRAM testgoto ;
 BEGIN
  GOTO label1 ;
- goto abort ;
- Goto aa ;
+ label1: exit;
 END
 TERM
