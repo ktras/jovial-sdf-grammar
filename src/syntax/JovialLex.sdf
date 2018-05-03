@@ -57,6 +57,8 @@ exports
 %%
     [A-Za-z\$]
     [A-Za-z0-9\$\']+        -> Name
+    'TRUE'                  -> Name     {reject}
+    'FALSE'                 -> Name     {reject}
 
 %% 8.2.2 RESERVED WORDS
 %%
@@ -103,10 +105,10 @@ exports
 %%  Icon -/- [0-9]
 %% Trying to stop IntegerItemDescription from interferring with StatusItemDescription
 
-    SignedTypeDesc -/- [A-Za-z0-9]
+    SignedTypeDesc   -/- [A-Za-z0-9]
     UnsignedTypeDesc -/- [A-Za-z0-9]
-    BitTypeDesc -/- [A-Za-z0-9]
-    PointerTypeDesc -/- [A-Za-z0-9]
+    BitTypeDesc      -/- [A-Za-z0-9]
+    PointerTypeDesc  -/- [A-Za-z0-9]
 
   context-free restrictions
 

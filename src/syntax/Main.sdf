@@ -2202,9 +2202,9 @@ context-free syntax
 
 %% 8.3.2 BIT LITERALS
 %%
-  BeadSize 'B' "'" Bead+   -> BitLiteral              {cons("BitLiteral")}
+  BeadSize 'B' "'" Bead+ "'"  -> BitLiteral              {cons("BitLiteral")}
 
-  Digit                    -> Bead
+  Digit                       -> Bead
 
 %% 8.3.3 BOOLEAN LITERALS
 %%
