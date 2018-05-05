@@ -59,6 +59,7 @@ exports
     [A-Za-z0-9\$\']+        -> Name
     'TRUE'                  -> Name     {reject}
     'FALSE'                 -> Name     {reject}
+    'NULL'                  -> Name     {reject}
 
 %% 8.2.2 RESERVED WORDS
 %%
