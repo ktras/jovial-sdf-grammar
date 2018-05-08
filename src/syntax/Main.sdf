@@ -1692,7 +1692,7 @@ context-free syntax
 
   FixedFormula
     RelationalOperator
-    FixedFormula              -> RelationalExpression   {cons("RelationalExpression")}
+    FixedFormula              -> RelationalExpression   {cons("RelationalExpression"), prefer}
 
   CharacterFormula
     RelationalOperator
