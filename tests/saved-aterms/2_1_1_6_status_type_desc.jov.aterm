@@ -4,7 +4,8 @@ Module(
   , Name("testdesc")
   , ProgramBody(
       DeclarationList(
-        [ ItemDeclaration(
+        [ ItemDeclaration("COLOR", no-allocation-specifier(), "STATUS", no-item-preset())
+        , ItemDeclaration(
             "COLOR"
           , no-allocation-specifier()
           , StatusItemDescription(no-item-size(), DefaultSublist([StatusConstant("RED")]))
