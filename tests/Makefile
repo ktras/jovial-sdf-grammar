@@ -9,7 +9,9 @@ PASSING_TESTS = \
   2_1_1_6_status_type_desc.jov       \
   2_1_2_1_table_dimension_list_a.jov \
   2_1_2_1_table_dimension_list_b.jov \
+  2_3_stmt_name_decl.jov             \
   4_6_return_stmt.jov                \
+  4_7_goto_stmt_a.jov                \
   4_8_exit_stmt.jov                  \
   4_9_stop_stmt_a.jov                \
   4_9_stop_stmt_b.jov                \
@@ -17,6 +19,7 @@ PASSING_TESTS = \
   4_10_abort_stmt_a.jov              \
   4_10_abort_stmt_b.jov              \
   4_10_abort_stmt_c.jov              \
+  5_0_formula.jov                    \
   5_1_1_integer-primary.jov
 
 FAILING_TESTS =

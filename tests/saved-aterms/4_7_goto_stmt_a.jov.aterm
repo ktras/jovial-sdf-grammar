@@ -1,0 +1,15 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testgoto")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(GotoStatement(LabelList([]), Name("label1")))
+      , SimpleStatement(ExitStatement(LabelList([Label("label1")])))
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

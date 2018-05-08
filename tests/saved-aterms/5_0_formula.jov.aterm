@@ -1,0 +1,57 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testFormula")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ibbr"]), IntegerFormula(no-sign(), IntegerLiteral("1")))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ibbr"]), PointerFormula(Null()))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ibbr"]), PointerFormula(PointerFormula(Null())))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , CharacterFormula(CharacterLiteral(["i", "v", "a", "r"]))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ibbr"]), StatusFormula(StatusConstant("RED")))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , FixedFormula(no-sign(), RealLiteralFF(FractionalForm("3", "8"), no-exponent()))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , IntegerFormula(
+              no-sign()
+            , ByteFunction(
+                CharacterLiteral(["i", "v", "a", "r"])
+              , IntegerFormula(no-sign(), IntegerLiteral("1"))
+              , IntegerFormula(no-sign(), IntegerLiteral("2"))
+              )
+            )
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

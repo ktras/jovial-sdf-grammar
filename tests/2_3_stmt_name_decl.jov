@@ -1,0 +1,8 @@
+START
+PROGRAM testdecl ;
+BEGIN
+ LABEL aa,bb;
+ LABEL iv, ix, iy;
+ ;
+END
+TERM

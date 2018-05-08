@@ -1,0 +1,17 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testdecl")
+  , ProgramBody(
+      DeclarationList(
+        [ StatementNameDeclaration([Name("aa"), Name("bb")])
+        , StatementNameDeclaration([Name("iv"), Name("ix"), Name("iy")])
+        ]
+      )
+    , [SimpleStatement(LabelList([]), NullStatement())]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

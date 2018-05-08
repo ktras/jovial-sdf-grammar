@@ -1,0 +1,12 @@
+START
+PROGRAM testFormula ;
+BEGIN
+  ibbr = 1;
+  ibbr = NULL;
+  ibbr = (NULL);
+  ibbr = 'ivar';
+  ibbr = V(RED);
+  ibbr = 3.8;
+  ibbr = BYTE('ivar', 1, 2);
+END
+TERM
