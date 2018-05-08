@@ -67,7 +67,7 @@ AssignmentOperator
 DereferenceOperator
 BitOperator
 ArithmeticOperator
-Comment
+%%Comment %%Moved to JovialLex.sdf
 Literal
 Operator
 Symbol
@@ -1641,7 +1641,7 @@ context-free syntax
   LogicalOperand
     OptLogicalContinuation    -> BitFormula             {cons("BitFormula")}
 
-  'NOT' LogicalOperand        -> BitFormula             {cons("BitFormula")}
+  'NOT' LogicalOperand        -> BitFormula             {cons("BitFormulaNOT")}
 
   BitPrimary                  -> LogicalOperand
   RelationalExpression        -> LogicalOperand
@@ -2107,7 +2107,7 @@ context-free syntax
     Operator                 -> Symbol
     Literal                  -> Symbol
     StatusConstant           -> Symbol
-    Comment                  -> Symbol
+%%  Comment                  -> Symbol %% Moved to JovialLex.sdf
     DefineString             -> Symbol
     DefineCall               -> Symbol
     Letter                   -> Symbol
@@ -2213,14 +2213,15 @@ context-free syntax
 
 %% 8.3.3 CHARACTER LITERALS
 %%
-  "'" Character+ "'"       -> CharacterLiteral        {cons("CharacterLiteral")}
+  CharString               -> CharacterLiteral        {cons("CharacterLiteral")}
 
 %% 8.3.4 POINTER LITERALS
 %%
   'NULL'                   -> PointerLiteral          {cons("Null")}
 
-  '"' Character* '"'       -> Comment                 {cons("Comment")}
-  '%' Character* '%'       -> Comment                 {cons("Comment")}
+%% Comment moved to JovialLex.sdf
+%%  '"' Character* '"'     -> Comment                 {cons("Comment")}
+%%  '%' Character* '%'     -> Comment                 {cons("Comment")}
 
 
 %%%%%%%%%%
