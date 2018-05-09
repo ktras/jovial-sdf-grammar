@@ -95,8 +95,8 @@ exports
 
 %% 8.4 COMMENTS
 %%
-  [\%] ~[\n]+ [\%]          -> LAYOUT
-  [\"] ~[\n]+ [\"]          -> LAYOUT
+  [\%] ~[\%]+ [\%]          -> LAYOUT
+  [\"] ~[\"]+ [\"]          -> LAYOUT
 
 %% 8.5 BLANKS
 %%
