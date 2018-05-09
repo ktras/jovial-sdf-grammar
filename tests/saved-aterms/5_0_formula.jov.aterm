@@ -18,10 +18,7 @@ Module(
         )
       , SimpleStatement(
           LabelList([])
-        , AssignmentStatement(
-            VariableList(["ibbr"])
-          , CharacterFormula(CharacterLiteral(["i", "v", "a", "r"]))
-          )
+        , AssignmentStatement(VariableList(["ibbr"]), CharacterFormula(CharacterLiteral("'ivar'")))
         )
       , SimpleStatement(
           LabelList([])
@@ -41,7 +38,7 @@ Module(
           , IntegerFormula(
               no-sign()
             , ByteFunction(
-                CharacterLiteral(["i", "v", "a", "r"])
+                CharacterLiteral("'ivar'")
               , IntegerFormula(no-sign(), IntegerLiteral("1"))
               , IntegerFormula(no-sign(), IntegerLiteral("2"))
               )

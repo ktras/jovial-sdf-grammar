@@ -20,7 +20,8 @@ PASSING_TESTS = \
   4_10_abort_stmt_b.jov              \
   4_10_abort_stmt_c.jov              \
   5_0_formula.jov                    \
-  5_1_1_integer-primary.jov
+  5_1_1_integer-primary.jov          \
+  8_4_comments.jov
 
 FAILING_TESTS =
 

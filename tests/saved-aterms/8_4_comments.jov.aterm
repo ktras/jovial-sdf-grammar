@@ -1,0 +1,13 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testComments")
+  , ProgramBody(
+      DeclarationList([])
+    , [SimpleStatement(LabelList([]), NullStatement())]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

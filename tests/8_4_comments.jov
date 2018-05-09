@@ -1,0 +1,19 @@
+START
+PROGRAM testComments ;
+BEGIN
+  ;
+% this is a test
+to see how comments work %
+% this should work %
+" this should work "
+" this should also 
+work "
+
+%this should work%
+%this should
+also work%
+"this should work"
+"this should
+also work"
+END
+TERM
