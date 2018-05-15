@@ -1,0 +1,22 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("main")
+  , ProgramSimpleBody(SimpleStatement(LabelList([]), NullStatement()))
+  , NonNestedSubroutineList(
+      [ NonNestedSubroutine(
+          ProcedureDefinition(
+            ProcedureHeading("sub1", no-subroutine-attribute(), no-formal-parameter-list())
+          , SimpleStatement(LabelList([]), NullStatement())
+          )
+        )
+      , NonNestedSubroutine(
+          ProcedureDefinition(
+            ProcedureHeading("sub2", no-subroutine-attribute(), no-formal-parameter-list())
+          , SimpleStatement(LabelList([]), NullStatement())
+          )
+        )
+      ]
+    )
+  )
+)

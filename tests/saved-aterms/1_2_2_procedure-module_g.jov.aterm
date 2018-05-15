@@ -1,0 +1,26 @@
+Module(
+  ProcedureModule(
+    DeclarationList([NullDeclaration(), NullDeclaration(), NullDeclaration()])
+  , NonNestedSubroutineList(
+      [ NonNestedSubroutine(
+          ProcedureDefinition(
+            ProcedureHeading("sub1", no-subroutine-attribute(), no-formal-parameter-list())
+          , SimpleStatement(LabelList([]), NullStatement())
+          )
+        )
+      , NonNestedSubroutine(
+          ProcedureDefinition(
+            ProcedureHeading("sub2", no-subroutine-attribute(), no-formal-parameter-list())
+          , SimpleStatement(LabelList([]), NullStatement())
+          )
+        )
+      , NonNestedSubroutine(
+          ProcedureDefinition(
+            ProcedureHeading("sub3", no-subroutine-attribute(), no-formal-parameter-list())
+          , SimpleStatement(LabelList([]), NullStatement())
+          )
+        )
+      ]
+    )
+  )
+)

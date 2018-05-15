@@ -2,10 +2,27 @@ SGLRI = sglri
 SYNTAX = ../src/syntax
 
 PASSING_TESTS = \
+  1_2_2_non-nested-subroutine_a.jov  \
+  1_2_2_non-nested-subroutine_b.jov  \
+  1_2_2_procedure-module_a.jov       \
+  1_2_2_procedure-module_b.jov       \
+  1_2_2_procedure-module_c.jov       \
+  1_2_2_procedure-module_d.jov       \
+  1_2_2_procedure-module_e.jov       \
+  1_2_2_procedure-module_f.jov       \
+  1_2_2_procedure-module_g.jov       \
   1_2_3_main-program-module_a.jov    \
   1_2_3_main-program-module_b.jov    \
+  1_2_3_main-program-module_c.jov    \
+  1_2_3_main-program-module_d.jov    \
+  1_2_3_program-body_a.jov           \
   1_2_3_program-body_b.jov           \
   1_2_3_program-body_c.jov           \
+  1_2_3_program-body_d.jov           \
+  1_2_3_program-body_e.jov           \
+  1_2_3_program-body_f.jov           \
+  1_2_3_program-body_g.jov           \
+  1_2_3_program-body_h.jov           \
   2_1_1_6_status_type_desc.jov       \
   2_1_2_1_table_dimension_list_a.jov \
   2_1_2_1_table_dimension_list_b.jov \
@@ -20,7 +37,11 @@ PASSING_TESTS = \
   4_10_abort_stmt_b.jov              \
   4_10_abort_stmt_c.jov              \
   5_0_formula.jov                    \
+  5_1_1_integer-factor.jov           \
+  5_1_1_integer-formula.jov          \
+  5_1_1_integer-precedence.jov       \
   5_1_1_integer-primary.jov          \
+  5_1_1_integer-term.jov             \
   8_4_comments.jov
 
 FAILING_TESTS =

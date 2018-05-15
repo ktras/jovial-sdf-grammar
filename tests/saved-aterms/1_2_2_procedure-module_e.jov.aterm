@@ -1,0 +1,14 @@
+Module(
+  ProcedureModule(
+    DeclarationList([])
+  , NonNestedSubroutineList(
+      [ NonNestedSubroutine(
+          ProcedureDefinition(
+            ProcedureHeading("procname", no-subroutine-attribute(), no-formal-parameter-list())
+          , SimpleStatement(LabelList([]), NullStatement())
+          )
+        )
+      ]
+    )
+  )
+)

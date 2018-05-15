@@ -1,0 +1,20 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testbody")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ivar"]), IntegerFormula(no-sign(), IntegerLiteral("13")))
+        )
+      ]
+    , [ProcedureDefinition(
+         ProcedureHeading("sub1", no-subroutine-attribute(), no-formal-parameter-list())
+       , SimpleStatement(LabelList([]), NullStatement())
+       )]
+    , LabelList([Label("label1")])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

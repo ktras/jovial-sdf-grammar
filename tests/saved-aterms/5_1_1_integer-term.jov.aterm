@@ -1,0 +1,56 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("integerterm")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ivar"]), IntegerFormula(no-sign(), IntegerLiteral("13")))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , IntegerFormula(no-sign(), IntegerTerm(IntegerLiteral("1"), TIMES(), IntegerLiteral("2")))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , IntegerFormula(no-sign(), IntegerTerm(IntegerLiteral("2"), DIV(), IntegerLiteral("1")))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , IntegerFormula(no-sign(), IntegerTerm(IntegerLiteral("5"), MOD(), IntegerLiteral("2")))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , IntegerFormula(
+              no-sign()
+            , IntegerTerm(
+                IntegerTerm(
+                  IntegerTerm(IntegerLiteral("5"), TIMES(), IntegerLiteral("2"))
+                , DIV()
+                , IntegerLiteral("5")
+                )
+              , MOD()
+              , IntegerLiteral("2")
+              )
+            )
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

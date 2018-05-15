@@ -1,0 +1,34 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("integerfactor")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ivar"]), IntegerFormula(no-sign(), IntegerLiteral("13")))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , IntegerFormula(no-sign(), IntegerFactor(IntegerLiteral("2"), IntegerLiteral("2")))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , IntegerFormula(
+              no-sign()
+            , IntegerFactor(IntegerFactor(IntegerLiteral("1"), IntegerLiteral("2")), IntegerLiteral("3"))
+            )
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)
