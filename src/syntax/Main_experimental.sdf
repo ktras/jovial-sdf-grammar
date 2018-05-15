@@ -1564,7 +1564,7 @@ context-free syntax
 
   NamedConstant               -> NamedIntegerConstant
 
-  FunctionCall                -> IntegerFunctionCall    {cons("IntegerFunctionCall")}
+  FunctionCall                -> IntegerFunctionCall
 
   IntegerFormula              -> CompileTimeIntegerFormula
 
@@ -1647,11 +1647,11 @@ context-free syntax
 
   BitPrimary                  -> LogicalOperand
   RelationalExpression        -> LogicalOperand
-  BitVariable                 -> LogicalOperand
+%%BitVariable                 -> LogicalOperand
 
   BitLiteral                  -> BitPrimary
   BooleanLiteral              -> BitPrimary
-%%BitVariable                 -> BitPrimary             {cons("BitVariable")}
+  BitVariable                 -> BitPrimary             {cons("BitVariable")}
 
   %% Rejected to fix ambiguity with NamedIntegerConstant
   %% WARNING - may need to be fixed
@@ -1713,13 +1713,13 @@ context-free syntax
     EqualOrNotEqualOperator
     BitPrimary                -> RelationalExpression   {cons("RelationalExpression")}
 
-  BitVariable
-    EqualOrNotEqualOperator
-    BitPrimary                -> RelationalExpression   {cons("RelationalExpression")}
+%%BitVariable
+%%  EqualOrNotEqualOperator
+%%  BitPrimary                -> RelationalExpression   {cons("RelationalExpression")}
 
-  BitPrimary
-    EqualOrNotEqualOperator
-    BitVariable               -> RelationalExpression   {cons("RelationalExpression")}
+%%BitPrimary
+%%  EqualOrNotEqualOperator
+%%  BitVariable               -> RelationalExpression   {cons("RelationalExpression")}
 
 %%PointerFormula
 %%  RelationalOperator
@@ -1823,12 +1823,12 @@ context-free syntax
   
   Item                        -> NamedVariable
   Table                       -> NamedVariable
-  TableItem                   -> NamedVariable
+  TableItem                   -> NamedVariable      {prefer}
   TableEntry                  -> NamedVariable      %% maybe will need to reject because TableItem is more general, check for sure
   BlockItem                   -> NamedVariable      {reject} %% AMBIGUOUS with BlockTable
-  BlockTable                  -> NamedVariable      {reject}
+  BlockTable                  -> NamedVariable
   BlockTableItem              -> NamedVariable      {reject} %% AMBIGUOUS with TableItem
-  BlockTableEntry             -> NamedVariable      {reject}
+  BlockTableEntry             -> NamedVariable
 
   ItemName                    -> Item
   ItemDereference             -> Item
