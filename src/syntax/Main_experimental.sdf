@@ -1841,7 +1841,7 @@ context-free syntax
   TableItemName
        Subscript
 %%  OptSubscript                                                      %% Optional makes AMBIGUOUS with Name
-    OptTableDereference       -> TableItem             {cons("TableItem")}
+    OptTableDereference       -> TableItem             {cons("TableItem"), prefer}
 
   TableItemName
     OptSubscript
@@ -1887,7 +1887,7 @@ context-free syntax
   '@' PointerItemName         -> Dereference           {cons("Dereference")}
   '@' '(' PointerFormula ')'  -> Dereference           {cons("Dereference")}
 
-  ItemName                    -> PointerItemName
+  ItemName                    -> PointerItemName       {prefer}
   TableItemName               -> PointerItemName
   ConstantItemName            -> PointerItemName
 

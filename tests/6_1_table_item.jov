@@ -1,0 +1,14 @@
+START
+PROGRAM testTableItem ;
+BEGIN
+  TABLE aTable S ;
+  ivar = aTable(1);
+  ivar = aTable @(NULL);
+  ivar = aTable (1) @pntr;
+  ivar = aTable (1, 2) @(P(3));
+  ivar = aTable (i) @ (NULL);
+  ivar = aTable (i, j) @(NULL);
+  ivar = aTable (V(RED), V(GREEN));
+  ivar = aTable (V(RED), V(GREEN), i, j);
+END
+TERM
