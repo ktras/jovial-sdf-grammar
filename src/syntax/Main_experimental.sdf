@@ -1824,7 +1824,7 @@ context-free syntax
   Item                        -> NamedVariable
   Table                       -> NamedVariable
   TableItem                   -> NamedVariable      {prefer}
-  TableEntry                  -> NamedVariable      %% maybe will need to reject because TableItem is more general, check for sure
+  TableEntry                  -> NamedVariable
   BlockItem                   -> NamedVariable      {reject} %% AMBIGUOUS with BlockTable
   BlockTable                  -> NamedVariable
   BlockTableItem              -> NamedVariable      {reject} %% AMBIGUOUS with TableItem
