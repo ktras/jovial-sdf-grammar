@@ -38,7 +38,7 @@ Module(
           , IntegerFormula(
               no-sign()
             , ByteFunction(
-                CharacterLiteral("'ivar'")
+                CharacterFormula(CharacterLiteral("'ivar'"))
               , IntegerFormula(no-sign(), IntegerLiteral("1"))
               , IntegerFormula(no-sign(), IntegerLiteral("2"))
               )
