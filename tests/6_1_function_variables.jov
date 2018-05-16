@@ -1,0 +1,11 @@
+START
+PROGRAM testFunctionVariable ;
+BEGIN
+% Can't access BitFunctionVariable, ByteFunctionVariable or RepFunctionVariable %
+% because of the prefer on TableItem that removes ambiguity %
+% These don't have any distinguishing parts from TableItem %
+  ivar = BIT (ivar, 2, 38);
+  ivar = BYTE (ivar, 2, 38);
+  ibbr = REP (ivar);
+END
+TERM

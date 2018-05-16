@@ -1,0 +1,15 @@
+START
+PROGRAM testBlockTableEntry ;
+BEGIN
+  BLOCK aBlock STATIC ;
+% Can't access BlockTableEntry because of the prefer on TableItem that removes ambiguity %
+% BlockTableEntry doesn't have any distinguishing parts from TableItem %
+  ivar = aBlock(1);
+  ivar = aBlock (1) @pntr;
+  ivar = aBlock (1, 2) @(P(3));
+  ivar = aBlock (i) @ (P(8));
+  ivar = aBlock (iv, jv) @(P(2));
+  ivar = aBlock (V(RED), V(GREEN));
+  ivar = aBlock (V(RED), V(GREEN), i, j);
+END
+TERM
