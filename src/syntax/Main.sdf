@@ -1796,7 +1796,7 @@ context-free syntax
 
   PointerFormula              -> CompileTimePointerFormula
 
-%% 5.5 TABLE FORMULAS
+%% 5.6 TABLE FORMULAS
 %%
   TableVariable               -> TableFormula       {cons("TableVariable")}
   NamedTableConstant          -> TableFormula       {cons("NamedTableConstant")}
@@ -2245,6 +2245,7 @@ context-free syntax
 
 %% 8.3.3 CHARACTER LITERALS
 %%
+%% CharString moved to JovialLex.sdf
   CharString               -> CharacterLiteral        {cons("CharacterLiteral")}
 
 %% 8.3.4 POINTER LITERALS
