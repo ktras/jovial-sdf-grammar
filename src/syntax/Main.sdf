@@ -691,7 +691,7 @@ context-free syntax
       ScaleSpecifier
       OptFractionSpecifier    -> FixedItemDescription    {cons("FixedItemDescription")}
 
-  CompileTimeIntegerFormula   -> ScaleSpecifier
+  CompileTimeIntegerFormula   -> ScaleSpecifier          {cons("ScaleSpecifier")}
   CompileTimeFixedFormula     -> FractionSpecifier       {cons("FractionSpecifier")}
 
   FractionSpecifier           -> OptFractionSpecifier
@@ -1586,7 +1586,7 @@ context-free syntax
     IntegerPrimary            -> FloatingFactor         {cons("FloatingFactor")}
 
   FloatingLiteral             -> FloatingPrimary
-  FloatingMachineParameter    -> FloatingPrimary
+  FloatingMachineParameter    -> FloatingPrimary        {prefer} %% added to remove ambiguity with FloatingPrimary(FloatingConversion(FloatingTypeName))
   FloatingVariable            -> FloatingPrimary        {cons("FloatingVariable")}
   NamedFloatingConstant       -> FloatingPrimary        {cons("NamedFloatingConstant")}
   FloatingFunctionCall        -> FloatingPrimary
