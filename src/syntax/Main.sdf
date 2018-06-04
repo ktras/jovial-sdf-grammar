@@ -1334,7 +1334,7 @@ context-free syntax
 
   'WHILE' BooleanFormula ';'   -> WhileClause          {cons("WhileClause")}
 
-  'FOR' ControlItem   ';'
+  'FOR' ControlItem   ':'
         ControlClause ';'      -> ForClause            {cons("ForClause")}
 
   ControlVariable              -> ControlItem
