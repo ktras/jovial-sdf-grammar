@@ -21,7 +21,7 @@ sorts
 
 % 3.0    %  SubroutineDeclaration SubroutineDefinition
 
-% 4.0    %  Statement SimpleStatement NullStatement Label StatementName CompoundStatement
+% 4.0    %  Statement SimpleStatement NullStatement Label StatementName LabeledCompoundStatement
             LabeledSimpleStatement LabelList
 
 InterferenceControl
@@ -1278,13 +1278,13 @@ context-free syntax
 
   LabelList SimpleStatement   -> Statement             {cons("SimpleStatement")}
   LabeledSimpleStatement      -> Statement             {cons("SimpleStatement")}
-  LabelList CompoundStatement -> Statement             {cons("CompoundStatement")}
+  LabeledCompoundStatement    -> Statement
 
   AssignmentStatement         -> SimpleStatement
   LoopStatement               -> SimpleStatement
   IfStatement                 -> SimpleStatement
-  CaseStatement               -> SimpleStatement
-  ProcedureCallStatement      -> SimpleStatement       {reject} %%AMBIGUOUS with AssignmentStatement
+  CaseStatement               -> LabeledSimpleStatement
+  ProcedureCallStatement      -> SimpleStatement       {reject} %%AMBIGUOUS with AssignmentStatement and other statements
   ReturnStatement             -> LabeledSimpleStatement
   GotoStatement               -> LabeledSimpleStatement
   ExitStatement               -> LabeledSimpleStatement
@@ -1309,10 +1309,11 @@ context-free syntax
 
   Name                        -> StatementName         {cons("Name")}
 
+  LabelList
   'BEGIN'
     Statement+
     LabelList
-  'END'                       -> CompoundStatement     {cons("CompoundStatement")}
+  'END'                       -> LabeledCompoundStatement {cons("CompoundStatement")}
   
 %% 4.1 ASSIGNMENT STATEMENTS
 %%
@@ -1391,10 +1392,12 @@ context-free syntax
 %% 4.4 CASE STATEMENTS
 %%
 
+  LabelList
   'CASE'
     CaseSelectorFormula ';'
   'BEGIN'
     CaseBody
+    LabelList
   'END'                        -> CaseStatement        {cons("CaseStatement")}
 
   IntegerFormula               -> CaseSelectorFormula
@@ -1408,7 +1411,7 @@ context-free syntax
     Statement
     OptFALLTHRU                -> CaseAlternative      {cons("CaseAlternative")}
 
-  DefaultOption                -> CaseAlternative      {cons("CaseAlternative")}
+  DefaultOption                -> CaseAlternative      {prefer}
 
   '(' 'DEFAULT' ')' ':'
     Statement
@@ -1855,7 +1858,7 @@ context-free syntax
   % empty %                   -> OptTableDereference   {cons("no-table-dereference")}
 
   TableName
-    Subscript                 -> TableEntry            {cons("TableEntry")}
+    Subscript                 -> TableEntry            {cons("TableEntry"), reject} %% Makes AMBIGUOUS with TableItem
 
   TableDereference
     Subscript                 -> TableEntry            {cons("TableEntry")}
@@ -1886,7 +1889,7 @@ context-free syntax
 
   '@' PointerItemName         -> Dereference           {cons("Dereference")}
   '@' '(' GeneralFormula ')'  -> Dereference           {cons("Dereference")}
-  '@' '(' PointerLiteral ')'  -> Dereference           {cons("Dereference"), reject}  %% doesn't allow a NULL to be dereferenced
+  '@' '(' PointerLiteral ')'  -> Dereference           {cons("Dereference"), reject}  %% This prevents NULL from being dereferenced
 
   ItemName                    -> PointerItemName       {prefer}
   TableItemName               -> PointerItemName
