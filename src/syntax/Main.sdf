@@ -786,7 +786,7 @@ context-free syntax
   TableTypeName               -> TypeName
   BlockTypeName               -> TypeName
 
-  TypeName                    -> OptTypeName
+  TypeName                    -> OptTypeName             {cons("TypeName")}
   % empty %                   -> OptTypeName             {cons("no-type-name")}
 
 %% 2.1.2 TABLE DECLARATIONS
