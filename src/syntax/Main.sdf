@@ -1282,7 +1282,7 @@ context-free syntax
 
   AssignmentStatement         -> SimpleStatement
   LoopStatement               -> SimpleStatement
-  IfStatement                 -> SimpleStatement
+  IfStatement                 -> LabeledSimpleStatement
   CaseStatement               -> LabeledSimpleStatement
   ProcedureCallStatement      -> SimpleStatement       {reject} %%AMBIGUOUS with AssignmentStatement and other statements
   ReturnStatement             -> LabeledSimpleStatement
@@ -1378,6 +1378,7 @@ context-free syntax
 %% 4.3 IF STATEMENTS
 %%
 
+  LabelList
   'IF' BooleanFormula ';'
     ConditionalStatement
     OptElseClause            -> IfStatement            {cons("IfStatement")}
