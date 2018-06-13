@@ -1383,7 +1383,7 @@ context-free syntax
     ConditionalStatement
     OptElseClause            -> IfStatement            {cons("IfStatement")}
 
-  Statement                  -> ConditionalStatement   {cons("ConditionalStatement")}
+  Statement                  -> ConditionalStatement   %%{cons("ConditionalStatement")} This might be unnecessary and clunky in traversal
 
   'ELSE' Statement           -> ElseClause             {cons("ElseClause")}
 
