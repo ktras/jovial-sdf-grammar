@@ -1281,7 +1281,7 @@ context-free syntax
   LabeledCompoundStatement    -> Statement
 
   AssignmentStatement         -> SimpleStatement
-  LoopStatement               -> SimpleStatement
+  LoopStatement               -> LabeledSimpleStatement
   IfStatement                 -> LabeledSimpleStatement
   CaseStatement               -> LabeledSimpleStatement
   ProcedureCallStatement      -> SimpleStatement       {reject} %%AMBIGUOUS with AssignmentStatement and other statements
@@ -1326,6 +1326,7 @@ context-free syntax
 %% 4.2 LOOP STATEMENTS
 %%
 
+  LabelList
   LoopType ControlledStatement -> LoopStatement        {cons("LoopStatement")}
 
   WhileClause                  -> LoopType
