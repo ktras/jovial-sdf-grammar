@@ -1327,7 +1327,10 @@ context-free syntax
 %%
 
   LabelList
-  LoopType ControlledStatement -> LoopStatement        {cons("LoopStatement")}
+  WhileClause ControlledStatement -> LoopStatement        {cons("WhileStatement")}
+
+  LabelList
+  ForClause ControlledStatement   -> LoopStatement        {cons("ForStatement")}
 
   WhileClause                  -> LoopType
   ForClause                    -> LoopType
