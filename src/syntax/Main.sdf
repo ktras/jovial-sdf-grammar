@@ -1557,7 +1557,7 @@ context-free syntax
 
   IntegerPrimary              -> IntegerFactor
   IntegerFactor '**'
-    IntegerPrimary            -> IntegerFactor          {cons("IntegerFactor")}
+    IntegerPrimary            -> IntegerFactor          {cons("ExponentiationOp")}
 
   IntegerLiteral              -> IntegerPrimary
   IntegerMachineParameter     -> IntegerPrimary
@@ -1679,7 +1679,7 @@ context-free syntax
   % empty %                   -> OptLogicalContinuation {cons("no-logical-continuation")}
 
   'AND' LogicalOperand        -> AndContinuation        {cons("AndContinuation")}
-  'OR'  LogicalOperand        ->  OrContinuation        {cons(" OrContinuation")}
+  'OR'  LogicalOperand        ->  OrContinuation        {cons( "OrContinuation")}
   'XOR' LogicalOperand        -> XorContinuation        {cons("XorContinuation")}
   'EQV' LogicalOperand        -> EqvContinuation        {cons("EqvContinuation")}
 
@@ -2169,16 +2169,18 @@ context-free syntax
   MultiplyOrDivide           -> ArithmeticOperator
   '**'                       -> ArithmeticOperator      {cons("PowerOp")}
 
-  '+'                        -> PlusOrMinus             {cons("PLUS")}
-  '-'                        -> PlusOrMinus             {cons("MINUS")}
+  '+'                        -> PlusOrMinus             {cons("AddOp")}
+  '-'                        -> PlusOrMinus             {cons("SubtractOp")}
 
-  '*'                        -> MultiplyDivideOrMod     {cons("TIMES")}
-  '/'                        -> MultiplyDivideOrMod     {cons("DIV")}
-  'MOD'                      -> MultiplyDivideOrMod     {cons("MOD")}
+  '*'                        -> MultiplyDivideOrMod     {cons("MultiplyOp")}
+  '/'                        -> MultiplyDivideOrMod     {cons("DivideOp")}
+  'MOD'                      -> MultiplyDivideOrMod     {cons("ModOp")}
 
-  '*'                        -> MultiplyOrDivide        {cons("TIMES")}
-  '/'                        -> MultiplyOrDivide        {cons("DIV")}
+  '*'                        -> MultiplyOrDivide        {cons("MultiplyOp")}
+  '/'                        -> MultiplyOrDivide        {cons("DivideOp")}
 
+
+%% Cons for NOT, AND, OR, XOR, EQV, DerefOp, and AssignOp will not be produced
   LogicalOperator            -> BitOperator
   'NOT'                      -> BitOperator             {cons("NOT")}
 
@@ -2188,13 +2190,13 @@ context-free syntax
   'EQV'                      -> LogicalOperator         {cons("EQV")}
 
   EqualOrNotEqualOperator    -> RelationalOperator
-  '<'                        -> RelationalOperator      {cons("LT")}
-  '>'                        -> RelationalOperator      {cons("GT")}
-  '<='                       -> RelationalOperator      {cons("LE")}
-  '>='                       -> RelationalOperator      {cons("GE")}
+  '<'                        -> RelationalOperator      {cons("LessThanOp")}
+  '>'                        -> RelationalOperator      {cons("GreaterThanOp")}
+  '<='                       -> RelationalOperator      {cons("LessOrEqualOp")}
+  '>='                       -> RelationalOperator      {cons("GreaterOrEqualOp")}
 
-  '='                        -> EqualOrNotEqualOperator {cons("EqOp")}
-  '<>'                       -> EqualOrNotEqualOperator {cons("NotEqOp")}
+  '='                        -> EqualOrNotEqualOperator {cons("EqualityOp")}
+  '<>'                       -> EqualOrNotEqualOperator {cons("NotEqualOp")}
 
   '@'                        -> DereferenceOperator     {cons("DerefOp")}
 
