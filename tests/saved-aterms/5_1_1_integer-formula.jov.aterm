@@ -16,7 +16,7 @@ Module(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ivar"])
-          , IntegerFormula(IntegerFormula(no-sign(), "ia"), PLUS(), "ib")
+          , IntegerFormula(IntegerFormula(no-sign(), "ia"), AddOp(), "ib")
           )
         )
       , SimpleStatement(
@@ -28,16 +28,16 @@ Module(
                 IntegerFormula(
                   MINUS()
                 , IntegerTerm(
-                    IntegerFactor(IntegerLiteral("2"), IntegerLiteral("3"))
-                  , DIV()
+                    ExponentiationOp(IntegerLiteral("2"), IntegerLiteral("3"))
+                  , DivideOp()
                   , IntegerLiteral("13")
                   )
                 )
-              , MINUS()
+              , SubtractOp()
               , "ia"
               )
-            , PLUS()
-            , IntegerTerm("ib", MOD(), IntegerLiteral("11"))
+            , AddOp()
+            , IntegerTerm("ib", ModOp(), IntegerLiteral("11"))
             )
           )
         )

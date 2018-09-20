@@ -12,21 +12,21 @@ Module(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ivar"])
-          , IntegerFormula(no-sign(), IntegerTerm(IntegerLiteral("1"), TIMES(), IntegerLiteral("2")))
+          , IntegerFormula(no-sign(), IntegerTerm(IntegerLiteral("1"), MultiplyOp(), IntegerLiteral("2")))
           )
         )
       , SimpleStatement(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ivar"])
-          , IntegerFormula(no-sign(), IntegerTerm(IntegerLiteral("2"), DIV(), IntegerLiteral("1")))
+          , IntegerFormula(no-sign(), IntegerTerm(IntegerLiteral("2"), DivideOp(), IntegerLiteral("1")))
           )
         )
       , SimpleStatement(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ivar"])
-          , IntegerFormula(no-sign(), IntegerTerm(IntegerLiteral("5"), MOD(), IntegerLiteral("2")))
+          , IntegerFormula(no-sign(), IntegerTerm(IntegerLiteral("5"), ModOp(), IntegerLiteral("2")))
           )
         )
       , SimpleStatement(
@@ -37,11 +37,11 @@ Module(
               no-sign()
             , IntegerTerm(
                 IntegerTerm(
-                  IntegerTerm(IntegerLiteral("5"), TIMES(), IntegerLiteral("2"))
-                , DIV()
+                  IntegerTerm(IntegerLiteral("5"), MultiplyOp(), IntegerLiteral("2"))
+                , DivideOp()
                 , IntegerLiteral("5")
                 )
-              , MOD()
+              , ModOp()
               , IntegerLiteral("2")
               )
             )

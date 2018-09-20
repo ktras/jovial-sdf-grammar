@@ -12,7 +12,7 @@ Module(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ivar"])
-          , IntegerFormula(no-sign(), IntegerFactor(IntegerLiteral("2"), IntegerLiteral("2")))
+          , IntegerFormula(no-sign(), ExponentiationOp(IntegerLiteral("2"), IntegerLiteral("2")))
           )
         )
       , SimpleStatement(
@@ -21,7 +21,7 @@ Module(
             VariableList(["ivar"])
           , IntegerFormula(
               no-sign()
-            , IntegerFactor(IntegerFactor(IntegerLiteral("1"), IntegerLiteral("2")), IntegerLiteral("3"))
+            , ExponentiationOp(ExponentiationOp(IntegerLiteral("1"), IntegerLiteral("2")), IntegerLiteral("3"))
             )
           )
         )
