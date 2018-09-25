@@ -569,13 +569,13 @@ context-free syntax
 
   'MAXFIXED'
      '('
-    ScaleSpecifier
+    ScaleSpecifier ','
     FractionSpecifier
      ')'                     -> FixedMachineParameter    {cons("MAXFIXED")}
 
   'MINFIXED'
      '('
-    ScaleSpecifier
+    ScaleSpecifier ','
     FractionSpecifier
      ')'                     -> FixedMachineParameter    {cons("MINFIXED")}
 
