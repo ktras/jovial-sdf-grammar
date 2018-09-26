@@ -15,7 +15,7 @@ Module(
             "COLOR"
           , no-allocation-specifier()
           , StatusItemDescription(
-              ItemSize(IntegerFormula(no-sign(), IntegerLiteral("1")))
+              ItemSize(NumericFormula(no-sign(), IntegerLiteral("1")))
             , DefaultSublist([StatusConstant("RED"), StatusConstant("GREEN"), StatusConstant("BLUE")])
             )
           , no-item-preset()
@@ -24,7 +24,7 @@ Module(
             "LETTER"
           , no-allocation-specifier()
           , StatusItemDescription(
-              ItemSize(IntegerFormula(no-sign(), IntegerLiteral("21")))
+              ItemSize(NumericFormula(no-sign(), IntegerLiteral("21")))
             , DefaultSublist([StatusConstant("A"), StatusConstant("B")])
             )
           , no-item-preset()
@@ -39,11 +39,11 @@ Module(
             "COLOR"
           , no-allocation-specifier()
           , StatusItemDescription(
-              ItemSize(IntegerFormula(no-sign(), IntegerLiteral("3")))
+              ItemSize(NumericFormula(no-sign(), IntegerLiteral("3")))
             , StatusList(
                 no-default-sublist()
               , [ SpecifiedSublist(
-                    IntegerFormula(no-sign(), IntegerLiteral("8"))
+                    NumericFormula(no-sign(), IntegerLiteral("8"))
                   , [StatusConstant("RED"), StatusConstant("GREEN"), StatusConstant("BLUE")]
                   )
                 ]

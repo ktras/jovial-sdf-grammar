@@ -6,38 +6,38 @@ Module(
       DeclarationList([])
     , [ SimpleStatement(
           LabelList([])
-        , AssignmentStatement(VariableList(["ivar"]), IntegerFormula(no-sign(), IntegerLiteral("13")))
+        , AssignmentStatement(VariableList(["ivar"]), NumericFormula(no-sign(), IntegerLiteral("13")))
         )
       , SimpleStatement(
           LabelList([])
-        , AssignmentStatement(VariableList(["ivar"]), IntegerFormula(MINUS(), "ivar"))
+        , AssignmentStatement(VariableList(["ivar"]), NumericFormula(MINUS(), NumericVariable("ivar")))
         )
       , SimpleStatement(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ivar"])
-          , IntegerFormula(IntegerFormula(no-sign(), "ia"), AddOp(), "ib")
+          , NumericFormula(NumericFormula(no-sign(), NumericVariable("ia")), AddOp(), NumericVariable("ib"))
           )
         )
       , SimpleStatement(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ivar"])
-          , IntegerFormula(
-              IntegerFormula(
-                IntegerFormula(
+          , NumericFormula(
+              NumericFormula(
+                NumericFormula(
                   MINUS()
-                , IntegerTerm(
+                , NumericTerm(
                     ExponentiationOp(IntegerLiteral("2"), IntegerLiteral("3"))
                   , DivideOp()
                   , IntegerLiteral("13")
                   )
                 )
               , SubtractOp()
-              , "ia"
+              , NumericVariable("ia")
               )
             , AddOp()
-            , IntegerTerm("ib", ModOp(), IntegerLiteral("11"))
+            , NumericTerm(NumericVariable("ib"), ModOp(), IntegerLiteral("11"))
             )
           )
         )

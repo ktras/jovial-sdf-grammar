@@ -9,8 +9,8 @@ Module(
           , no-allocation-specifier()
           , DimensionList(
               [ Dimension(
-                  LowerBoundOption(IntegerFormula(no-sign(), IntegerLiteral("1")))
-                , IntegerFormula(no-sign(), IntegerLiteral("3"))
+                  LowerBoundOption(NumericFormula(no-sign(), IntegerLiteral("1")))
+                , NumericFormula(no-sign(), IntegerLiteral("3"))
                 )
               , DimensionSTAR()
               ]

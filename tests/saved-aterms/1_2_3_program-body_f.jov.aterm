@@ -6,7 +6,7 @@ Module(
       DeclarationList([])
     , [ SimpleStatement(
           LabelList([])
-        , AssignmentStatement(VariableList(["ivar"]), IntegerFormula(no-sign(), IntegerLiteral("13")))
+        , AssignmentStatement(VariableList(["ivar"]), NumericFormula(no-sign(), IntegerLiteral("13")))
         )
       ]
     , [ProcedureDefinition(

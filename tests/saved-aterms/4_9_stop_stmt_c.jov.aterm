@@ -10,10 +10,10 @@ Module(
       , SimpleStatement(
           StopStatement(
             LabelList([Label("label3")])
-          , IntegerFormula(no-sign(), IntegerLiteral("1"))
+          , NumericFormula(no-sign(), IntegerLiteral("1"))
           )
         )
-      , SimpleStatement(StopStatement(LabelList([]), IntegerFormula(MINUS(), IntegerLiteral("21"))))
+      , SimpleStatement(StopStatement(LabelList([]), NumericFormula(MINUS(), IntegerLiteral("21"))))
       ]
     , []
     , LabelList([])

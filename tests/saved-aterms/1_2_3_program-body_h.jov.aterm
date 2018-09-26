@@ -10,11 +10,11 @@ Module(
       )
     , [ SimpleStatement(
           LabelList([Label("label1")])
-        , AssignmentStatement(VariableList(["ivar"]), IntegerFormula(MINUS(), IntegerLiteral("13")))
+        , AssignmentStatement(VariableList(["ivar"]), NumericFormula(MINUS(), IntegerLiteral("13")))
         )
       , SimpleStatement(
           LabelList([Label("label2")])
-        , AssignmentStatement(VariableList(["uvar"]), IntegerFormula(no-sign(), IntegerLiteral("13")))
+        , AssignmentStatement(VariableList(["uvar"]), NumericFormula(no-sign(), IntegerLiteral("13")))
         )
       ]
     , [ ProcedureDefinition(

@@ -6,7 +6,7 @@ Module(
       DeclarationList([])
     , [ SimpleStatement(
           LabelList([])
-        , AssignmentStatement(VariableList(["ibbr"]), IntegerFormula(no-sign(), IntegerLiteral("1")))
+        , AssignmentStatement(VariableList(["ibbr"]), NumericFormula(no-sign(), IntegerLiteral("1")))
         )
       , SimpleStatement(
           LabelList([])
@@ -28,19 +28,19 @@ Module(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ibbr"])
-          , FixedFormula(no-sign(), RealLiteralFF(FractionalForm("3", "8"), no-exponent()))
+          , NumericFormula(no-sign(), RealLiteralFF(FractionalForm("3", "8"), no-exponent()))
           )
         )
       , SimpleStatement(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ibbr"])
-          , IntegerFormula(
+          , NumericFormula(
               no-sign()
             , ByteFunction(
                 CharacterFormula(CharacterLiteral("'ivar'"))
-              , IntegerFormula(no-sign(), IntegerLiteral("1"))
-              , IntegerFormula(no-sign(), IntegerLiteral("2"))
+              , NumericFormula(no-sign(), IntegerLiteral("1"))
+              , NumericFormula(no-sign(), IntegerLiteral("2"))
               )
             )
           )

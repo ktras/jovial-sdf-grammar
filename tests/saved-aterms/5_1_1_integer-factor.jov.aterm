@@ -6,20 +6,20 @@ Module(
       DeclarationList([])
     , [ SimpleStatement(
           LabelList([])
-        , AssignmentStatement(VariableList(["ivar"]), IntegerFormula(no-sign(), IntegerLiteral("13")))
+        , AssignmentStatement(VariableList(["ivar"]), NumericFormula(no-sign(), IntegerLiteral("13")))
         )
       , SimpleStatement(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ivar"])
-          , IntegerFormula(no-sign(), ExponentiationOp(IntegerLiteral("2"), IntegerLiteral("2")))
+          , NumericFormula(no-sign(), ExponentiationOp(IntegerLiteral("2"), IntegerLiteral("2")))
           )
         )
       , SimpleStatement(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ivar"])
-          , IntegerFormula(
+          , NumericFormula(
               no-sign()
             , ExponentiationOp(ExponentiationOp(IntegerLiteral("1"), IntegerLiteral("2")), IntegerLiteral("3"))
             )

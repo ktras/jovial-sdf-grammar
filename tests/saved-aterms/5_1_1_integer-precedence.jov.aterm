@@ -8,8 +8,8 @@ Module(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ivar"])
-          , IntegerFormula(
-              IntegerFormula(IntegerFormula(no-sign(), IntegerLiteral("1")), SubtractOp(), IntegerLiteral("2"))
+          , NumericFormula(
+              NumericFormula(NumericFormula(no-sign(), IntegerLiteral("1")), SubtractOp(), IntegerLiteral("2"))
             , AddOp()
             , IntegerLiteral("3")
             )
@@ -19,8 +19,8 @@ Module(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ivar"])
-          , IntegerFormula(
-              IntegerFormula(IntegerFormula(no-sign(), IntegerLiteral("1")), AddOp(), IntegerLiteral("2"))
+          , NumericFormula(
+              NumericFormula(NumericFormula(no-sign(), IntegerLiteral("1")), AddOp(), IntegerLiteral("2"))
             , SubtractOp()
             , IntegerLiteral("3")
             )
@@ -30,8 +30,8 @@ Module(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ivar"])
-          , IntegerFormula(
-              IntegerFormula(no-sign(), IntegerTerm(IntegerLiteral("1"), MultiplyOp(), IntegerLiteral("2")))
+          , NumericFormula(
+              NumericFormula(no-sign(), NumericTerm(IntegerLiteral("1"), MultiplyOp(), IntegerLiteral("2")))
             , AddOp()
             , IntegerLiteral("3")
             )
@@ -41,10 +41,10 @@ Module(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ivar"])
-          , IntegerFormula(
-              IntegerFormula(no-sign(), IntegerLiteral("1"))
+          , NumericFormula(
+              NumericFormula(no-sign(), IntegerLiteral("1"))
             , SubtractOp()
-            , IntegerTerm(IntegerLiteral("2"), DivideOp(), IntegerLiteral("3"))
+            , NumericTerm(IntegerLiteral("2"), DivideOp(), IntegerLiteral("3"))
             )
           )
         )
@@ -52,8 +52,8 @@ Module(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ivar"])
-          , IntegerFormula(
-              IntegerFormula(MINUS(), IntegerTerm(IntegerLiteral("1"), ModOp(), IntegerLiteral("2")))
+          , NumericFormula(
+              NumericFormula(MINUS(), NumericTerm(IntegerLiteral("1"), ModOp(), IntegerLiteral("2")))
             , AddOp()
             , IntegerLiteral("3")
             )
@@ -63,10 +63,10 @@ Module(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ivar"])
-          , IntegerFormula(
-              IntegerFormula(MINUS(), IntegerLiteral("1"))
+          , NumericFormula(
+              NumericFormula(MINUS(), IntegerLiteral("1"))
             , SubtractOp()
-            , IntegerTerm(IntegerLiteral("2"), ModOp(), IntegerLiteral("3"))
+            , NumericTerm(IntegerLiteral("2"), ModOp(), IntegerLiteral("3"))
             )
           )
         )
@@ -74,10 +74,10 @@ Module(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ivar"])
-          , IntegerFormula(
-              IntegerFormula(no-sign(), ExponentiationOp(IntegerLiteral("1"), IntegerLiteral("2")))
+          , NumericFormula(
+              NumericFormula(no-sign(), ExponentiationOp(IntegerLiteral("1"), IntegerLiteral("2")))
             , AddOp()
-            , IntegerTerm(IntegerLiteral("3"), MultiplyOp(), IntegerLiteral("4"))
+            , NumericTerm(IntegerLiteral("3"), MultiplyOp(), IntegerLiteral("4"))
             )
           )
         )
@@ -85,10 +85,10 @@ Module(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ivar"])
-          , IntegerFormula(
-              IntegerFormula(no-sign(), IntegerLiteral("1"))
+          , NumericFormula(
+              NumericFormula(no-sign(), IntegerLiteral("1"))
             , AddOp()
-            , IntegerTerm(
+            , NumericTerm(
                 ExponentiationOp(IntegerLiteral("2"), IntegerLiteral("3"))
               , MultiplyOp()
               , IntegerLiteral("4")
@@ -100,11 +100,11 @@ Module(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ivar"])
-          , IntegerFormula(
-              IntegerFormula(no-sign(), IntegerLiteral("1"))
+          , NumericFormula(
+              NumericFormula(no-sign(), IntegerLiteral("1"))
             , AddOp()
-            , IntegerTerm(
-                IntegerTerm(
+            , NumericTerm(
+                NumericTerm(
                   ExponentiationOp(IntegerLiteral("2"), IntegerLiteral("3"))
                 , MultiplyOp()
                 , IntegerLiteral("4")
@@ -119,10 +119,10 @@ Module(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ivar"])
-          , IntegerFormula(
-              IntegerFormula(no-sign(), IntegerTerm(IntegerLiteral("1"), MultiplyOp(), IntegerLiteral("2")))
+          , NumericFormula(
+              NumericFormula(no-sign(), NumericTerm(IntegerLiteral("1"), MultiplyOp(), IntegerLiteral("2")))
             , AddOp()
-            , IntegerTerm(
+            , NumericTerm(
                 ExponentiationOp(IntegerLiteral("3"), IntegerLiteral("4"))
               , MultiplyOp()
               , IntegerLiteral("5")
@@ -134,10 +134,10 @@ Module(
           LabelList([])
         , AssignmentStatement(
             VariableList(["ivar"])
-          , IntegerFormula(
-              IntegerFormula(no-sign(), ExponentiationOp(IntegerLiteral("1"), IntegerLiteral("2")))
+          , NumericFormula(
+              NumericFormula(no-sign(), ExponentiationOp(IntegerLiteral("1"), IntegerLiteral("2")))
             , SubtractOp()
-            , IntegerTerm(
+            , NumericTerm(
                 IntegerLiteral("3")
               , DivideOp()
               , ExponentiationOp(IntegerLiteral("4"), IntegerLiteral("5"))
