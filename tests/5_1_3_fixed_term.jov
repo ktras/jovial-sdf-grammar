@@ -1,0 +1,14 @@
+START
+PROGRAM testFixedTerm ;
+BEGIN
+  ivar = 1.8 * 1.0 / 1;
+  ivar = 1.8 * MAXFIXED (1,2.2);
+  ivar = 1.8 * 2E2;
+  ivar = 3 * 2E2;
+  ivar = 3 * MINFIXED (1,2.2);
+  ivar = 2E-2 * 1;
+  ivar = 2E-2 * 1 * 1;
+  ivar = 1.8 / 2;
+  ivar = 1.8 / 2 / 2;
+END
+TERM

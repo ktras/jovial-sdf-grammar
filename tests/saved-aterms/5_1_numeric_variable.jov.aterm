@@ -1,0 +1,86 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testNumericVariable")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ivar"]), NumericFormula(no-sign(), IntegerLiteral("2")))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["iccr"]), NumericFormula(MINUS(), IntegerLiteral("2")))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(NumericFormula(no-sign(), NumericVariable("ivar")), AddOp(), IntegerLiteral("1"))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(
+              no-sign()
+            , NumericTerm(
+                NumericPrimary(
+                  NumericFormula(NumericFormula(no-sign(), NumericVariable("ivar")), AddOp(), IntegerLiteral("1"))
+                )
+              , DivideOp()
+              , NumericVariable("iccr")
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(NumericFormula(no-sign(), NumericVariable("ivar")), AddOp(), NumericVariable("iccr"))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(NumericFormula(no-sign(), NumericVariable("ivar")), SubtractOp(), NumericVariable("iccr"))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(no-sign(), NumericTerm(NumericVariable("ivar"), MultiplyOp(), NumericVariable("iccr")))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(no-sign(), NumericTerm(NumericVariable("ivar"), DivideOp(), NumericVariable("iccr")))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(no-sign(), ExponentiationOp(NumericVariable("ivar"), IntegerLiteral("2")))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(no-sign(), ExponentiationOp(NumericVariable("ivar"), NumericVariable("iccr")))
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

@@ -1,0 +1,117 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testFixedFormula")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              NumericFormula(no-sign(), RealLiteralFF(FractionalForm("1", "8"), no-exponent()))
+            , AddOp()
+            , RealLiteralFF(FractionalForm("1", "8"), no-exponent())
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              NumericFormula(no-sign(), RealLiteralFF(FractionalForm("1", "8"), no-exponent()))
+            , SubtractOp()
+            , RealLiteralFF(FractionalForm("1", "8"), no-exponent())
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              NumericFormula(
+                NumericFormula(no-sign(), RealLiteralFF(FractionalForm("1", "8"), no-exponent()))
+              , AddOp()
+              , RealLiteralFF(FractionalForm("1", "8"), no-exponent())
+              )
+            , SubtractOp()
+            , RealLiteralFF(FractionalForm("1", "8"), no-exponent())
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              NumericFormula(
+                NumericFormula(
+                  NumericFormula(no-sign(), RealLiteralFF(FractionalForm("2", "8"), no-exponent()))
+                , AddOp()
+                , RealLiteralFF(FractionalForm("2", "8"), no-exponent())
+                )
+              , SubtractOp()
+              , RealLiteralFF(FractionalForm("3", "8"), no-exponent())
+              )
+            , SubtractOp()
+            , RealLiteralFF(FractionalForm("3", "8"), no-exponent())
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              NumericFormula(
+                no-sign()
+              , NumericTerm(
+                  IntegerLiteral("3")
+                , MultiplyOp()
+                , RealLiteralIE("2", Exponent(no-sign(), "2"))
+                )
+              )
+            , SubtractOp()
+            , NumericTerm(
+                IntegerLiteral("3")
+              , MultiplyOp()
+              , RealLiteralIE("2", Exponent(no-sign(), "2"))
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              NumericFormula(
+                no-sign()
+              , NumericPrimary(
+                  NumericFormula(
+                    no-sign()
+                  , RealLiteralFF(FractionalForm("1", "8"), Exponent(no-sign(), "2"))
+                  )
+                )
+              )
+            , AddOp()
+            , NumericTerm(
+                RealLiteralFF(FractionalForm("1", "8"), no-exponent())
+              , MultiplyOp()
+              , MAXFIXED(
+                  ScaleSpecifier(NumericFormula(no-sign(), IntegerLiteral("1")))
+                , FractionSpecifier(NumericFormula(no-sign(), RealLiteralFF(FractionalForm("2", "2"), no-exponent())))
+                )
+              )
+            )
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

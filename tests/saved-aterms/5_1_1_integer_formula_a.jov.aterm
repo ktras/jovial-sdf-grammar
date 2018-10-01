@@ -1,0 +1,147 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testIntegerFormula")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ibbr"]), NumericFormula(no-sign(), IntegerLiteral("1")))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ibbr"]), NumericFormula(MINUS(), IntegerLiteral("1")))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ibbr"]), NumericFormula(PLUS(), IntegerLiteral("1")))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(NumericFormula(no-sign(), IntegerLiteral("10")), AddOp(), IntegerLiteral("2"))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(NumericFormula(no-sign(), IntegerLiteral("10")), SubtractOp(), IntegerLiteral("2"))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(no-sign(), NumericTerm(IntegerLiteral("10"), DivideOp(), IntegerLiteral("2")))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(no-sign(), NumericTerm(IntegerLiteral("10"), MultiplyOp(), IntegerLiteral("2")))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(no-sign(), NumericTerm(IntegerLiteral("10"), ModOp(), IntegerLiteral("2")))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(no-sign(), ExponentiationOp(IntegerLiteral("10"), IntegerLiteral("2")))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(
+              no-sign()
+            , ExponentiationOp(ExponentiationOp(IntegerLiteral("1"), IntegerLiteral("2")), IntegerLiteral("3"))
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(
+              no-sign()
+            , NumericTerm(
+                NumericPrimary(
+                  NumericFormula(NumericFormula(no-sign(), IntegerLiteral("10")), AddOp(), IntegerLiteral("2"))
+                )
+              , MultiplyOp()
+              , IntegerLiteral("2")
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(
+              no-sign()
+            , NumericPrimary(
+                IntegerConversionS()
+              , NumericFormula(no-sign(), RealLiteralFF(FractionalForm("3", "8"), no-exponent()))
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(
+              no-sign()
+            , NumericPrimary(
+                IntegerConversionU()
+              , NumericFormula(no-sign(), RealLiteralFF(FractionalForm("3", "8"), no-exponent()))
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(
+              no-sign()
+            , NumericPrimary(
+                IntegerConversion(IntegerItemDescriptionU("U", R(), no-item-size()))
+              , NumericFormula(MINUS(), RealLiteralFF(FractionalForm("1", "8"), no-exponent()))
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(
+              no-sign()
+            , NumericPrimary(
+                IntegerConversion(
+                  IntegerItemDescription("S", R(), ItemSize(NumericFormula(no-sign(), IntegerLiteral("1"))))
+                )
+              , NumericFormula(MINUS(), RealLiteralFF(FractionalForm("1", "8"), no-exponent()))
+              )
+            )
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

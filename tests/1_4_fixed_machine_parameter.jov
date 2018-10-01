@@ -1,0 +1,7 @@
+START
+PROGRAM testFixedMachineParameter ;
+BEGIN
+  ibbr = MAXFIXED (8, 9);
+  ibbr = MINFIXED (1, 2);
+END
+TERM

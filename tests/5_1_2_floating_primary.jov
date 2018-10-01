@@ -1,0 +1,26 @@
+START
+PROGRAM testFloatingPrimary ;
+BEGIN
+
+% Parses as FixedFormula because of prefer %
+  ivar = +1.8;
+  ivar = 1.8E2;
+
+% Parses as IntegerVariable instead of
+FloatingMachineParameters because of prefer %
+  ivar = MAXFLOAT (.2);
+  ivar = MAXFLOAT (F(.2));
+  ivar = MINFLOAT (2E2);
+  ivar = FLOATRELPRECISION (1.0);
+  ivar = FLOATUNDERFLOW (1.8);
+  ivar = (FLOATUNDERFLOW (1.8));
+
+  ivar = F(2.2);
+  ivar = (F(2.2));
+
+% Parses as IntegerVariable %
+  ivar = floatcon (2.2);
+
+  ivar = (* F , R 2.2 *) (2.2);
+END
+TERM

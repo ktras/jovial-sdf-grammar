@@ -1,0 +1,15 @@
+START
+PROGRAM testNumericVariable ;
+BEGIN
+  ivar = 2;
+  iccr = -2;
+  ibbr = ivar + 1;
+  ibbr = (ivar +1) / iccr;
+  ibbr = ivar + iccr;
+  ibbr = ivar - iccr;
+  ibbr = ivar * iccr;
+  ibbr = ivar / iccr;
+  ibbr = ivar ** 2;
+  ibbr = ivar ** iccr;
+END
+TERM

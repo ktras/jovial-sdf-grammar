@@ -1,0 +1,56 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testIntegerMachineParameter")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ibbr"]), NumericFormula(no-sign(), MAXSTOP()))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ibbr"]), NumericFormula(no-sign(), MINSTOP()))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(no-sign(), NumericTerm(MAXSIGNDIGITS(), DivideOp(), IntegerLiteral("2")))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(no-sign(), MINSIZE(NumericFormula(no-sign(), IntegerLiteral("10"))))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(no-sign(), MINFRACTION(NumericFormula(no-sign(), IntegerLiteral("2"))))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(no-sign(), MINSCALE(NumericFormula(no-sign(), IntegerLiteral("5"))))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(no-sign(), MINRELPRECISION(NumericFormula(no-sign(), IntegerLiteral("6"))))
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

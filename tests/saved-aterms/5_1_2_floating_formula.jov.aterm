@@ -1,0 +1,115 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testFloatingFormula")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              NumericFormula(
+                no-sign()
+              , NumericTerm(
+                  RealLiteralFF(FractionalForm("1", "0"), no-exponent())
+                , DivideOp()
+                , NumericPrimary(
+                    FloatingConversionF()
+                  , NumericFormula(no-sign(), RealLiteralFF(FractionalForm("2", "2"), no-exponent()))
+                  )
+                )
+              )
+            , AddOp()
+            , RealLiteralFF(FractionalForm("1", "0"), no-exponent())
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              NumericFormula(
+                no-sign()
+              , NumericTerm(
+                  RealLiteralFF(FractionalForm("1", "0"), no-exponent())
+                , DivideOp()
+                , NumericPrimary(
+                    FloatingConversionF()
+                  , NumericFormula(no-sign(), RealLiteralFF(FractionalForm("2", "2"), no-exponent()))
+                  )
+                )
+              )
+            , SubtractOp()
+            , NumericTerm(
+                RealLiteralFF(FractionalForm("1", "0"), no-exponent())
+              , DivideOp()
+              , NumericPrimary(
+                  NumericFormula(
+                    no-sign()
+                  , NumericPrimary(
+                      FloatingConversionF()
+                    , NumericFormula(no-sign(), RealLiteralFF(FractionalForm("2", "2"), no-exponent()))
+                    )
+                  )
+                )
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              NumericFormula(
+                NumericFormula(
+                  NumericFormula(
+                    no-sign()
+                  , NumericTerm(
+                      RealLiteralFF(FractionalForm("1", "0"), no-exponent())
+                    , DivideOp()
+                    , NumericPrimary(
+                        FloatingConversionF()
+                      , NumericFormula(no-sign(), RealLiteralFF(FractionalForm("2", "2"), no-exponent()))
+                      )
+                    )
+                  )
+                , AddOp()
+                , RealLiteralFF(FractionalForm("1", "0"), no-exponent())
+                )
+              , SubtractOp()
+              , NumericTerm(
+                  RealLiteralFF(FractionalForm("1", "0"), no-exponent())
+                , DivideOp()
+                , NumericPrimary(
+                    FloatingConversionF()
+                  , NumericFormula(no-sign(), RealLiteralFF(FractionalForm("2", "2"), no-exponent()))
+                  )
+                )
+              )
+            , SubtractOp()
+            , NumericTerm(
+                RealLiteralFF(FractionalForm("1", "0"), no-exponent())
+              , DivideOp()
+              , NumericPrimary(
+                  NumericFormula(
+                    no-sign()
+                  , NumericPrimary(
+                      FloatingConversionF()
+                    , NumericFormula(no-sign(), RealLiteralFF(FractionalForm("2", "2"), no-exponent()))
+                    )
+                  )
+                )
+              )
+            )
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

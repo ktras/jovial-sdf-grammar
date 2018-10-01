@@ -1,0 +1,20 @@
+START
+PROGRAM testIntegerFormula ;
+BEGIN
+  ibbr = 1;
+  ibbr = -1;
+  ibbr = +1;
+  ibbr = 10 + 2;
+  ibbr = 10 - 2;
+  ibbr = 10 / 2;
+  ibbr = 10 * 2;
+  ibbr = 10 MOD 2;
+  ibbr = 10 ** 2;
+  ibbr = 1 ** 2 ** 3 ;
+  ibbr = (10 + 2) * 2;
+  ibbr = S (3.8);
+  ibbr = U (3.8);
+  ibbr = (* U , R*) (-1.8);
+  ibbr = (* S , R 1*) (-1.8);
+END
+TERM

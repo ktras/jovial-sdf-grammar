@@ -1,0 +1,15 @@
+START
+PROGRAM testFixedFactor ;
+BEGIN
+  ivar = +1.8;
+  ivar = -1.8;
+  ivar = .8;
+  ivar = 0.8;
+  ivar = 1.8E2;
+  ivar = 3E3;
+  ivar = 2E-2;
+  ivar = MAXFIXED (1, 2.2);
+  ivar = MINFIXED (3, 2E2);
+  ivar = (1.8E2);
+END
+TERM

@@ -1,0 +1,46 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testIntegerMachineParameter")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ibbr"]), NumericFormula(no-sign(), MAXINTSIZE()))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ibbr"]), NumericFormula(no-sign(), MAXBYTES()))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ibbr"]), NumericFormula(no-sign(), MAXBITS()))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(no-sign(), MAXINT(ItemSize(NumericFormula(no-sign(), IntegerLiteral("100")))))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(no-sign(), MININT(ItemSize(NumericFormula(no-sign(), IntegerLiteral("0")))))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(no-sign(), NumericTerm(MAXTABLESIZE(), MultiplyOp(), IntegerLiteral("2")))
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

@@ -1,0 +1,63 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testIntegerMachineParameter")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ibbr"]), NumericFormula(no-sign(), FLOATPRECISION()))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ibbr"]), NumericFormula(no-sign(), FIXEDPRECISION()))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ibbr"]), NumericFormula(no-sign(), FLOATRADIX()))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(no-sign(), IMPLFLOATPRECISION(NumericFormula(no-sign(), IntegerLiteral("8"))))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(
+              no-sign()
+            , IMPLFIXEDPRECISION(
+                ScaleSpecifier(NumericFormula(no-sign(), IntegerLiteral("1")))
+              , FractionSpecifier(NumericFormula(no-sign(), RealLiteralFF(FractionalForm("3", "8"), no-exponent())))
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(no-sign(), IMPLINTSIZE(ItemSize(NumericFormula(no-sign(), IntegerLiteral("4")))))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ibbr"]), NumericFormula(no-sign(), MAXFLOATPRECISION()))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(NumericFormula(no-sign(), MAXFIXEDPRECSION()), SubtractOp(), IntegerLiteral("1"))
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

@@ -1,0 +1,11 @@
+START
+PROGRAM testIntegerMachineParameter ;
+BEGIN
+  ibbr = MAXINTSIZE;
+  ibbr = MAXBYTES;
+  ibbr = MAXBITS;
+  ibbr = MAXINT (100);
+  ibbr = MININT (0);
+  ibbr = MAXTABLESIZE * 2;
+END
+TERM

@@ -1,0 +1,18 @@
+START
+PROGRAM testFixedConversion ;
+BEGIN
+  ivar = (* A , R 1 2.2 *) (1);
+  ivar = (* A 1 *) (1);
+  ivar = (* A 1 *) (1 / 2E-2);
+
+% Tried to use FixedTypeName in a FixedConversion but parse as IntegerTypeName
+then uses FloatingFormula for the part in parentheses, not FixedFormula %
+  ivar = fixconv (1.8 / 1.8);
+
+% Is ambiguous within the FixedConversion between FixedTerm and FloatingFormula %
+  ivar = (* A 1 *) (1.8 * 1.0 / 1.8);
+  ivar = (* A 1 *) (1.8 / 1.8);
+
+
+END
+TERM

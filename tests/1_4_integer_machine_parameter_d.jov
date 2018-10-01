@@ -1,0 +1,12 @@
+START
+PROGRAM testIntegerMachineParameter ;
+BEGIN
+  ibbr = MAXSTOP;
+  ibbr = MINSTOP;
+  ibbr = MAXSIGNDIGITS / 2;
+  ibbr = MINSIZE (10);
+  ibbr = MINFRACTION (2);
+  ibbr = MINSCALE (5);
+  ibbr = MINRELPRECISION (6);
+END
+TERM

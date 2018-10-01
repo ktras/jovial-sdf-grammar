@@ -1,0 +1,106 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testFixedFactor")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(PLUS(), RealLiteralFF(FractionalForm("1", "8"), no-exponent()))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(MINUS(), RealLiteralFF(FractionalForm("1", "8"), no-exponent()))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(no-sign(), RealLiteralFF(FractionalForm(no-number(), "8"), no-exponent()))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(no-sign(), RealLiteralFF(FractionalForm("0", "8"), no-exponent()))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , RealLiteralFF(FractionalForm("1", "8"), Exponent(no-sign(), "2"))
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(no-sign(), RealLiteralIE("3", Exponent(no-sign(), "3")))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(no-sign(), RealLiteralIE("2", Exponent(MINUS(), "2")))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , MAXFIXED(
+                ScaleSpecifier(NumericFormula(no-sign(), IntegerLiteral("1")))
+              , FractionSpecifier(NumericFormula(no-sign(), RealLiteralFF(FractionalForm("2", "2"), no-exponent())))
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , MINFIXED(
+                ScaleSpecifier(NumericFormula(no-sign(), IntegerLiteral("3")))
+              , FractionSpecifier(NumericFormula(no-sign(), RealLiteralIE("2", Exponent(no-sign(), "2"))))
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , NumericPrimary(
+                NumericFormula(
+                  no-sign()
+                , RealLiteralFF(FractionalForm("1", "8"), Exponent(no-sign(), "2"))
+                )
+              )
+            )
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

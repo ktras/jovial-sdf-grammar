@@ -1,0 +1,9 @@
+START
+PROGRAM testFloatingMachineParameter ;
+BEGIN
+  ibbr = MAXFLOAT (9.9);
+  ibbr = MINFLOAT (0.1);
+  ibbr = FLOATRELPRECISION (99);
+  ibbr = FLOATUNDERFLOW (1);
+END
+TERM

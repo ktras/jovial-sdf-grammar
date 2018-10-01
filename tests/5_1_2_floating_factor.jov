@@ -1,0 +1,15 @@
+START
+PROGRAM testFloatingFactor ;
+BEGIN
+% Ambiguous between what was wanted - MINFLOAT (which is a FloatingMachineParameter)
+and a FloatingPrimary "MINFLOAT" %
+% No longer ambiguous after added a prefer%
+  ivar = MINFLOAT(1.0) ** F(2.2);
+
+  ivar = 1.0 ** F(2.2);
+  ivar = F(2.2) ** 1;
+
+% Parses as IntegerPrimary(IntegerTypeName) %
+  ivar = MAXFLOAT(1.0) ** 1;
+END
+TERM

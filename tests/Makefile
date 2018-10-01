@@ -23,6 +23,12 @@ PASSING_TESTS = \
   1_2_3_program-body_f.jov           \
   1_2_3_program-body_g.jov           \
   1_2_3_program-body_h.jov           \
+  1_4_integer_machine_parameter_a.jov \
+  1_4_integer_machine_parameter_b.jov \
+  1_4_integer_machine_parameter_c.jov \
+  1_4_integer_machine_parameter_d.jov \
+  1_4_floating_machine_parameter.jov \
+  1_4_fixed_machine_parameter.jov    \
   2_1_1_6_status_type_desc.jov       \
   2_1_2_1_table_dimension_list_a.jov \
   2_1_2_1_table_dimension_list_b.jov \
@@ -42,6 +48,16 @@ PASSING_TESTS = \
   5_1_1_integer-precedence.jov       \
   5_1_1_integer-primary.jov          \
   5_1_1_integer-term.jov             \
+  5_1_1_integer_formula_a.jov        \
+  5_1_2_floating_factor.jov          \
+  5_1_2_floating_formula.jov         \
+  5_1_2_floating_primary.jov         \
+  5_1_2_floating_term.jov            \
+  5_1_3_fixed_conversion.jov         \
+  5_1_3_fixed_factor.jov             \
+  5_1_3_fixed_formula.jov            \
+  5_1_3_fixed_term.jov               \
+  5_1_numeric_variable.jov           \
   8_4_comments.jov
 
 FAILING_TESTS =

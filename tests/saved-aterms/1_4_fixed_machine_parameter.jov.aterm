@@ -1,0 +1,39 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testFixedMachineParameter")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(
+              no-sign()
+            , MAXFIXED(
+                ScaleSpecifier(NumericFormula(no-sign(), IntegerLiteral("8")))
+              , FractionSpecifier(NumericFormula(no-sign(), IntegerLiteral("9")))
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(
+              no-sign()
+            , MINFIXED(
+                ScaleSpecifier(NumericFormula(no-sign(), IntegerLiteral("1")))
+              , FractionSpecifier(NumericFormula(no-sign(), IntegerLiteral("2")))
+              )
+            )
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

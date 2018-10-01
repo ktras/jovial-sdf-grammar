@@ -1,0 +1,50 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testIntegerMachineParameter")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ibbr"]), NumericFormula(no-sign(), BITSINBYTE()))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ibbr"]), NumericFormula(no-sign(), BITSINWORD()))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ibbr"]), NumericFormula(no-sign(), LOCSINWORD()))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(
+              no-sign()
+            , BYTEPOS(NumericFormula(no-sign(), RealLiteralFF(FractionalForm("2", "2"), no-exponent())))
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ibbr"]), NumericFormula(no-sign(), BYTESINWORD()))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ibbr"]), NumericFormula(no-sign(), BITSINPOINTER()))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(NumericFormula(no-sign(), INTPRECISION()), AddOp(), IntegerLiteral("1"))
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

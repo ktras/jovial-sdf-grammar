@@ -1,0 +1,12 @@
+START
+PROGRAM testIntegerMachineParameter ;
+BEGIN
+  ibbr = BITSINBYTE;
+  ibbr = BITSINWORD;
+  ibbr = LOCSINWORD;
+  ibbr = BYTEPOS (2.2);
+  ibbr = BYTESINWORD;
+  ibbr = BITSINPOINTER;
+  ibbr = INTPRECISION + 1;
+END
+TERM

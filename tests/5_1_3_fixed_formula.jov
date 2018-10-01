@@ -1,0 +1,11 @@
+START
+PROGRAM testFixedFormula ;
+BEGIN
+  ivar = 1.8 + 1.8;
+  ivar = 1.8 - 1.8;
+  ivar = 1.8 + 1.8 - 1.8;
+  ivar = 2.8 + 2.8 - 3.8 - 3.8;
+  ivar = 3 * 2E2 - 3 * 2E2;
+  ivar = (1.8E2) +  1.8 * MAXFIXED (1, 2.2);
+END
+TERM

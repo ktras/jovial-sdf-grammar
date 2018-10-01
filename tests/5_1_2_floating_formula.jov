@@ -1,0 +1,8 @@
+START
+PROGRAM testFloatingFormula ;
+BEGIN
+  ivar = 1.0 / F(2.2) + 1.0 ;
+  ivar = 1.0 / F(2.2) - 1.0 / (F(2.2));
+  ivar = 1.0 / F(2.2) + 1.0 - 1.0 / F(2.2) - 1.0 / (F(2.2));
+END
+TERM

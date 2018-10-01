@@ -1,0 +1,47 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testFloatingMachineParameter")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(
+              no-sign()
+            , MAXFLOAT(NumericFormula(no-sign(), RealLiteralFF(FractionalForm("9", "9"), no-exponent())))
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(
+              no-sign()
+            , MINFLOAT(NumericFormula(no-sign(), RealLiteralFF(FractionalForm("0", "1"), no-exponent())))
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(no-sign(), FLOATRELPRECISION(NumericFormula(no-sign(), IntegerLiteral("99"))))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(no-sign(), FLOATUNDERFLOW(NumericFormula(no-sign(), IntegerLiteral("1"))))
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

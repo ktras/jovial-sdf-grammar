@@ -1,0 +1,74 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testFloatingFactor")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , ExponentiationOp(
+                MINFLOAT(NumericFormula(no-sign(), RealLiteralFF(FractionalForm("1", "0"), no-exponent())))
+              , NumericPrimary(
+                  FloatingConversionF()
+                , NumericFormula(no-sign(), RealLiteralFF(FractionalForm("2", "2"), no-exponent()))
+                )
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , ExponentiationOp(
+                RealLiteralFF(FractionalForm("1", "0"), no-exponent())
+              , NumericPrimary(
+                  FloatingConversionF()
+                , NumericFormula(no-sign(), RealLiteralFF(FractionalForm("2", "2"), no-exponent()))
+                )
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , ExponentiationOp(
+                NumericPrimary(
+                  FloatingConversionF()
+                , NumericFormula(no-sign(), RealLiteralFF(FractionalForm("2", "2"), no-exponent()))
+                )
+              , IntegerLiteral("1")
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , ExponentiationOp(
+                MAXFLOAT(NumericFormula(no-sign(), RealLiteralFF(FractionalForm("1", "0"), no-exponent())))
+              , IntegerLiteral("1")
+              )
+            )
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)
