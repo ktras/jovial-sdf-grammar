@@ -637,15 +637,16 @@ context-free syntax
   FixedTypeDescription        -> ItemTypeDescription
   BitTypeDescription          -> ItemTypeDescription
   CharacterTypeDescription    -> ItemTypeDescription
-  StatusTypeDescription       -> ItemTypeDescription     {prefer} %% Look at this in testing to see if necessary
+  StatusTypeDescription       -> ItemTypeDescription
   PointerTypeDescription      -> ItemTypeDescription
 
-  ItemTypeName                -> ItemTypeDescription     {cons("ItemTypeName")}  %% Fixes ambiguity with type names  
+  ItemTypeName                -> ItemTypeDescription     {cons("ItemTypeName"), prefer}
+  %% Prefer above fixes ambiguity with type names
 
 %% 2.1.1.1 INTEGER TYPE DESCRIPTIONS
 %%
 
-  IntegerItemDescription      -> IntegerTypeDescription  %%{prefer}
+  IntegerItemDescription      -> IntegerTypeDescription
   IntegerTypeName             -> IntegerTypeDescription  {reject} %% Using ItemTypeName
 
 %%  'S'
@@ -668,8 +669,8 @@ context-free syntax
 %% 2.1.1.2 FLOATING TYPE DESCRIPTIONS
 %%
 
-  FloatingItemDescription     -> FloatingTypeDescription %%{prefer}
-  FloatingTypeName            -> FloatingTypeDescription
+  FloatingItemDescription     -> FloatingTypeDescription
+  FloatingTypeName            -> FloatingTypeDescription   {reject} %% Using ItemTypeName
 
 %% 'F'
 
@@ -691,8 +692,8 @@ context-free syntax
 %% 2.1.1.3 FIXED TYPE DESCRIPTIONS
 %%
 
-  FixedItemDescription        -> FixedTypeDescription    %%{prefer}
-  FixedTypeName               -> FixedTypeDescription
+  FixedItemDescription        -> FixedTypeDescription
+  FixedTypeName               -> FixedTypeDescription    {reject} %% Using ItemTypeName
 
   'A' OptRoundOrTruncate
       ScaleSpecifier
@@ -710,8 +711,8 @@ context-free syntax
 %% 2.1.1.4 BIT TYPE DESCRIPTIONS
 %%
 
-  BitItemDescription          -> BitTypeDescription       %%{prefer}
-  BitTypeName                 -> BitTypeDescription
+  BitItemDescription          -> BitTypeDescription
+  BitTypeName                 -> BitTypeDescription       {reject} %% Using ItemTypeName
 
 %%  'B'
   BitTypeDesc
@@ -728,8 +729,8 @@ context-free syntax
 %% 2.1.1.5 CHARACTER TYPE DESCRIPTIONS
 %%
 
-  CharacterItemDescription    -> CharacterTypeDescription  %%{prefer}
-  CharacterTypeName           -> CharacterTypeDescription
+  CharacterItemDescription    -> CharacterTypeDescription
+  CharacterTypeName           -> CharacterTypeDescription  {reject} %% Using ItemTypeName
 
   'C' OptCharacterSize        -> CharacterItemDescription  {cons("CharacterItemDescription")}
 
@@ -744,8 +745,8 @@ context-free syntax
 %% 2.1.1.6 STATUS TYPE DESCRIPTIONS
 %%
 
-  StatusItemDescription      -> StatusTypeDescription  %%{prefer}
-  StatusTypeName             -> StatusTypeDescription
+  StatusItemDescription      -> StatusTypeDescription
+  StatusTypeName             -> StatusTypeDescription  {reject} %% Using ItemTypeName
 
   'STATUS' OptStatusSize
      '(' StatusList ')'      -> StatusItemDescription  {cons("StatusItemDescription")}
@@ -780,8 +781,8 @@ context-free syntax
 %% 2.1.1.7 POINTER TYPE DESCRIPTIONS
 %%
 
-  PointerItemDescription      -> PointerTypeDescription  %%{prefer}
-  PointerTypeName             -> PointerTypeDescription
+  PointerItemDescription      -> PointerTypeDescription
+  PointerTypeName             -> PointerTypeDescription  {reject} %% Using ItemTypeName
 
 %%  'P'
   PointerTypeDesc
@@ -1906,6 +1907,8 @@ context-free syntax
 %%
   'LOC' '(' LocArgument ')'   -> LocFunction          {cons("LocFunction")}
 
+  Name                        -> LocArgument          {prefer}
+%% Added because can't distinguish between the different names below
   NamedVariable               -> LocArgument
   StatementName               -> LocArgument
   ProcedureName               -> LocArgument

@@ -4,7 +4,7 @@ Module(
   , Name("testdesc")
   , ProgramBody(
       DeclarationList(
-        [ ItemDeclaration("COLOR", no-allocation-specifier(), "STATUS", no-item-preset())
+        [ ItemDeclaration("COLOR", no-allocation-specifier(), ItemTypeName("STATUS"), no-item-preset())
         , ItemDeclaration(
             "COLOR"
           , no-allocation-specifier()
