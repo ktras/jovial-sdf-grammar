@@ -1292,7 +1292,7 @@ context-free syntax
   LoopStatement               -> LabeledSimpleStatement
   IfStatement                 -> LabeledSimpleStatement
   CaseStatement               -> LabeledSimpleStatement
-  ProcedureCallStatement      -> SimpleStatement       {reject} %%AMBIGUOUS with AssignmentStatement and other statements
+  ProcedureCallStatement      -> LabeledSimpleStatement
   ReturnStatement             -> LabeledSimpleStatement
   GotoStatement               -> LabeledSimpleStatement
   ExitStatement               -> LabeledSimpleStatement
@@ -1444,19 +1444,19 @@ context-free syntax
 %% 4.5 PROCEDURE CALL STATEMENTS
 %%
 
-  UserDefinedProcedureCall     -> ProcedureCallStatement   {cons("ProcedureCallStatement")}
-  MachineSpecificProcedureCall -> ProcedureCallStatement   {cons("ProcedureCallStatement")}
+  UserDefinedProcedureCall     -> ProcedureCallStatement   {prefer}
+  MachineSpecificProcedureCall -> ProcedureCallStatement   %% rejected below
 
-  ProcedureName
+  LabelList ProcedureName
     OptActualParameterList
-    OptAbortPhrase ';'         -> UserDefinedProcedureCall {cons("UserDefinedProcedureCall")}
+    OptAbortPhrase ';'         -> UserDefinedProcedureCall {cons("ProcedureCallStatement")}
 
   AbortPhrase                  -> OptAbortPhrase
   % empty %                    -> OptAbortPhrase           {cons("no-abort-phrase")}
 
   '('
     {ActualInputParameter ','}*
-    OptActualOutputParameters
+   % OptActualOutputParameters %                       %% not needed/accessible
   ')'                          -> ActualParameterList  {cons("ActualParameterList")}
 
   ActualParameterList          -> OptActualParameterList
@@ -1465,11 +1465,11 @@ context-free syntax
   ':' {ActualOutputParameter ','}+ -> OptActualOutputParameters {cons("OptActualOutputParameters")}
   % empty%                         -> OptActualOutputParameters {cons("no-actual-output-parameters")}
 
-  Formula                      -> ActualInputParameter     {cons("ActualInputParameter")}
-  StatementName                -> ActualInputParameter     {cons("ActualInputParameter")}
-  FunctionName                 -> ActualInputParameter     {cons("ActualInputParameter")}
-  ProcedureName                -> ActualInputParameter     {cons("ActualInputParameter")}
-  BlockReference               -> ActualInputParameter     {cons("ActualInputParameter")}
+  Formula                      -> ActualInputParameter     {prefer} %% other paths aren't needed
+%%StatementName                -> ActualInputParameter
+%%FunctionName                 -> ActualInputParameter
+%%ProcedureName                -> ActualInputParameter
+%%BlockReference               -> ActualInputParameter
 
   Variable                     -> ActualOutputParameter    {cons("ActualOutputParameter")}
   BlockReference               -> ActualOutputParameter    {cons("ActualOutputParameter")}
@@ -1477,9 +1477,13 @@ context-free syntax
   'ABORT' StatementName        -> AbortPhrase              {cons("AbortPhrase")}
 
   ProcedureName
-    OptActualParameterList     -> MachineSpecificProcedureCall {cons("MachineSpecificProcedureCall")}
+    OptActualParameterList     -> MachineSpecificProcedureCall {cons("MachineSpecificProcedureCall"), reject} %%AMBIGUOUS
 
   Name                         -> ProcedureName
+  'RETURN'                     -> ProcedureName            {reject} %% Ambiguous with ReturnStatement
+  'EXIT'                       -> ProcedureName            {reject} %% Ambiguous with ExitStatement
+  'STOP'                       -> ProcedureName            {reject} %% Ambiguous with StopStatement
+  'ABORT'                      -> ProcedureName            {reject} %% Ambiguous with AbortStatement
   Name                         -> FunctionName
 
 %% 4.6 RETURN STATEMENTS
