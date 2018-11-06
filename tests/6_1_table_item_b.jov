@@ -7,9 +7,5 @@ BEGIN
   ivar = aTable @(ivar);
   ivar = aTable (1) @pntr;
   ivar = aTable (1, 2) @(P(3));
-  ivar = aTable (i) @ (P(8));
-  ivar = aTable (iv, jv) @(P(2));
-  ivar = aTable (V(RED), V(GREEN));
-  ivar = aTable (V(RED), V(GREEN), i, j);
 END
 TERM

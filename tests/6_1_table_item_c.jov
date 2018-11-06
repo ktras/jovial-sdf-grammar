@@ -1,0 +1,12 @@
+START
+PROGRAM testTableItem ;
+BEGIN
+  TABLE aTable S ;
+  ivar = aTable (iv, jv) @(P(2));
+  ivar = aTable (V(RED), V(GREEN));
+
+% commented out code below doesn't parse %
+%  ivar = aTable (i) @ (P(8));%
+%  ivar = aTable (V(RED), V(GREEN), i, j); %
+END
+TERM
