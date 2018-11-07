@@ -69,6 +69,7 @@ PASSING_TESTS = \
   6_1_table_item_b.jov               \
   6_1_table_item_c.jov               \
   6_1_variable.jov                   \
+  8_3_1_real_literal.jov             \
   8_4_comments.jov
 
 FAILING_TESTS =

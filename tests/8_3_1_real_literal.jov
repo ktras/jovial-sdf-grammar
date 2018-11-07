@@ -1,0 +1,16 @@
+START
+PROGRAM testRealLiteral ;
+BEGIN
+  ivar = +1.8;
+  ivar = -1.8;
+  ivar = .8;
+  ivar = 0.8;
+  ivar = 8.;
+  ivar = 8.0;
+  ivar = 52.3801;
+  ivar = 1.8E2;
+  ivar = 3E3;
+  ivar = 3E+2;
+  ivar = 2E-2;
+END
+TERM
