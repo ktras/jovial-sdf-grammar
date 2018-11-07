@@ -1,0 +1,39 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testloop")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ivar"]), NumericFormula(no-sign(), IntegerLiteral("0")))
+        )
+      , SimpleStatement(
+          WhileStatement(
+            LabelList([])
+          , WhileClause(
+              BitFormula(
+                RelationalExpression(
+                  NumericFormula(no-sign(), NumericVariable("ivar"))
+                , LessThanOp()
+                , NumericFormula(no-sign(), IntegerLiteral("10"))
+                )
+              , no-logical-continuation()
+              )
+            )
+          , SimpleStatement(
+              LabelList([])
+            , AssignmentStatement(
+                VariableList(["ivar"])
+              , NumericFormula(NumericFormula(no-sign(), NumericVariable("ivar")), AddOp(), IntegerLiteral("1"))
+              )
+            )
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

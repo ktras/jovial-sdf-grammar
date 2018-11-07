@@ -1,0 +1,58 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testTableItem")
+  , ProgramBody(
+      DeclarationList(
+        [ TableDeclaration(
+            "aTable"
+          , no-allocation-specifier()
+          , no-dimension-list()
+          , TableDescription(
+              no-structure-specifier()
+            , OrdinaryEntrySpecifier(no-packing-specifier(), IntegerItemDescription("S", no-round-or-truncate(), no-item-size()), no-table-preset())
+            )
+          )
+        ]
+      )
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , NumericVariable(
+                TableItem(
+                  "aTable"
+                , Subscript(
+                    [NumericFormula(no-sign(), NumericVariable("iv")), NumericFormula(no-sign(), NumericVariable("jv"))]
+                  )
+                , Dereference(PointerFormula(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("2"))))
+                )
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , NumericVariable(
+                TableItem(
+                  "aTable"
+                , Subscript([StatusFormula(StatusConstant("RED")), StatusFormula(StatusConstant("GREEN"))])
+                , no-table-dereference()
+                )
+              )
+            )
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

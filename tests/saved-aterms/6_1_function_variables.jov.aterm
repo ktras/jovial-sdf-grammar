@@ -1,0 +1,71 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testFunctionVariable")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , NumericVariable(
+                TableItem(
+                  "BIT"
+                , Subscript(
+                    [ NumericFormula(no-sign(), NumericVariable("ivar"))
+                    , NumericFormula(no-sign(), IntegerLiteral("2"))
+                    , NumericFormula(no-sign(), IntegerLiteral("38"))
+                    ]
+                  )
+                , no-table-dereference()
+                )
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , NumericVariable(
+                TableItem(
+                  "BYTE"
+                , Subscript(
+                    [ NumericFormula(no-sign(), NumericVariable("ivar"))
+                    , NumericFormula(no-sign(), IntegerLiteral("2"))
+                    , NumericFormula(no-sign(), IntegerLiteral("38"))
+                    ]
+                  )
+                , no-table-dereference()
+                )
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ibbr"])
+          , NumericFormula(
+              no-sign()
+            , NumericVariable(
+                TableItem(
+                  "REP"
+                , Subscript([NumericFormula(no-sign(), NumericVariable("ivar"))])
+                , no-table-dereference()
+                )
+              )
+            )
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

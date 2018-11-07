@@ -33,6 +33,8 @@ PASSING_TESTS = \
   2_1_2_1_table_dimension_list_a.jov \
   2_1_2_1_table_dimension_list_b.jov \
   2_3_stmt_name_decl.jov             \
+  4_0_compound_stmt.jov              \
+  4_2_loop_stmt_while_a.jov          \
   4_6_return_stmt.jov                \
   4_7_goto_stmt_a.jov                \
   4_8_exit_stmt.jov                  \
@@ -58,6 +60,15 @@ PASSING_TESTS = \
   5_1_3_fixed_formula.jov            \
   5_1_3_fixed_term.jov               \
   5_1_numeric_variable.jov           \
+  5_2_1_relational_expressions_a.jov \
+  6_1_block_table.jov                \
+  6_1_block_table_entry.jov          \
+  6_1_function_variables.jov         \
+  6_1_table_entry.jov                \
+  6_1_table_item_a.jov               \
+  6_1_table_item_b.jov               \
+  6_1_table_item_c.jov               \
+  6_1_variable.jov                   \
   8_4_comments.jov
 
 FAILING_TESTS =

@@ -1,0 +1,47 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testTableItem")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(
+              [ TableItem(
+                  "arr"
+                , Subscript(
+                    [NumericFormula(no-sign(), IntegerLiteral("1")), NumericFormula(no-sign(), IntegerLiteral("3"))]
+                  )
+                , no-table-dereference()
+                )
+              ]
+            )
+          , NumericFormula(no-sign(), IntegerLiteral("13"))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , NumericVariable(
+                TableItem(
+                  "array"
+                , Subscript(
+                    [NumericFormula(no-sign(), IntegerLiteral("1")), NumericFormula(no-sign(), IntegerLiteral("3"))]
+                  )
+                , no-table-dereference()
+                )
+              )
+            )
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

@@ -1,0 +1,93 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testTableEntry")
+  , ProgramBody(
+      DeclarationList(
+        [ TableDeclaration(
+            "aTable"
+          , no-allocation-specifier()
+          , no-dimension-list()
+          , TableDescription(
+              no-structure-specifier()
+            , OrdinaryEntrySpecifier(no-packing-specifier(), IntegerItemDescription("S", no-round-or-truncate(), no-item-size()), no-table-preset())
+            )
+          )
+        ]
+      )
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , NumericVariable(
+                TableEntry(
+                  Dereference(
+                    PointerFormula(
+                      PointerConversion(PointerItemDescription("P", TypeName("pntr")))
+                    , NumericFormula(no-sign(), IntegerLiteral("8"))
+                    )
+                  )
+                , Subscript([NumericFormula(no-sign(), IntegerLiteral("1"))])
+                )
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , NumericVariable(
+                TableEntry(
+                  Dereference("pntr")
+                , Subscript(
+                    [NumericFormula(no-sign(), IntegerLiteral("1")), NumericFormula(no-sign(), IntegerLiteral("2"))]
+                  )
+                )
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , NumericVariable(
+                TableEntry(
+                  Dereference(GeneralFormula("ibbr"))
+                , Subscript([NumericFormula(no-sign(), NumericVariable("iv"))])
+                )
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , NumericVariable(
+                TableEntry(
+                  Dereference(PointerFormula(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("8"))))
+                , Subscript(
+                    [NumericFormula(no-sign(), NumericVariable("iv")), NumericFormula(no-sign(), NumericVariable("jv"))]
+                  )
+                )
+              )
+            )
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

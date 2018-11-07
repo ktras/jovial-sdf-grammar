@@ -1,0 +1,135 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testBlockTableEntry")
+  , ProgramBody(
+      DeclarationList([BlockDeclarationTypeName("aBlock", no-allocation-specifier(), "STATIC", no-block-preset())])
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , NumericVariable(
+                TableItem(
+                  "aBlock"
+                , Subscript([NumericFormula(no-sign(), IntegerLiteral("1"))])
+                , no-table-dereference()
+                )
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , NumericVariable(
+                TableItem(
+                  "aBlock"
+                , Subscript([NumericFormula(no-sign(), IntegerLiteral("1"))])
+                , Dereference("pntr")
+                )
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , NumericVariable(
+                TableItem(
+                  "aBlock"
+                , Subscript(
+                    [NumericFormula(no-sign(), IntegerLiteral("1")), NumericFormula(no-sign(), IntegerLiteral("2"))]
+                  )
+                , Dereference(PointerFormula(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("3"))))
+                )
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , NumericVariable(
+                TableItem(
+                  "aBlock"
+                , Subscript([NumericFormula(no-sign(), NumericVariable("iv"))])
+                , Dereference(PointerFormula(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("8"))))
+                )
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , NumericVariable(
+                TableItem(
+                  "aBlock"
+                , Subscript(
+                    [NumericFormula(no-sign(), NumericVariable("iv")), NumericFormula(no-sign(), NumericVariable("jv"))]
+                  )
+                , Dereference(PointerFormula(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("2"))))
+                )
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , NumericVariable(
+                TableItem(
+                  "aBlock"
+                , Subscript([StatusFormula(StatusConstant("RED")), StatusFormula(StatusConstant("GREEN"))])
+                , no-table-dereference()
+                )
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , NumericVariable(
+                TableItem(
+                  "aBlock"
+                , Subscript(
+                    [ StatusFormula(StatusConstant("RED"))
+                    , StatusFormula(StatusConstant("GREEN"))
+                    , NumericFormula(no-sign(), NumericVariable("iv"))
+                    , NumericFormula(no-sign(), NumericVariable("jv"))
+                    ]
+                  )
+                , no-table-dereference()
+                )
+              )
+            )
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

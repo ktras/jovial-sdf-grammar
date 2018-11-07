@@ -1,0 +1,139 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testRelationalExpression")
+  , ProgramBody(
+      DeclarationList([])
+    , [ SimpleStatement(
+          IfStatement(
+            LabelList([])
+          , BitFormula(
+              RelationalExpression(
+                NumericFormula(no-sign(), NumericVariable("ibbr"))
+              , LessThanOp()
+              , NumericFormula(no-sign(), IntegerLiteral("3"))
+              )
+            , no-logical-continuation()
+            )
+          , SimpleStatement(
+              LabelList([])
+            , AssignmentStatement(
+                VariableList(["ibbr"])
+              , NumericFormula(NumericFormula(no-sign(), NumericVariable("ibbr")), AddOp(), IntegerLiteral("1"))
+              )
+            )
+          , no-else-clause()
+          )
+        )
+      , SimpleStatement(
+          IfStatement(
+            LabelList([])
+          , BitFormula(
+              RelationalExpression(
+                NumericFormula(no-sign(), NumericVariable("ibbr"))
+              , LessOrEqualOp()
+              , NumericFormula(no-sign(), IntegerLiteral("0"))
+              )
+            , no-logical-continuation()
+            )
+          , SimpleStatement(
+              LabelList([])
+            , AssignmentStatement(
+                VariableList(["ibbr"])
+              , NumericFormula(NumericFormula(no-sign(), NumericVariable("ibbr")), SubtractOp(), IntegerLiteral("1"))
+              )
+            )
+          , no-else-clause()
+          )
+        )
+      , SimpleStatement(
+          IfStatement(
+            LabelList([])
+          , BitFormula(
+              RelationalExpression(
+                NumericFormula(no-sign(), NumericVariable("ibbr"))
+              , GreaterThanOp()
+              , NumericFormula(no-sign(), IntegerLiteral("10"))
+              )
+            , no-logical-continuation()
+            )
+          , SimpleStatement(
+              LabelList([])
+            , AssignmentStatement(
+                VariableList(["ibbr"])
+              , NumericFormula(NumericFormula(no-sign(), NumericVariable("ibbr")), AddOp(), IntegerLiteral("1"))
+              )
+            )
+          , no-else-clause()
+          )
+        )
+      , SimpleStatement(
+          IfStatement(
+            LabelList([])
+          , BitFormula(
+              RelationalExpression(
+                NumericFormula(no-sign(), NumericVariable("ibbr"))
+              , GreaterOrEqualOp()
+              , NumericFormula(no-sign(), IntegerLiteral("8"))
+              )
+            , no-logical-continuation()
+            )
+          , SimpleStatement(
+              LabelList([])
+            , AssignmentStatement(
+                VariableList(["ibbr"])
+              , NumericFormula(NumericFormula(no-sign(), NumericVariable("ibbr")), SubtractOp(), IntegerLiteral("2"))
+              )
+            )
+          , no-else-clause()
+          )
+        )
+      , SimpleStatement(
+          IfStatement(
+            LabelList([])
+          , BitFormula(
+              RelationalExpression(
+                NumericFormula(no-sign(), NumericVariable("ibbr"))
+              , NotEqualOp()
+              , NumericFormula(no-sign(), IntegerLiteral("20"))
+              )
+            , no-logical-continuation()
+            )
+          , SimpleStatement(
+              LabelList([])
+            , AssignmentStatement(
+                VariableList(["ibbr"])
+              , NumericFormula(NumericFormula(no-sign(), NumericVariable("ibbr")), AddOp(), IntegerLiteral("2"))
+              )
+            )
+          , no-else-clause()
+          )
+        )
+      , SimpleStatement(
+          IfStatement(
+            LabelList([])
+          , BitFormula(
+              RelationalExpression(
+                NumericFormula(no-sign(), NumericVariable("ibbr"))
+              , EqualityOp()
+              , NumericFormula(no-sign(), IntegerLiteral("5"))
+              )
+            , no-logical-continuation()
+            )
+          , SimpleStatement(
+              LabelList([])
+            , AssignmentStatement(
+                VariableList(["ibbr"])
+              , NumericFormula(NumericFormula(no-sign(), NumericVariable("ibbr")), AddOp(), IntegerLiteral("3"))
+              )
+            )
+          , no-else-clause()
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

@@ -4,7 +4,7 @@ BEGIN
   TABLE aTable S ;
   ivar = @((* P pntr *) (8)) (1);
   ivar = @pntr (1, 2);
-  ivar = @(ibbr) (i);
-  ivar = @(P(8)) (i, j);
+  ivar = @(ibbr) (iv);
+  ivar = @(P(8)) (iv, jv);
 END
 TERM

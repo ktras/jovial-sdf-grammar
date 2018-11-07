@@ -1,0 +1,25 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testVariable")
+  , ProgramBody(
+      DeclarationList(
+        [ ItemDeclaration("aa'bb", no-allocation-specifier(), IntegerItemDescriptionU("U", no-round-or-truncate(), no-item-size()), no-item-preset())
+        , ItemDeclaration("x'y'z", no-allocation-specifier(), IntegerItemDescriptionU("U", no-round-or-truncate(), no-item-size()), no-item-preset())
+        ]
+      )
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["aa'bb"]), NumericFormula(no-sign(), IntegerLiteral("10")))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["x'y'z"]), NumericFormula(no-sign(), NumericVariable("aa'bb")))
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

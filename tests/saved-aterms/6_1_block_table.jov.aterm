@@ -1,0 +1,57 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testBlockTable")
+  , ProgramBody(
+      DeclarationList([BlockDeclarationTypeName("aBlock", no-allocation-specifier(), "STATIC", no-block-preset())])
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(no-sign(), NumericVariable(TableItem("aBlock", no-subscript(), Dereference("pntr"))))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , NumericVariable(
+                TableItem(
+                  "aBlock"
+                , no-subscript()
+                , Dereference(
+                    PointerFormula(
+                      PointerConversion(PointerItemDescription("P", TypeName("pntr")))
+                    , NumericFormula(no-sign(), IntegerLiteral("3"))
+                    )
+                  )
+                )
+              )
+            )
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList(["ivar"])
+          , NumericFormula(
+              no-sign()
+            , NumericVariable(
+                TableItem(
+                  "aBlock"
+                , no-subscript()
+                , Dereference(PointerFormula(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("3"))))
+                )
+              )
+            )
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

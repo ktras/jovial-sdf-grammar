@@ -1,0 +1,31 @@
+Module(
+  MainProgramModule(
+    DeclarationList([])
+  , Name("testCompoundStatement")
+  , ProgramBody(
+      DeclarationList([])
+    , [ CompoundStatement(
+          LabelList([])
+        , [ SimpleStatement(
+              LabelList([])
+            , AssignmentStatement(VariableList(["ivar"]), NumericFormula(no-sign(), IntegerLiteral("13")))
+            )
+          , SimpleStatement(
+              LabelList([])
+            , AssignmentStatement(VariableList(["ibbr"]), NumericFormula(no-sign(), IntegerLiteral("1")))
+            )
+          , CompoundStatement(
+              LabelList([])
+            , [SimpleStatement(LabelList([]), NullStatement()), SimpleStatement(LabelList([]), NullStatement())]
+            , LabelList([])
+            )
+          ]
+        , LabelList([])
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)
