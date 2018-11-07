@@ -474,7 +474,7 @@ context-free syntax
 %% 1.2.1 COMPOOL MODULES
 %%
   'START'
-    'COMPOOL' CompoolName
+    'COMPOOL' CompoolName ';'
      CompoolDeclaration*
   'TERM'                     -> CompoolModule         {cons("CompoolModule")}
 
@@ -608,10 +608,11 @@ context-free syntax
   ConstantDeclaration        -> CompoolDeclaration
   TypeDeclaration            -> CompoolDeclaration
   DefineDeclaration          -> CompoolDeclaration
+  OverlayDeclaration         -> CompoolDeclaration
   NullDeclaration            -> CompoolDeclaration
   'BEGIN'
     CompoolDeclaration+
-  'END'                      -> Declaration           {cons("CompoolDeclaration")}
+  'END'                      -> CompoolDeclaration    {cons("CompoolDeclaration")}
 
 
 %% 2.1 DATA DECLARATIONS
