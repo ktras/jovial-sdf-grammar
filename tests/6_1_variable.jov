@@ -1,0 +1,9 @@
+START
+PROGRAM testVariable ;
+BEGIN
+   ITEM aa'bb U;
+   ITEM x'y'z U;
+   aa'bb = 10;
+   x'y'z = aa'bb;
+END
+TERM
