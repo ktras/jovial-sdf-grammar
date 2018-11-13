@@ -1214,6 +1214,7 @@ context-free syntax
   'REC'                           -> SubroutineAttribute    {cons("REC")}
   'RENT'                          -> SubroutineAttribute    {cons("RENT")}
 
+  SubroutineAttribute             -> OptSubroutineAttribute
   % empty %                       -> OptSubroutineAttribute {cons("no-subroutine-attribute")}
  
   Name                            -> ProcedureName
