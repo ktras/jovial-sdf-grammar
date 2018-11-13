@@ -65,6 +65,7 @@ exports
   'TRUE'                    -> Name     {reject}
   'FALSE'                   -> Name     {reject}
   'NULL'                    -> Name     {reject}
+  ReservedWord              -> Name     {reject}
 
   'BITSINBYTE'              -> Name     {reject}
   'BITSINWORD'              -> Name     {reject}
@@ -188,6 +189,28 @@ exports
   'SHIFTL'                  -> ReservedWord
   'SHIFTR'                  -> ReservedWord
   'SIGNAL*'                 -> ReservedWord
+  'START'                   -> ReservedWord
+  'STATIC'                  -> ReservedWord
+  'STATUS'                  -> ReservedWord
+  'STOP'                    -> ReservedWord
+
+  'TABLE'                   -> ReservedWord
+  'TERM'                    -> ReservedWord
+  'THEN'                    -> ReservedWord
+  'TO*'                     -> ReservedWord
+  'TRUE'                    -> ReservedWord
+  'TYPE'                    -> ReservedWord
+
+  'UNBOUND'                 -> ReservedWord
+  'UPDATE*'                 -> ReservedWord
+
+  'WHILE'                   -> ReservedWord
+  'WITH*'                   -> ReservedWord
+  'WORDSIZE'                -> ReservedWord
+  'WRITEONLY*'              -> ReservedWord
+
+  'XOR'                     -> ReservedWord
+  'ZONE*'                   -> ReservedWord
 
 %% 8.3.2 BIT LITERALS
 %%

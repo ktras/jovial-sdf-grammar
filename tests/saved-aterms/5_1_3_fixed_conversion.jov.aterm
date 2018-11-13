@@ -15,7 +15,9 @@ Module(
                   FixedItemDescription(
                     R()
                   , ScaleSpecifier(NumericFormula(no-sign(), IntegerLiteral("1")))
-                  , FractionSpecifier(NumericFormula(no-sign(), RealLiteralFF(FractionalForm("2", "2"), no-exponent())))
+                  , OptFractionSpecifier(
+                      FractionSpecifier(NumericFormula(no-sign(), RealLiteralFF(FractionalForm("2", "2"), no-exponent())))
+                    )
                   )
                 )
               , NumericFormula(no-sign(), IntegerLiteral("1"))

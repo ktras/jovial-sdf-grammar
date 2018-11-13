@@ -1,7 +1,7 @@
 START
 PROGRAM testFixedConversion ;
 BEGIN
-  ivar = (* A , R 1 2.2 *) (1);
+  ivar = (* A , R 1 , 2.2 *) (1);
   ivar = (* A 1 *) (1);
   ivar = (* A 1 *) (1 / 2E-2);
 

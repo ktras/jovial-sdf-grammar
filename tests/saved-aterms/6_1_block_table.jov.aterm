@@ -3,7 +3,7 @@ Module(
     DeclarationList([])
   , Name("testBlockTable")
   , ProgramBody(
-      DeclarationList([BlockDeclarationTypeName("aBlock", no-allocation-specifier(), "STATIC", no-block-preset())])
+      DeclarationList([BlockDeclarationTypeName("aBlock", STATIC(), "aBlockType", no-block-preset())])
     , [ SimpleStatement(
           LabelList([])
         , AssignmentStatement(

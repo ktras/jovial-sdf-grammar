@@ -1,7 +1,7 @@
 START
 PROGRAM testBlockTable ;
 BEGIN
-  BLOCK aBlock STATIC ;
+  BLOCK aBlock STATIC aBlockType ;
 % Can't access BlockTable because of the prefer on TableItem that removes ambiguity %
 % BlockTable doesn't have any distinguishing parts from TableItem %
   ivar = aBlock @pntr;

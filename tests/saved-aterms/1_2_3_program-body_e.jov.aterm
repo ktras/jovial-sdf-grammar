@@ -15,7 +15,7 @@ Module(
          ProcedureHeading("sub1", no-subroutine-attribute(), no-formal-parameter-list())
        , SimpleStatement(LabelList([]), NullStatement())
        )]
-    , LabelList([Label("label")])
+    , LabelList([Label("label1")])
     )
   , NonNestedSubroutineList([])
   )
