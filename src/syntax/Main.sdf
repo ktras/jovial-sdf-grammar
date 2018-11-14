@@ -1281,6 +1281,7 @@ context-free syntax
   StatementName                   -> InputParameterName
   SubroutineName                  -> InputParameterName
 
+  Name                            -> OutputParameterName      {prefer}
   DataName                        -> OutputParameterName
 
   ProcedureName                   -> SubroutineName
