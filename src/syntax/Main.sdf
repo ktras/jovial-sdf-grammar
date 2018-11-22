@@ -1230,7 +1230,7 @@ context-free syntax
     Statement*
     SubroutineDefinition*
     LabelList
-  'END'                           -> SubroutineBody         {cons("SubroutineBody")}
+  'END'                           -> SubroutineBody         {cons("SubroutineBody"), prefer}
 
 %% 3.2 FUNCTIONS
 %%
@@ -1653,7 +1653,7 @@ context-free syntax
 %%
   NumericFormula
     RelationalOperator
-    NumericFormula            -> RelationalExpression   {cons("RelationalExpression")}
+    NumericFormula            -> RelationalExpression   {cons("RelationalExpression"), prefer}
 
   GeneralFormula
     RelationalOperator
