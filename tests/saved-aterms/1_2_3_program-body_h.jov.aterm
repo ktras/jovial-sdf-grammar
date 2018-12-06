@@ -18,12 +18,14 @@ Module(
         )
       ]
     , [ ProcedureDefinition(
-          ProcedureHeading("sub1", no-subroutine-attribute(), no-formal-parameter-list())
-        , SimpleStatement(LabelList([Label("label3"), Label("label4")]), NullStatement())
+          ProcedureHeading(Name("sub1"), no-subroutine-attribute(), no-formal-parameter-list())
+        , SubroutineSimpleBody(
+            SimpleStatement(LabelList([Label("label3"), Label("label4")]), NullStatement())
+          )
         )
       , ProcedureDefinition(
-          ProcedureHeading("sub2", no-subroutine-attribute(), no-formal-parameter-list())
-        , SimpleStatement(LabelList([Label("label5")]), NullStatement())
+          ProcedureHeading(Name("sub2"), no-subroutine-attribute(), no-formal-parameter-list())
+        , SubroutineSimpleBody(SimpleStatement(LabelList([Label("label5")]), NullStatement()))
         )
       ]
     , LabelList([Label("label6"), Label("label7")])

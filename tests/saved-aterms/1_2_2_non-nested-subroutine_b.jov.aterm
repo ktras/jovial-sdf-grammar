@@ -4,8 +4,8 @@ Module(
   , NonNestedSubroutineList(
       [ NonNestedSubroutine(
           ProcedureDefinition(
-            ProcedureHeading("sub1", no-subroutine-attribute(), no-formal-parameter-list())
-          , SimpleStatement(LabelList([]), NullStatement())
+            ProcedureHeading(Name("sub1"), no-subroutine-attribute(), no-formal-parameter-list())
+          , SubroutineSimpleBody(SimpleStatement(LabelList([]), NullStatement()))
           )
         )
       ]
