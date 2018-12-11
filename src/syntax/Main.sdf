@@ -1095,9 +1095,12 @@ context-free syntax
 
   Letter                          -> FormalDefineParameter        {cons("FormalDefineParameter")}
 
-  '"'
-     {Character ','}*
-  '"'                             -> DefineString                 {cons("DefineString")}
+%% Moved to lexor
+%%'?'
+%%   {Character ','}*
+%%'?'                             -> DefineString                 {cons("DefineString")}
+
+  DefString                       -> DefineString                 {cons("DefineString")}
 
 %% 2.4.1 DEFINE CALLS
 %%

@@ -9,5 +9,8 @@ Jovial.tbl : Main.def
 check : Jovial.tbl
 	sglri -p Jovial.tbl -i testfile.jov | pp-aterm
 
+cpl : Jovial.tbl
+	sglri -p Jovial.tbl -i cpl_testfile.cpl | pp-aterm
+
 clean :
 	rm -f *.def *.tbl

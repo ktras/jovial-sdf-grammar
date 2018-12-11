@@ -14,6 +14,7 @@ exports
     UnsignedTypeDesc           %% 2.1.1.1
     BitTypeDesc                %% 2.1.1.5
     PointerTypeDesc            %% 2.1.1.7
+    DefString                  %% 2.4
 
   lexical syntax
 
@@ -34,6 +35,13 @@ exports
 %% 2.1.1.7
 %%
   'P'                       -> PointerTypeDesc
+
+
+%%%%%%%%%%
+%% 2.4 DEFINE DECLARATIONS
+%%%%%%%%%%
+
+  [\?] (Mark | Digit | Letter)*  [\?]  -> DefString
 
 
 %%%%%%%%%%
