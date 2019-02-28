@@ -1095,7 +1095,7 @@ context-free syntax
 
   Letter                          -> FormalDefineParameter        {cons("FormalDefineParameter")}
 
-%% Moved to lexor
+%% Moved to lexical analysis
 %%'?'
 %%   {Character ','}*
 %%'?'                             -> DefineString                 {cons("DefineString")}
