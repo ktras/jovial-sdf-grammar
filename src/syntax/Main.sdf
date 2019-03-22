@@ -1287,6 +1287,7 @@ context-free syntax
   Name                            -> OutputParameterName      {cons("Name"), prefer}
   DataName                        -> OutputParameterName
 
+  Name                            -> SubroutineName           {prefer}
   ProcedureName                   -> SubroutineName
   FunctionName                    -> SubroutineName
 
