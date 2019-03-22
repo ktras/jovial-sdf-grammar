@@ -1183,6 +1183,7 @@ context-free syntax
 
   'W' CompileTimeNumericFormula   -> Spacer               {cons("Spacer")}
 
+  Name                            -> DataName             {cons("Name"), prefer}
   ItemName                        -> DataName
   TableName                       -> DataName
   BlockName                       -> DataName
@@ -1287,7 +1288,7 @@ context-free syntax
   Name                            -> OutputParameterName      {cons("Name"), prefer}
   DataName                        -> OutputParameterName
 
-  Name                            -> SubroutineName           {prefer}
+  Name                            -> SubroutineName           {cons("Name"), prefer}
   ProcedureName                   -> SubroutineName
   FunctionName                    -> SubroutineName
 

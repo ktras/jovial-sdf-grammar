@@ -1,8 +1,9 @@
 START
-PROGRAM testdecl ;
+PROGRAM testStatementNameDecl ;
 BEGIN
- LABEL aa,bb;
- LABEL iv, ix, iy;
- ;
+  LABEL PROCESS;
+  LABEL SWITCH, TEMP;
+  ITEM DEGREE U;
+  DEGREE = 8;
 END
 TERM
