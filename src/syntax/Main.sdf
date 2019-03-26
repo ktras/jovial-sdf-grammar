@@ -955,7 +955,7 @@ context-free syntax
     BlockTypeName
     OptBlockPreset ';'           -> BlockDeclaration         {cons("BlockDeclarationTypeName")}
   
-  Name                           -> BlockName
+  Name                           -> BlockName                {cons("Name")}
 
   NullDeclaration                -> BlockBodyPart
   DataDeclaration                -> BlockBodyPart
@@ -1036,7 +1036,7 @@ context-free syntax
   % empty %                       -> OptTablePresetList    {cons("no-table-preset-list")}
 
   '(' BlockPresetList ')'         -> OptBlockPresetList    {cons("OptBlockPresetlist")}
-  % empty %                       -> OptBlockPresetList    {cons("no-table-preset-list")}
+  % empty %                       -> OptBlockPresetList    {cons("no-block-preset-list")}
 
 %% 2.2 TYPE DECLARATIONS
 %%
@@ -1070,7 +1070,7 @@ context-free syntax
   'TYPE'  BlockTypeName
   'BLOCK' BlockBodyPart           -> BlockTypeDeclaration  {cons("BlockTypeDeclaration")}
 
-  Name                            -> BlockTypeName
+  Name                            -> BlockTypeName         {cons("Name")}
 
 %% 2.3 STATEMENT NAME DECLARATIONS
 %%

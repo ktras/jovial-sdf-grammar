@@ -1,0 +1,19 @@
+START
+PROGRAM testBlockDecl ;
+BEGIN
+  BLOCK block1 STATIC;
+    BEGIN
+      ITEM ivar U = 13;
+    END
+
+  BLOCK block2;
+    BEGIN
+    END
+
+  BLOCK block3 type3;
+
+  BLOCK block4 type4 = 12;
+
+  ivar = 8;
+END
+TERM
