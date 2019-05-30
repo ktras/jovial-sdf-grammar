@@ -1,6 +1,7 @@
 Module(
   MainProgramModule(
-    DeclarationList([NullDeclaration()])
+    []
+  , DeclarationList([NullDeclaration()])
   , Name("main")
   , ProgramSimpleBody(SimpleStatement(LabelList([]), NullStatement()))
   , NonNestedSubroutineList(

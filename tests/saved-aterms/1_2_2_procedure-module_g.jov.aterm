@@ -1,6 +1,7 @@
 Module(
   ProcedureModule(
-    DeclarationList([NullDeclaration(), NullDeclaration(), NullDeclaration()])
+    []
+  , DeclarationList([NullDeclaration(), NullDeclaration(), NullDeclaration()])
   , NonNestedSubroutineList(
       [ NonNestedSubroutine(
           ProcedureDefinition(

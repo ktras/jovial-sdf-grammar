@@ -1,1 +1,1 @@
-Module(ProcedureModule(DeclarationList([NullDeclaration()]), NonNestedSubroutineList([])))
+Module(ProcedureModule([], DeclarationList([NullDeclaration()]), NonNestedSubroutineList([])))

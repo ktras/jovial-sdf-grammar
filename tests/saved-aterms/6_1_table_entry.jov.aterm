@@ -1,6 +1,7 @@
 Module(
   MainProgramModule(
-    DeclarationList([])
+    []
+  , DeclarationList([])
   , Name("testTableEntry")
   , ProgramBody(
       DeclarationList(
@@ -25,7 +26,7 @@ Module(
                 TableEntry(
                   Dereference(
                     PointerFormula(
-                      PointerConversion(PointerItemDescription("P", TypeName("pntr")))
+                      PointerConversion(PointerItemDescription("P", TypeName(Name("pntr"))))
                     , NumericFormula(no-sign(), IntegerLiteral("8"))
                     )
                   )

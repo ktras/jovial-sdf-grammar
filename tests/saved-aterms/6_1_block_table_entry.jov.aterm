@@ -1,9 +1,12 @@
 Module(
   MainProgramModule(
-    DeclarationList([])
+    []
+  , DeclarationList([])
   , Name("testBlockTableEntry")
   , ProgramBody(
-      DeclarationList([BlockDeclarationTypeName("aBlock", STATIC(), "aBlockType", no-block-preset())])
+      DeclarationList(
+        [BlockDeclarationTypeName(Name("aBlock"), STATIC(), Name("aBlockType"), no-block-preset())]
+      )
     , [ SimpleStatement(
           LabelList([])
         , AssignmentStatement(

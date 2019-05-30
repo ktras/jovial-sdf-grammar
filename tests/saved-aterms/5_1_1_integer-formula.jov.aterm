@@ -1,6 +1,7 @@
 Module(
   MainProgramModule(
-    DeclarationList([])
+    []
+  , DeclarationList([])
   , Name("integerformula")
   , ProgramBody(
       DeclarationList([])

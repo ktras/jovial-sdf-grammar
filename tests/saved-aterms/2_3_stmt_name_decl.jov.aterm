@@ -1,14 +1,20 @@
 Module(
   MainProgramModule(
-    DeclarationList([])
-  , Name("testdecl")
+    []
+  , DeclarationList([])
+  , Name("testStatementNameDecl")
   , ProgramBody(
       DeclarationList(
-        [ StatementNameDeclaration([Name("aa"), Name("bb")])
-        , StatementNameDeclaration([Name("iv"), Name("ix"), Name("iy")])
+        [ StatementNameDeclaration([Name("PROCESS")])
+        , StatementNameDeclaration([Name("SWITCH"), Name("TEMP")])
+        , ItemDeclaration("DEGREE", no-allocation-specifier(), IntegerItemDescriptionU("U", no-round-or-truncate(), no-item-size()), no-item-preset())
         ]
       )
-    , [SimpleStatement(LabelList([]), NullStatement())]
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["DEGREE"]), NumericFormula(no-sign(), IntegerLiteral("8")))
+        )
+      ]
     , []
     , LabelList([])
     )

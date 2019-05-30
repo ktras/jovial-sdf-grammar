@@ -1,6 +1,7 @@
 Module(
   MainProgramModule(
-    DeclarationList([])
+    []
+  , DeclarationList([])
   , Name("testFixedConversion")
   , ProgramBody(
       DeclarationList([])
@@ -63,7 +64,7 @@ Module(
           , NumericFormula(
               no-sign()
             , NumericPrimary(
-                "fixconv"
+                Name("fixconv")
               , RealLiteralFF(FractionalForm("1", "8"), no-exponent())
               , RealLiteralFF(FractionalForm("1", "8"), no-exponent())
               )

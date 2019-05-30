@@ -1,6 +1,7 @@
 Module(
   MainProgramModule(
-    DeclarationList([])
+    []
+  , DeclarationList([])
   , Name("integerterm")
   , ProgramBody(
       DeclarationList([])
