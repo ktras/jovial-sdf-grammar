@@ -475,6 +475,7 @@ context-free syntax
 %% 1.2.1 COMPOOL MODULES
 %%
   'START'
+    CompoolDirective*
     'COMPOOL' CompoolName ';'
      CompoolDeclarationList
   'TERM'                     -> CompoolModule          {cons("CompoolModule")}
@@ -486,6 +487,7 @@ context-free syntax
 %% 1.2.2 PROCEDURE MODULES
 %%
   'START'
+    CompoolDirective*
     DeclarationList
     NonNestedSubroutineList
   'TERM'                     -> ProcedureModule       {cons("ProcedureModule")}
@@ -499,6 +501,7 @@ context-free syntax
 %% 1.2.3 MAIN PROGRAM MODULES
 %%
   'START'
+    CompoolDirective*
     DeclarationList
   'PROGRAM'
     ProgramName ';'
@@ -813,7 +816,7 @@ context-free syntax
     EntrySpecifier           -> TableDescription         {cons("TableDescription")}
 
   TableTypeName
-    OptTablePreset ';'       -> TableDescription         {prefer, cons("TableDescriptionT")} %% removes ambiguity with other production of TableDescription
+    OptTablePreset ';'       -> TableDescription         {prefer, cons("TableDescriptionName")} %% removes ambiguity with other production of TableDescription
 
   OrdinaryEntrySpecifier     -> EntrySpecifier
   SpecifiedEntrySpecifier    -> EntrySpecifier
@@ -863,7 +866,7 @@ context-free syntax
 
   OptPackingSpecifier
     OptTablePreset ';'
-    OrdinaryTableBody          -> OrdinaryEntrySpecifier {cons("OrdinaryEntrySpecifierT")}
+    OrdinaryTableBody          -> OrdinaryEntrySpecifier {cons("OrdinaryEntrySpecifierBody")}
 
   'N'                          -> PackingSpecifier       {cons("PackingSpecifierN")}
   'M'                          -> PackingSpecifier       {cons("PackingSpecifierM")}
@@ -871,6 +874,7 @@ context-free syntax
 
   OrdinaryTableItemDeclaration -> OrdinaryTableBody
   'BEGIN'
+    OrderDirective*
     OrdinaryTableOptions+
   'END'                        -> OrdinaryTableBody      {cons("OrdinaryTableBody")}
 
@@ -880,7 +884,7 @@ context-free syntax
   'ITEM' TableItemName
     ItemTypeDescription
     OptPackingSpecifier
-    OptTablePreset             -> OrdinaryTableItemDeclaration {cons("OrdinaryTableItemDeclaration")}
+    OptTablePreset ';'         -> OrdinaryTableItemDeclaration {cons("OrdinaryTableItemDeclaration")}
 
   Name                         -> TableItemName
 
@@ -896,7 +900,7 @@ context-free syntax
 
   WordsPerEntry
     OptTablePreset ';'
-    SpecifiedTableBody           -> SpecifiedEntrySpecifier  {cons("SpecifiedEntrySpecifierT")}
+    SpecifiedTableBody           -> SpecifiedEntrySpecifier  {cons("SpecifiedEntrySpecifierBody")}
 
   'W' OptEntrySize               -> WordsPerEntry            {cons("WordsPerEntryW")}
   'V'                            -> WordsPerEntry            {cons("WordsPerEntryV")}
@@ -961,6 +965,7 @@ context-free syntax
   DataDeclaration                -> BlockBodyPart
 
   'BEGIN'
+    OrderDirective*
     BlockBodyOptions+
   'END'                          -> BlockBodyPart            {cons("BlockBodyPart")}
 
@@ -1036,7 +1041,7 @@ context-free syntax
   % empty %                       -> OptTablePresetList    {cons("no-table-preset-list")}
 
   '(' BlockPresetList ')'         -> OptBlockPresetList    {cons("OptBlockPresetlist")}
-  % empty %                       -> OptBlockPresetList    {cons("no-block-preset-list")}
+  % empty %                       -> OptBlockPresetList    {cons("no-table-preset-list")}
 
 %% 2.2 TYPE DECLARATIONS
 %%
@@ -1239,9 +1244,11 @@ context-free syntax
 %% 3.2 FUNCTIONS
 %%
   FunctionHeading ';'
+    ReducibleDirective*
     Declaration                   -> FunctionDeclaration    {cons("FunctionDeclaration")}
 
   FunctionHeading ';'
+    ReducibleDirective*
     FunctionBody                  -> FunctionDefinition      {cons("FunctionDefinition")}
 
   'PROC'
@@ -1615,6 +1622,9 @@ context-free syntax
     OptLogicalContinuation    -> BitFormula             {cons("BitFormula")}
 
   'NOT' LogicalOperand        -> BitFormula             {cons("BitFormulaNOT")}
+
+%% May be necessary down the line
+%%Variable                    -> BitFormula             {cons("BitVariableFormula"), prefer}
 
   BitPrimary                  -> LogicalOperand
   RelationalExpression        -> LogicalOperand
