@@ -514,6 +514,7 @@ context-free syntax
   Statement                  -> ProgramBody           {cons("ProgramSimpleBody")}
 
   'BEGIN'
+%%    Directive*             %% Might need this in the future
     DeclarationList
     Statement+
     SubroutineDefinition*
@@ -1235,6 +1236,7 @@ context-free syntax
   Statement                       -> SubroutineBody         {cons("SubroutineSimpleBody")}
 
   'BEGIN'
+%%    Directive*                  %% Might need this in the future
     DeclarationList
     Statement*
     SubroutineDefinition*
@@ -1622,9 +1624,9 @@ context-free syntax
     OptLogicalContinuation    -> BitFormula             {cons("BitFormula")}
 
   'NOT' LogicalOperand        -> BitFormula             {cons("BitFormulaNOT")}
+  'NOT' Variable              -> BitFormula             {cons("BitFormulaNOT")}
 
-%% May be necessary down the line
-%%Variable                    -> BitFormula             {cons("BitVariableFormula"), prefer}
+  Variable                    -> BitFormula             {cons("BitVariableFormula"), prefer}
 
   BitPrimary                  -> LogicalOperand
   RelationalExpression        -> LogicalOperand
@@ -1964,7 +1966,7 @@ context-free syntax
 %% 6.3.3 BIT FUNCTION
 %%
   'BIT' '(' BitFormula ','
-    Fbit ',' Nbit ')'         -> BitFunction          {cons("BitFunction")}
+    Fbit ',' Nbit ')'         -> BitFunction          {cons("BitFunction"), prefer}
 
   NumericFormula              -> Fbit                 {cons("Fbit")}
   NumericFormula              -> Nbit                 {cons("Fbit")}
