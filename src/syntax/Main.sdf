@@ -1622,7 +1622,7 @@ context-free syntax
 %% 5.2 BIT FORMULAS
 %%
   LogicalOperand
-    OptLogicalContinuation    -> BitFormula             {cons("BitFormula")}
+    OptLogicalContinuation    -> BitFormula             {cons("BitFormula"), prefer}
 %% Added for when variable is used with LogicalContinuation
   LogicalComponent
     LogicalContinuation       -> BitFormula             {cons("BitFormula")}
