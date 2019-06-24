@@ -1592,7 +1592,7 @@ context-free syntax
   NumericVariable             -> NumericPrimary         {cons("NumericVariable")}
   NamedNumericConstant        -> NumericPrimary         {cons("NamedNumericConstant")}
   NumericFunctionCall         -> NumericPrimary
-  '(' NumericFormula ')'      -> NumericPrimary         {cons("NumericPrimary")}
+  '(' NumericFormula ')'      -> NumericPrimary         {cons("NumericPrimaryParens")}
   IntegerConversion
     '(' Formula ')'           -> NumericPrimary         {cons("NumericPrimary")}
   FloatingConversion
@@ -1623,14 +1623,15 @@ context-free syntax
 %%
   LogicalOperand
     OptLogicalContinuation    -> BitFormula             {cons("BitFormula"), prefer}
+
 %% Added for when variable is used with LogicalContinuation
   LogicalComponent
     LogicalContinuation       -> BitFormula             {cons("BitFormula")}
 
-  'NOT' LogicalOperand        -> BitFormula             {cons("BitFormulaNOT")}
-  'NOT' Variable              -> BitFormula             {cons("BitFormulaNOT")}
+  'NOT' LogicalComponent      -> BitFormula             {cons("BitFormulaNOT")}
 
   Variable                    -> BitFormula             {cons("BitVariableFormula"), prefer}
+
 %% Added LogicalComponent to allow for nonambiguous use of variables
   LogicalOperand              -> LogicalComponent
   Variable                    -> LogicalComponent
@@ -1649,9 +1650,9 @@ context-free syntax
   NamedBitConstant            -> BitPrimary             {cons("NamedBitConstant"), reject}
 
   BitFunctionCall             -> BitPrimary
-  '(' BitFormula  ')'         -> BitPrimary             {cons("BitPrimary")}
+  '(' BitFormula  ')'         -> BitPrimary             {cons("BitPrimaryParens")}
   BitConversion
-  '('    Formula ')'          -> BitPrimary             {cons("BitPrimary")}
+  '('    Formula ')'          -> BitPrimary             {cons("BitConversionPrimary")}
 
   AndContinuation+            -> LogicalContinuation
   OrContinuation+             -> LogicalContinuation
@@ -1661,15 +1662,12 @@ context-free syntax
   LogicalContinuation         -> OptLogicalContinuation
   % empty %                   -> OptLogicalContinuation {cons("no-logical-continuation")}
 
+%% Using LogicalComponent instead of LogicalOperand
+%% for these continuations to allow use of variables
   'AND' LogicalComponent      -> AndContinuation        {cons("AndContinuation")}
   'OR'  LogicalComponent      ->  OrContinuation        {cons( "OrContinuation")}
   'XOR' LogicalComponent      -> XorContinuation        {cons("XorContinuation")}
   'EQV' LogicalComponent      -> EqvContinuation        {cons("EqvContinuation")}
-%% Using LogicalComponent for continuations to allow use of variables
-%%'AND' LogicalOperand        -> AndContinuation        {cons("AndContinuation")}
-%%'OR'  LogicalOperand        ->  OrContinuation        {cons( "OrContinuation")}
-%%'XOR' LogicalOperand        -> XorContinuation        {cons("XorContinuation")}
-%%'EQV' LogicalOperand        -> EqvContinuation        {cons("EqvContinuation")}
 
   Variable                    -> BitVariable            {cons("BitVariable")}
 
@@ -1744,9 +1742,9 @@ context-free syntax
 %%CharacterVariable           -> CharacterFormula       {cons("CharacterVariable")}
 %%NamedCharacterConstant      -> CharacterFormula       {cons("NamedCharacterConstant")}
 %%CharacterFunctionCall       -> CharacterFormula
-  '(' CharacterFormula ')'    -> CharacterFormula       {cons("CharacterFormula")}
+  '(' CharacterFormula ')'    -> CharacterFormula       {cons("CharacterFormulaParens")}
   CharacterConversion
-    '(' Formula ')'           -> CharacterFormula       {cons("CharacterFormula")}
+    '(' Formula ')'           -> CharacterFormula       {cons("CharacterConversionFormula")}
 
 %%Variable                    -> CharacterVariable
 
@@ -1762,9 +1760,9 @@ context-free syntax
 %%StatusVariable              -> StatusFormula      {cons("StatusVariable")}
 %%NamedStatusConstant         -> StatusFormula      {cons("NamedStatusConstant")}
 %%StatusFunctionCall          -> StatusFormula
-  '(' StatusFormula ')'       -> StatusFormula      {cons("StatusFormula")}
+  '(' StatusFormula ')'       -> StatusFormula      {cons("StatusFormulaParens")}
   StatusConversion
-    '(' Formula ')'           -> StatusFormula      {cons("StatusFormula")}
+    '(' Formula ')'           -> StatusFormula      {cons("StatusConversionFormula")}
 
 %%Variable                    -> StatusVariable
 
@@ -1780,9 +1778,9 @@ context-free syntax
 %%PointerVariable             -> PointerFormula     {cons("PointerVariable")}
 %%NamedPointerConstant        -> PointerFormula     {cons("NamedPointerConstant")}
 %%PointerFunctionCall         -> PointerFormula
-  '(' PointerFormula ')'      -> PointerFormula     {cons("PointerFormula")}
+  '(' PointerFormula ')'      -> PointerFormula     {cons("PointerFormulaParens")}
   PointerConversion
-    '(' Formula ')'           -> PointerFormula     {cons("PointerFormula")}
+    '(' Formula ')'           -> PointerFormula     {cons("PointerConversionFormula")}
 
 %%Variable                    -> PointerVariable
 
@@ -1796,9 +1794,9 @@ context-free syntax
 %%
   TableVariable               -> TableFormula       {cons("TableVariable")}
   NamedTableConstant          -> TableFormula       {cons("NamedTableConstant")}
-  '(' TableFormula ')'        -> TableFormula       {cons("TableFormula")}
+  '(' TableFormula ')'        -> TableFormula       {cons("TableFormulaParens")}
   TableConversion
-    '(' Formula ')'           -> TableFormula       {cons("TableFormula")}
+    '(' Formula ')'           -> TableFormula       {cons("TableConversionFormula")}
 
   Variable                    -> TableVariable
 
