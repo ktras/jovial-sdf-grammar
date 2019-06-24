@@ -163,6 +163,7 @@ RelationalExpression
 BitPrimary
 OptLogicalContinuation
 LogicalOperand
+LogicalComponent
 FixedConversion
 %%FixedFunctionCall
 %%NamedFixedConstant
@@ -1622,15 +1623,22 @@ context-free syntax
 %%
   LogicalOperand
     OptLogicalContinuation    -> BitFormula             {cons("BitFormula")}
+%% Added for when variable is used with LogicalContinuation
+  LogicalComponent
+    LogicalContinuation       -> BitFormula             {cons("BitFormula")}
 
   'NOT' LogicalOperand        -> BitFormula             {cons("BitFormulaNOT")}
   'NOT' Variable              -> BitFormula             {cons("BitFormulaNOT")}
 
   Variable                    -> BitFormula             {cons("BitVariableFormula"), prefer}
+%% Added LogicalComponent to allow for nonambiguous use of variables
+  LogicalOperand              -> LogicalComponent
+  Variable                    -> LogicalComponent
 
   BitPrimary                  -> LogicalOperand
   RelationalExpression        -> LogicalOperand
 %%BitVariable                 -> LogicalOperand
+%% Moving variable to LogicalComponent to remove ambiguity
 
   BitLiteral                  -> BitPrimary
   BooleanLiteral              -> BitPrimary
@@ -1653,10 +1661,15 @@ context-free syntax
   LogicalContinuation         -> OptLogicalContinuation
   % empty %                   -> OptLogicalContinuation {cons("no-logical-continuation")}
 
-  'AND' LogicalOperand        -> AndContinuation        {cons("AndContinuation")}
-  'OR'  LogicalOperand        ->  OrContinuation        {cons( "OrContinuation")}
-  'XOR' LogicalOperand        -> XorContinuation        {cons("XorContinuation")}
-  'EQV' LogicalOperand        -> EqvContinuation        {cons("EqvContinuation")}
+  'AND' LogicalComponent      -> AndContinuation        {cons("AndContinuation")}
+  'OR'  LogicalComponent      ->  OrContinuation        {cons( "OrContinuation")}
+  'XOR' LogicalComponent      -> XorContinuation        {cons("XorContinuation")}
+  'EQV' LogicalComponent      -> EqvContinuation        {cons("EqvContinuation")}
+%% Using LogicalComponent for continuations to allow use of variables
+%%'AND' LogicalOperand        -> AndContinuation        {cons("AndContinuation")}
+%%'OR'  LogicalOperand        ->  OrContinuation        {cons( "OrContinuation")}
+%%'XOR' LogicalOperand        -> XorContinuation        {cons("XorContinuation")}
+%%'EQV' LogicalOperand        -> EqvContinuation        {cons("EqvContinuation")}
 
   Variable                    -> BitVariable            {cons("BitVariable")}
 
