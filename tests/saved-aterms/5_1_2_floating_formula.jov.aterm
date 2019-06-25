@@ -46,7 +46,7 @@ Module(
             , NumericTerm(
                 RealLiteralFF(FractionalForm("1", "0"), no-exponent())
               , DivideOp()
-              , NumericPrimary(
+              , NumericPrimaryParens(
                   NumericFormula(
                     no-sign()
                   , NumericPrimary(
@@ -94,7 +94,7 @@ Module(
             , NumericTerm(
                 RealLiteralFF(FractionalForm("1", "0"), no-exponent())
               , DivideOp()
-              , NumericPrimary(
+              , NumericPrimaryParens(
                   NumericFormula(
                     no-sign()
                   , NumericPrimary(

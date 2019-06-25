@@ -86,7 +86,7 @@ Module(
             VariableList(["ivar"])
           , NumericFormula(
               no-sign()
-            , NumericPrimary(
+            , NumericPrimaryParens(
                 NumericFormula(
                   no-sign()
                 , FLOATUNDERFLOW(NumericFormula(no-sign(), RealLiteralFF(FractionalForm("1", "8"), no-exponent())))
@@ -114,7 +114,7 @@ Module(
             VariableList(["ivar"])
           , NumericFormula(
               no-sign()
-            , NumericPrimary(
+            , NumericPrimaryParens(
                 NumericFormula(
                   no-sign()
                 , NumericPrimary(

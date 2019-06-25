@@ -76,7 +76,7 @@ Module(
           , NumericFormula(
               no-sign()
             , NumericTerm(
-                NumericPrimary(
+                NumericPrimaryParens(
                   NumericFormula(NumericFormula(no-sign(), IntegerLiteral("10")), AddOp(), IntegerLiteral("2"))
                 )
               , MultiplyOp()

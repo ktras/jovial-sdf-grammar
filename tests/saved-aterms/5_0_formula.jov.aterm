@@ -15,7 +15,7 @@ Module(
         )
       , SimpleStatement(
           LabelList([])
-        , AssignmentStatement(VariableList(["ibbr"]), PointerFormula(PointerFormula(Null())))
+        , AssignmentStatement(VariableList(["ibbr"]), PointerFormulaParens(PointerFormula(Null())))
         )
       , SimpleStatement(
           LabelList([])

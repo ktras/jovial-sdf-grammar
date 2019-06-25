@@ -27,7 +27,7 @@ Module(
           , NumericFormula(
               no-sign()
             , NumericTerm(
-                NumericPrimary(
+                NumericPrimaryParens(
                   NumericFormula(NumericFormula(no-sign(), NumericVariable("ivar")), AddOp(), IntegerLiteral("1"))
                 )
               , DivideOp()

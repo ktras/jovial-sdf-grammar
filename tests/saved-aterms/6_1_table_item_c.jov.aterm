@@ -28,7 +28,7 @@ Module(
                 , Subscript(
                     [NumericFormula(no-sign(), NumericVariable("iv")), NumericFormula(no-sign(), NumericVariable("jv"))]
                   )
-                , Dereference(PointerFormula(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("2"))))
+                , Dereference(PointerConversionFormula(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("2"))))
                 )
               )
             )

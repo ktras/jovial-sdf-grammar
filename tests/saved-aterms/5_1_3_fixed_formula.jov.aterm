@@ -90,7 +90,7 @@ Module(
           , NumericFormula(
               NumericFormula(
                 no-sign()
-              , NumericPrimary(
+              , NumericPrimaryParens(
                   NumericFormula(
                     no-sign()
                   , RealLiteralFF(FractionalForm("1", "8"), Exponent(no-sign(), "2"))
