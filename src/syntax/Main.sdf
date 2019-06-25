@@ -1487,7 +1487,7 @@ context-free syntax
 
   '('
     {ActualInputParameter ','}*
-   % OptActualOutputParameters %                       %% not needed/accessible
+    OptActualOutputParameters
   ')'                          -> ActualParameterList  {cons("ActualParameterList")}
 
   ActualParameterList          -> OptActualParameterList
@@ -1502,8 +1502,10 @@ context-free syntax
 %%ProcedureName                -> ActualInputParameter
 %%BlockReference               -> ActualInputParameter
 
-  Variable                     -> ActualOutputParameter    {cons("ActualOutputParameter")}
-  BlockReference               -> ActualOutputParameter    {cons("ActualOutputParameter")}
+  Name                         -> ActualOutputParameter    {cons("ActualOutputParameter")}
+%% Using Name instead of Variable or BlockReference to remove ambiguity
+%%Variable                     -> ActualOutputParameter    {cons("ActualOutputParameter")}
+%%BlockReference               -> ActualOutputParameter    {cons("ActualOutputParameter")}
 
   'ABORT' StatementName        -> AbortPhrase              {cons("AbortPhrase")}
 
