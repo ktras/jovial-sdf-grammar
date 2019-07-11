@@ -1969,7 +1969,8 @@ context-free syntax
     NextArgument ','
     IncrementAmount ')'       -> NextFunction         {cons("NextFunction")}
 
-  PointerFormula              -> NextArgument
+%%PointerFormula              -> NextArgument
+  GeneralFormula              -> NextArgument
   StatusFormula               -> NextArgument
 
   NumericFormula              -> IncrementAmount
