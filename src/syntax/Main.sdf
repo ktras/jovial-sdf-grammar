@@ -227,6 +227,7 @@ CaseSelectorFormula
 ElseClause
 OptElseClause
 ConditionalStatement
+RelationalFormula     %% nonstandard
 NumericFormula OptNumericFormula
 NumericFunctionCall
 NamedNumericConstant
@@ -1679,13 +1680,15 @@ context-free syntax
 
 %% 5.2.1 RELATIONAL EXPRESSIONS
 %%
-  NumericFormula
-    RelationalOperator
-    NumericFormula            -> RelationalExpression   {cons("RelationalExpression"), prefer}
 
-  GeneralFormula
+%% Nonstandard handling to remove ambiguities
+%%
+  RelationalFormula
     RelationalOperator
-    GeneralFormula            -> RelationalExpression   {cons("RelationalExpression")}
+    RelationalFormula         -> RelationalExpression   {cons("RelationalExpression")}
+
+  GeneralFormula              -> RelationalFormula
+  NumericFormula              -> RelationalFormula      {prefer}
 
 %%FloatingFormula
 %%  RelationalOperator
@@ -1932,8 +1935,11 @@ context-free syntax
   IntrinsicFunctionCall       -> FunctionCall
   MachineSpecificFunctionCall -> FunctionCall
 
-  FunctionName                                                %% AMBIGUOUS with NamedConstant
-    OptActualParameterList    -> UserDefinedFunctionCall      {cons("UserDefinedFunctionCall"), reject}
+%% Removed Opt from ActualParameterList to distinguish from Variable.
+%% Now user-defined function calls must have parens. Resolution of function calls
+%% without parens will require name resolution using a symbol table.
+  FunctionName
+    ActualParameterList       -> UserDefinedFunctionCall      {cons("UserDefinedFunctionCall")}
 
   LocFunction                 -> IntrinsicFunctionCall
   NextFunction                -> IntrinsicFunctionCall
