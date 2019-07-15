@@ -1892,7 +1892,9 @@ context-free syntax
   '(' { Index ','}+ ')'       -> Subscript             {cons("Subscript")}
 
   NumericFormula              -> Index
-  StatusFormula               -> Index
+%%StatusFormula               -> Index
+%% Replaced with GeneralFormula
+  GeneralFormula              -> Index
 
   'BIT' '(' BitVariable ','
             Fbit ',' Nbit ')' -> BitFunctionVariable   {cons("BitFunctionVariable")}
