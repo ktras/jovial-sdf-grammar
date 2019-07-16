@@ -70,7 +70,14 @@ PASSING_TESTS = \
   6_1_table_item_c.jov               \
   6_1_variable.jov                   \
   8_3_1_real_literal.jov             \
-  8_4_comments.jov
+  8_4_comments.jov                   \
+  issue_2063.jov                     \
+  issue_2067.jov                     \
+  issue_2101.jov                     \
+  issue_2102.jov                     \
+  issue_2104.jov                     \
+  issue_2105.jov                     \
+  issue_2106.jov
 
 FAILING_TESTS =
 
