@@ -1,0 +1,72 @@
+Module(
+  ProcedureModule(
+    []
+  , DeclarationList(
+      [ SimpleDef(
+          ItemDeclaration(
+            "ITEM'1"
+          , no-allocation-specifier()
+          , FloatingItemDescription(no-round-or-truncate(), no-precision())
+          , ItemPreset(NumericFormula(no-sign(), RealLiteralFF(FractionalForm("0", "0"), no-exponent())))
+          )
+        )
+      ]
+    )
+  , NonNestedSubroutineList(
+      [ NonNestedSubroutine(
+          FunctionDefinition(
+            FunctionHeading(
+              Name("$TIME")
+            , no-subroutine-attribute()
+            , FormalParameterList([], no-formal-output-parameters())
+            , FloatingItemDescription(no-round-or-truncate(), no-precision())
+            )
+          , []
+          , SubroutineBody(
+              DeclarationList([])
+            , [ SimpleStatement(
+                  LabelList([])
+                , AssignmentStatement(
+                    VariableList(["$TIME"])
+                  , NumericFormula(no-sign(), RealLiteralFF(FractionalForm("3", "1415926"), no-exponent()))
+                  )
+                )
+              ]
+            , []
+            , LabelList([])
+            )
+          )
+        )
+      , NonNestedSubroutine(
+          ProcedureDefinition(
+            ProcedureHeading(Name("PROC'1"), no-subroutine-attribute(), no-formal-parameter-list())
+          , SubroutineBody(
+              DeclarationList([])
+            , [ SimpleStatement(
+                  LabelList([])
+                , AssignmentStatement(
+                    VariableList(["ITEM'1"])
+                  , NumericFormula(
+                      NumericFormula(no-sign(), UserDefinedFunctionCall(Name("$TIME"), ActualParameterList([], no-actual-output-parameters())))
+                    , AddOp()
+                    , RealLiteralFF(FractionalForm("1", "0"), no-exponent())
+                    )
+                  )
+                )
+              , SimpleStatement(
+                  LabelList([])
+                , AssignmentStatement(
+                    VariableList(["ITEM'1"])
+                  , NumericFormula(no-sign(), RealLiteralFF(FractionalForm("1", "0"), no-exponent()))
+                  )
+                )
+              ]
+            , []
+            , LabelList([])
+            )
+          )
+        )
+      ]
+    )
+  )
+)

@@ -1,0 +1,47 @@
+Module(
+  ProcedureModule(
+    []
+  , DeclarationList([])
+  , NonNestedSubroutineList(
+      [ NonNestedSubroutine(
+          ProcedureDefinition(
+            ProcedureHeading(Name("rent'1"), no-subroutine-attribute(), no-formal-parameter-list())
+          , SubroutineBody(
+              DeclarationList(
+                [ ItemDeclaration("VAR1", no-allocation-specifier(), BitItemDescription("B", no-item-size()), no-item-preset())
+                , ItemDeclaration("VAR2", no-allocation-specifier(), IntegerItemDescription("S", no-round-or-truncate(), no-item-size()), no-item-preset())
+                ]
+              )
+            , [ SimpleStatement(
+                  IfStatement(
+                    LabelList([])
+                  , BitFormula(
+                      BitPrimaryParens(
+                        BitFormula(
+                          BitPrimaryParens(BitFormulaNOT("VAR1"))
+                        , [ AndContinuation(
+                              RelationalExpression(
+                                NumericFormula(no-sign(), NumericVariable("VAR2"))
+                              , GreaterThanOp()
+                              , NumericFormula(no-sign(), IntegerLiteral("0"))
+                              )
+                            )
+                          ]
+                        )
+                      )
+                    , no-logical-continuation()
+                    )
+                  , SimpleStatement(LabelList([]), NullBlockStatement(LabelList([])))
+                  , no-else-clause()
+                  )
+                )
+              ]
+            , []
+            , LabelList([])
+            )
+          )
+        )
+      ]
+    )
+  )
+)

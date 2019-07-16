@@ -1,0 +1,10 @@
+START
+DEF PROC RENT'1;
+  BEGIN
+    ITEM ITEM'1 B;
+    ITEM ITEM'2 B;
+    IF ITEM'1 OR ITEM'2;
+      BEGIN
+      END
+  END
+TERM

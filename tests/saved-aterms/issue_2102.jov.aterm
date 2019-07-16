@@ -1,0 +1,80 @@
+Module(
+  ProcedureModule(
+    []
+  , DeclarationList(
+      [ SimpleDef(
+          TableDeclaration(
+            "TABLE'1"
+          , no-allocation-specifier()
+          , no-dimension-list()
+          , TableDescription(
+              no-structure-specifier()
+            , SpecifiedEntrySpecifierBody(
+                WordsPerEntryW(NumericFormula(no-sign(), IntegerLiteral("4")))
+              , no-table-preset()
+              , SpecifiedTableBody(
+                  [ SpecifiedTableItemDeclaration(
+                      "ITEM'1"
+                    , SpecifiedItemDescription(
+                        BitItemDescription("B", ItemSize(NumericFormula(no-sign(), IntegerLiteral("16"))))
+                      , LocationSpecifier(
+                          NumericFormula(no-sign(), IntegerLiteral("0"))
+                        , NumericFormula(no-sign(), IntegerLiteral("0"))
+                        )
+                      )
+                    , TablePreset(
+                        DefaultPresetSublist(
+                          [BitFormula(
+                             BitLiteral("4", ["0", "0", "0", "0"])
+                           , no-logical-continuation()
+                           )]
+                        )
+                      )
+                    )
+                  ]
+                )
+              )
+            )
+          )
+        )
+      ]
+    )
+  , NonNestedSubroutineList(
+      [ NonNestedSubroutine(
+          ProcedureDefinition(
+            ProcedureHeading(Name("PROC'1"), RENT(), no-formal-parameter-list())
+          , SubroutineBody(
+              DeclarationList([])
+            , [ SimpleStatement(
+                  IfStatement(
+                    LabelList([])
+                  , BitFormula(
+                      BitPrimaryParens(
+                        BitFormula(
+                          RelationalExpression(
+                            NumericFormula(no-sign(), NumericVariable("ITEM'1"))
+                          , EqualityOp()
+                          , BitFormula(
+                              BitLiteral("4", ["2", "1", "0", "7"])
+                            , no-logical-continuation()
+                            )
+                          )
+                        , no-logical-continuation()
+                        )
+                      )
+                    , no-logical-continuation()
+                    )
+                  , SimpleStatement(LabelList([]), NullBlockStatement(LabelList([])))
+                  , no-else-clause()
+                  )
+                )
+              ]
+            , []
+            , LabelList([])
+            )
+          )
+        )
+      ]
+    )
+  )
+)

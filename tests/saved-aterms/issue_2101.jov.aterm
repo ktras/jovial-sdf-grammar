@@ -1,0 +1,197 @@
+Module(
+  ProcedureModule(
+    []
+  , DeclarationList(
+      [ ConstantDeclaration(
+          "ITEM'1"
+        , IntegerItemDescriptionU("U", no-round-or-truncate(), ItemSize(NumericFormula(no-sign(), IntegerLiteral("4"))))
+        , ItemPreset(NumericFormula(no-sign(), IntegerLiteral("10")))
+        )
+      , SimpleDef(
+          TableDeclaration(
+            "TABLE'1"
+          , no-allocation-specifier()
+          , DimensionList(
+              [ Dimension(
+                  LowerBoundOption(NumericFormula(no-sign(), IntegerLiteral("0")))
+                , NumericFormula(no-sign(), IntegerLiteral("10"))
+                )
+              ]
+            )
+          , TableDescription(
+              no-structure-specifier()
+            , OrdinaryEntrySpecifierBody(
+                no-packing-specifier()
+              , no-table-preset()
+              , OrdinaryTableBody(
+                  []
+                , [ OrdinaryTableItemDeclaration(
+                      "ITEM'2"
+                    , IntegerItemDescriptionU("U", no-round-or-truncate(), ItemSize(NumericFormula(no-sign(), IntegerLiteral("6"))))
+                    , no-packing-specifier()
+                    , no-table-preset()
+                    )
+                  ]
+                )
+              )
+            )
+          )
+        )
+      , TableTypeDeclaration(
+          Name("TABLE'TYPE'1")
+        , TableTypeSpecifier(
+            no-dimension-list()
+          , no-structure-specifier()
+          , no-like-option()
+          , SpecifiedEntrySpecifierBody(
+              WordsPerEntryW(NumericFormula(no-sign(), IntegerLiteral("27")))
+            , no-table-preset()
+            , SpecifiedTableBody(
+                [ SpecifiedTableItemDeclaration(
+                    "ITEM'3"
+                  , SpecifiedItemDescription(
+                      IntegerItemDescriptionU("U", no-round-or-truncate(), ItemSize(NumericFormula(no-sign(), IntegerLiteral("6"))))
+                    , LocationSpecifier(
+                        NumericFormula(no-sign(), IntegerLiteral("1"))
+                      , NumericFormula(no-sign(), IntegerLiteral("1"))
+                      )
+                    )
+                  , no-table-preset()
+                  )
+                ]
+              )
+            )
+          )
+        )
+      , SimpleDef(
+          TableDeclaration(
+            "TABLE'2"
+          , no-allocation-specifier()
+          , DimensionList(
+              [ Dimension(
+                  LowerBoundOption(NumericFormula(no-sign(), IntegerLiteral("0")))
+                , NumericFormula(no-sign(), IntegerLiteral("10"))
+                )
+              ]
+            )
+          , TableDescriptionName(Name("TABLE'TYPE'1"), no-table-preset())
+          )
+        )
+      , SimpleDef(
+          TableDeclaration(
+            "TABLE'3"
+          , no-allocation-specifier()
+          , DimensionList(
+              [ Dimension(
+                  LowerBoundOption(NumericFormula(no-sign(), IntegerLiteral("0")))
+                , NumericFormula(no-sign(), IntegerLiteral("10"))
+                )
+              ]
+            )
+          , TableDescription(
+              no-structure-specifier()
+            , OrdinaryEntrySpecifierBody(
+                no-packing-specifier()
+              , no-table-preset()
+              , OrdinaryTableBody(
+                  []
+                , [ OrdinaryTableItemDeclaration(
+                      "ITEM'4"
+                    , IntegerItemDescriptionU("U", no-round-or-truncate(), ItemSize(NumericFormula(no-sign(), IntegerLiteral("6"))))
+                    , no-packing-specifier()
+                    , no-table-preset()
+                    )
+                  ]
+                )
+              )
+            )
+          )
+        )
+      ]
+    )
+  , NonNestedSubroutineList(
+      [ NonNestedSubroutine(
+          ProcedureDefinition(
+            ProcedureHeading(Name("PROC'1"), RENT(), no-formal-parameter-list())
+          , SubroutineBody(
+              DeclarationList([])
+            , [ SimpleStatement(
+                  ForStatement(
+                    LabelList([])
+                  , ForClause(
+                      "I"
+                    , ControlClause(
+                        NumericFormula(no-sign(), IntegerLiteral("0"))
+                      , Continuation(
+                          ByPhrase(NumericFormula(no-sign(), IntegerLiteral("1")))
+                        , WhilePhrase(
+                            BitFormula(
+                              BitPrimaryParens(
+                                BitFormula(
+                                  RelationalExpression(
+                                    GeneralFormula(ControlLetter("I"))
+                                  , LessOrEqualOp()
+                                  , NumericFormula(no-sign(), NumericVariable("ITEM'1"))
+                                  )
+                                , no-logical-continuation()
+                                )
+                              )
+                            , no-logical-continuation()
+                            )
+                          )
+                        )
+                      )
+                    )
+                  , CompoundStatement(
+                      LabelList([])
+                    , [ SimpleStatement(
+                          LabelList([])
+                        , AssignmentStatement(
+                            VariableList(
+                              [TableItem("ITEM'2", Subscript([GeneralFormula(ControlLetter("I"))]), no-table-dereference())]
+                            )
+                          , NumericFormula(
+                              no-sign()
+                            , NumericVariable(
+                                TableItem(
+                                  "ITEM'3"
+                                , no-subscript()
+                                , Dereference(
+                                    GeneralFormula(
+                                      LocFunction(
+                                        TableItem(
+                                          "TABLE'2"
+                                        , Subscript(
+                                            [ NumericFormula(
+                                                no-sign()
+                                              , NumericVariable(
+                                                  TableItem("ITEM'4", Subscript([GeneralFormula(ControlLetter("I"))]), no-table-dereference())
+                                                )
+                                              )
+                                            ]
+                                          )
+                                        , no-table-dereference()
+                                        )
+                                      )
+                                    )
+                                  )
+                                )
+                              )
+                            )
+                          )
+                        )
+                      ]
+                    , LabelList([])
+                    )
+                  )
+                )
+              ]
+            , []
+            , LabelList([])
+            )
+          )
+        )
+      ]
+    )
+  )
+)

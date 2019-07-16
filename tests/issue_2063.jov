@@ -1,0 +1,10 @@
+START
+DEF PROC rent'1;
+  BEGIN
+    ITEM VAR1 B;
+    ITEM VAR2 S;
+    IF ((NOT VAR1) AND VAR2 > 0);
+      BEGIN
+      END
+  END
+TERM

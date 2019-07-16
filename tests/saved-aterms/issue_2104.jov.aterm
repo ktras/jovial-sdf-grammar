@@ -1,0 +1,52 @@
+Module(
+  ProcedureModule(
+    []
+  , DeclarationList([])
+  , NonNestedSubroutineList(
+      [ NonNestedSubroutine(
+          ProcedureDefinition(
+            ProcedureHeading(Name("PROC'1"), RENT(), no-formal-parameter-list())
+          , SubroutineBody(
+              DeclarationList(
+                [ ItemDeclaration(
+                    "ITEM'1"
+                  , no-allocation-specifier()
+                  , PointerItemDescription("P", TypeName(Name("T'T'1")))
+                  , no-item-preset()
+                  )
+                , ItemDeclaration(
+                    "ITEM'2"
+                  , no-allocation-specifier()
+                  , PointerItemDescription("P", TypeName(Name("T'T'2")))
+                  , no-item-preset()
+                  )
+                ]
+              )
+            , [ SimpleStatement(
+                  LabelList([])
+                , AssignmentStatement(
+                    VariableList(["ITEM'1"])
+                  , NumericFormula(
+                      no-sign()
+                    , NumericPrimaryParens(
+                        NumericFormula(
+                          no-sign()
+                        , NextFunction(
+                            GeneralFormula(TableItem("ITEM'4", no-subscript(), Dereference("ITEM'2")))
+                          , NumericFormula(no-sign(), IntegerLiteral("0"))
+                          )
+                        )
+                      )
+                    )
+                  )
+                )
+              ]
+            , []
+            , LabelList([])
+            )
+          )
+        )
+      ]
+    )
+  )
+)

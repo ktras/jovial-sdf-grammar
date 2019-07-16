@@ -1,0 +1,62 @@
+Module(
+  ProcedureModule(
+    []
+  , DeclarationList([])
+  , NonNestedSubroutineList(
+      [ NonNestedSubroutine(
+          ProcedureDefinition(
+            ProcedureHeading(Name("PROC'1"), RENT(), no-formal-parameter-list())
+          , SubroutineBody(
+              DeclarationList(
+                [ ConstantDeclaration(
+                    "ITEM'1"
+                  , IntegerItemDescriptionU("U", no-round-or-truncate(), ItemSize(NumericFormula(no-sign(), IntegerLiteral("8"))))
+                  , ItemPreset(NumericFormula(no-sign(), IntegerLiteral("10")))
+                  )
+                ]
+              )
+            , [ SimpleStatement(
+                  ForStatement(
+                    LabelList([])
+                  , ForClause(
+                      "I"
+                    , ControlClause(
+                        NumericFormula(no-sign(), IntegerLiteral("0"))
+                      , Continuation(
+                          ByPhrase(NumericFormula(no-sign(), IntegerLiteral("1")))
+                        , WhilePhrase(
+                            BitFormula(
+                              BitPrimaryParens(
+                                BitFormula(
+                                  RelationalExpression(
+                                    GeneralFormula(ControlLetter("I"))
+                                  , LessOrEqualOp()
+                                  , NumericFormula(
+                                      no-sign()
+                                    , NumericPrimaryParens(
+                                        NumericFormula(NumericFormula(no-sign(), NumericVariable("ITEM'1")), SubtractOp(), IntegerLiteral("1"))
+                                      )
+                                    )
+                                  )
+                                , no-logical-continuation()
+                                )
+                              )
+                            , no-logical-continuation()
+                            )
+                          )
+                        )
+                      )
+                    )
+                  , SimpleStatement(LabelList([]), NullBlockStatement(LabelList([])))
+                  )
+                )
+              ]
+            , []
+            , LabelList([])
+            )
+          )
+        )
+      ]
+    )
+  )
+)

@@ -1,0 +1,32 @@
+Module(
+  ProcedureModule(
+    []
+  , DeclarationList([])
+  , NonNestedSubroutineList(
+      [ NonNestedSubroutine(
+          ProcedureDefinition(
+            ProcedureHeading(Name("RENT'1"), no-subroutine-attribute(), no-formal-parameter-list())
+          , SubroutineBody(
+              DeclarationList(
+                [ ItemDeclaration("ITEM'1", no-allocation-specifier(), BitItemDescription("B", no-item-size()), no-item-preset())
+                , ItemDeclaration("ITEM'2", no-allocation-specifier(), BitItemDescription("B", no-item-size()), no-item-preset())
+                ]
+              )
+            , [ SimpleStatement(
+                  IfStatement(
+                    LabelList([])
+                  , BitFormula("ITEM'1", [OrContinuation("ITEM'2")])
+                  , SimpleStatement(LabelList([]), NullBlockStatement(LabelList([])))
+                  , no-else-clause()
+                  )
+                )
+              ]
+            , []
+            , LabelList([])
+            )
+          )
+        )
+      ]
+    )
+  )
+)
