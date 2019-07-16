@@ -1891,9 +1891,7 @@ context-free syntax
 
   '(' { Index ','}+ ')'       -> Subscript             {cons("Subscript")}
 
-  NumericFormula              -> Index
-%%StatusFormula               -> Index
-%% Replaced with GeneralFormula
+  NumericFormula              -> Index                 {prefer}
   GeneralFormula              -> Index
 
   'BIT' '(' BitVariable ','
