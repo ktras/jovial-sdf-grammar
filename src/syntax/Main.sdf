@@ -1623,11 +1623,11 @@ context-free syntax
 %% 5.2 BIT FORMULAS
 %%
   LogicalOperand
-    OptLogicalContinuation    -> BitFormula             {cons("BitFormula"), prefer}
+    OptLogicalContinuation    -> BitFormula             {cons("BitFormula")}
 
 %% Added for when variable is used with LogicalContinuation
   LogicalComponent
-    LogicalContinuation       -> BitFormula             {cons("BitFormula")}
+    LogicalContinuation       -> BitFormula             {cons("BitFormula"), prefer}
 
   'NOT' LogicalComponent      -> BitFormula             {cons("BitFormulaNOT")}
 
@@ -1687,8 +1687,9 @@ context-free syntax
     RelationalOperator
     RelationalFormula         -> RelationalExpression   {cons("RelationalExpression")}
 
-  GeneralFormula              -> RelationalFormula
   NumericFormula              -> RelationalFormula      {prefer}
+  GeneralFormula              -> RelationalFormula
+  BitFormula                  -> RelationalFormula
 
 %%FloatingFormula
 %%  RelationalOperator
