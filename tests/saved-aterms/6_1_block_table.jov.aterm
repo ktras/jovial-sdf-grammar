@@ -25,7 +25,7 @@ Module(
                   "aBlock"
                 , no-subscript()
                 , Dereference(
-                    PointerConversionFormula(
+                    PointerFormulaConversion(
                       PointerConversion(PointerItemDescription("P", TypeName(Name("pntr"))))
                     , NumericFormula(no-sign(), IntegerLiteral("3"))
                     )
@@ -45,7 +45,7 @@ Module(
                 TableItem(
                   "aBlock"
                 , no-subscript()
-                , Dereference(PointerConversionFormula(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("3"))))
+                , Dereference(PointerFormulaConversion(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("3"))))
                 )
               )
             )

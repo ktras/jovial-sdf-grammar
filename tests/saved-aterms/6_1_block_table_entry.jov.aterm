@@ -51,7 +51,7 @@ Module(
                 , Subscript(
                     [NumericFormula(no-sign(), IntegerLiteral("1")), NumericFormula(no-sign(), IntegerLiteral("2"))]
                   )
-                , Dereference(PointerConversionFormula(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("3"))))
+                , Dereference(PointerFormulaConversion(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("3"))))
                 )
               )
             )
@@ -67,7 +67,7 @@ Module(
                 TableItem(
                   "aBlock"
                 , Subscript([NumericFormula(no-sign(), NumericVariable("iv"))])
-                , Dereference(PointerConversionFormula(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("8"))))
+                , Dereference(PointerFormulaConversion(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("8"))))
                 )
               )
             )
@@ -85,7 +85,7 @@ Module(
                 , Subscript(
                     [NumericFormula(no-sign(), NumericVariable("iv")), NumericFormula(no-sign(), NumericVariable("jv"))]
                   )
-                , Dereference(PointerConversionFormula(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("2"))))
+                , Dereference(PointerFormulaConversion(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("2"))))
                 )
               )
             )

@@ -42,7 +42,7 @@ Module(
                 TableItem(
                   "aTable"
                 , no-subscript()
-                , Dereference(PointerConversionFormula(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("3"))))
+                , Dereference(PointerFormulaConversion(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("3"))))
                 )
               )
             )
@@ -86,7 +86,7 @@ Module(
                 , Subscript(
                     [NumericFormula(no-sign(), IntegerLiteral("1")), NumericFormula(no-sign(), IntegerLiteral("2"))]
                   )
-                , Dereference(PointerConversionFormula(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("3"))))
+                , Dereference(PointerFormulaConversion(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("3"))))
                 )
               )
             )

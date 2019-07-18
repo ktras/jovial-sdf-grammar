@@ -25,7 +25,7 @@ Module(
             , NumericVariable(
                 TableEntry(
                   Dereference(
-                    PointerConversionFormula(
+                    PointerFormulaConversion(
                       PointerConversion(PointerItemDescription("P", TypeName(Name("pntr"))))
                     , NumericFormula(no-sign(), IntegerLiteral("8"))
                     )
@@ -76,7 +76,7 @@ Module(
               no-sign()
             , NumericVariable(
                 TableEntry(
-                  Dereference(PointerConversionFormula(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("8"))))
+                  Dereference(PointerFormulaConversion(PointerConversionP(), NumericFormula(no-sign(), IntegerLiteral("8"))))
                 , Subscript(
                     [NumericFormula(no-sign(), NumericVariable("iv")), NumericFormula(no-sign(), NumericVariable("jv"))]
                   )
