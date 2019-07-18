@@ -589,11 +589,23 @@ context-free syntax
     FractionSpecifier
      ')'                     -> FixedMachineParameter    {cons("MAXFIXED")}
 
+%% Temporary addition for parsing tests
+  'MAXFIXED'
+     '('
+    ScaleSpecifier
+     ')'                     -> FixedMachineParameter    {cons("MAXFIXEDVariant")}
+
   'MINFIXED'
      '('
     ScaleSpecifier ','
     FractionSpecifier
      ')'                     -> FixedMachineParameter    {cons("MINFIXED")}
+
+%% Temporary addition for parsing tests
+  'MINFIXED'
+     '('
+    ScaleSpecifier
+     ')'                     -> FixedMachineParameter    {cons("MINFIXEDVariant")}
 
 
 %%%%%%%%%%
@@ -1563,7 +1575,7 @@ context-free syntax
 %%NamedVariable               -> UntypedNamedVariable   {cons("UntypedNamedVariable")}
 %%Sign NamedVariable          -> UntypedNamedVariable   {cons("NumericNamedVariable")}
 
-  CompileTimeNumericFormula   -> CompileTimeFormula
+  CompileTimeNumericFormula   -> CompileTimeFormula     {prefer}
   CompileTimeBitFormula       -> CompileTimeFormula
   CompileTimeCharacterFormula -> CompileTimeFormula
   CompileTimeStatusFormula    -> CompileTimeFormula
@@ -1697,7 +1709,7 @@ context-free syntax
 
 %%FixedFormula
 %%  RelationalOperator
-%%  FixedFormula              -> RelationalExpression   {cons("RelationalExpression"), prefer}
+%%  FixedFormula              -> RelationalExpression   {cons("RelationalExpression")}
 
 %%CharacterFormula
 %%  RelationalOperator
@@ -1707,9 +1719,9 @@ context-free syntax
 %%  RelationalOperator
 %%  StatusFormula             -> RelationalExpression   {cons("RelationalExpression")}
 
-  BitPrimary
-    EqualOrNotEqualOperator
-    BitPrimary                -> RelationalExpression   {cons("RelationalExpression")}
+%%BitPrimary
+%%  EqualOrNotEqualOperator
+%%  BitPrimary                -> RelationalExpression   {cons("RelationalExpression")}
 
 %%BitVariable
 %%  EqualOrNotEqualOperator
@@ -2026,7 +2038,7 @@ context-free syntax
   'BYTESIZE'                  -> SizeType             {cons("BYTESIZE")}
   'WORDSIZE'                  -> SizeType             {cons("WORDSIZE")}
 
-  Formula                     -> SizeArgument
+  Formula                     -> SizeArgument         {prefer}
   BlockName                   -> SizeArgument
   TypeName                    -> SizeArgument
   
