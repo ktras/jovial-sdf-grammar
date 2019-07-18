@@ -595,6 +595,7 @@ context-free syntax
     FractionSpecifier
      ')'                     -> FixedMachineParameter    {cons("MINFIXED")}
 
+
 %%%%%%%%%%
 %% 2.0 DECLARATIONS
 %%%%%%%%%%
@@ -1975,7 +1976,12 @@ context-free syntax
     NextArgument ','
     IncrementAmount ')'       -> NextFunction         {cons("NextFunction")}
 
+%% PointerFormula is not general enough anymore because of the accumulation
+%% of various expressions into GeneralFormula, therefore replaced by
+%% GeneralFormula producing NextArgument.
+%%
 %%PointerFormula              -> NextArgument
+
   GeneralFormula              -> NextArgument
   StatusFormula               -> NextArgument
 
