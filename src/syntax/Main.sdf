@@ -477,7 +477,7 @@ context-free syntax
 %% 1.2.1 COMPOOL MODULES
 %%
   'START'
-    CompoolDirective*
+    Directive*
     'COMPOOL' CompoolName ';'
      CompoolDeclarationList
   'TERM'                     -> CompoolModule          {cons("CompoolModule")}
@@ -489,7 +489,7 @@ context-free syntax
 %% 1.2.2 PROCEDURE MODULES
 %%
   'START'
-    CompoolDirective*
+    Directive*
     DeclarationList
     NonNestedSubroutineList
   'TERM'                     -> ProcedureModule       {cons("ProcedureModule")}
@@ -503,7 +503,7 @@ context-free syntax
 %% 1.2.3 MAIN PROGRAM MODULES
 %%
   'START'
-    CompoolDirective*
+    Directive*
     DeclarationList
   'PROGRAM'
     ProgramName ';'
@@ -589,24 +589,11 @@ context-free syntax
     FractionSpecifier
      ')'                     -> FixedMachineParameter    {cons("MAXFIXED")}
 
-%% Temporary addition for parsing tests
-  'MAXFIXED'
-     '('
-    ScaleSpecifier
-     ')'                     -> FixedMachineParameter    {cons("MAXFIXEDVariant")}
-
   'MINFIXED'
      '('
     ScaleSpecifier ','
     FractionSpecifier
      ')'                     -> FixedMachineParameter    {cons("MINFIXED")}
-
-%% Temporary addition for parsing tests
-  'MINFIXED'
-     '('
-    ScaleSpecifier
-     ')'                     -> FixedMachineParameter    {cons("MINFIXEDVariant")}
-
 
 %%%%%%%%%%
 %% 2.0 DECLARATIONS
@@ -1078,7 +1065,7 @@ context-free syntax
     EntrySpecifier                -> TableTypeSpecifier    {cons("TableTypeSpecifier")}
   
   OptDimensionList
-    TableTypeName ';'             -> TableTypeSpecifier    {cons("TableTypeSpecifier")}
+    TableTypeName ';'             -> TableTypeSpecifier    {cons("TableTypeSpecifierName")}
 
   Name                            -> TableTypeName         {cons("Name")}
 
@@ -1665,7 +1652,7 @@ context-free syntax
   BitFunctionCall             -> BitPrimary
   '(' BitFormula  ')'         -> BitPrimary             {cons("BitPrimaryParens")}
   BitConversion
-  '('    Formula ')'          -> BitPrimary             {cons("BitConversionPrimary")}
+  '('    Formula ')'          -> BitPrimary             {cons("BitPrimaryConversion")}
 
   AndContinuation+            -> LogicalContinuation
   OrContinuation+             -> LogicalContinuation
@@ -1760,7 +1747,7 @@ context-free syntax
 %%CharacterFunctionCall       -> CharacterFormula
   '(' CharacterFormula ')'    -> CharacterFormula       {cons("CharacterFormulaParens")}
   CharacterConversion
-    '(' Formula ')'           -> CharacterFormula       {cons("CharacterConversionFormula")}
+    '(' Formula ')'           -> CharacterFormula       {cons("CharacterFormulaConversion")}
 
 %%Variable                    -> CharacterVariable
 
@@ -1778,7 +1765,7 @@ context-free syntax
 %%StatusFunctionCall          -> StatusFormula
   '(' StatusFormula ')'       -> StatusFormula      {cons("StatusFormulaParens")}
   StatusConversion
-    '(' Formula ')'           -> StatusFormula      {cons("StatusConversionFormula")}
+    '(' Formula ')'           -> StatusFormula      {cons("StatusFormulaConversion")}
 
 %%Variable                    -> StatusVariable
 
@@ -1796,7 +1783,7 @@ context-free syntax
 %%PointerFunctionCall         -> PointerFormula
   '(' PointerFormula ')'      -> PointerFormula     {cons("PointerFormulaParens")}
   PointerConversion
-    '(' Formula ')'           -> PointerFormula     {cons("PointerConversionFormula")}
+    '(' Formula ')'           -> PointerFormula     {cons("PointerFormulaConversion")}
 
 %%Variable                    -> PointerVariable
 
@@ -1812,7 +1799,7 @@ context-free syntax
   NamedTableConstant          -> TableFormula       {cons("NamedTableConstant")}
   '(' TableFormula ')'        -> TableFormula       {cons("TableFormulaParens")}
   TableConversion
-    '(' Formula ')'           -> TableFormula       {cons("TableConversionFormula")}
+    '(' Formula ')'           -> TableFormula       {cons("TableFormulaConversion")}
 
   Variable                    -> TableVariable
 
