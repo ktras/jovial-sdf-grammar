@@ -1066,7 +1066,7 @@ context-free syntax
     EntrySpecifier                -> TableTypeSpecifier    {cons("TableTypeSpecifier")}
   
   OptDimensionList
-    TableTypeName ';'             -> TableTypeSpecifier    {cons("TableTypeSpecifierName")}
+    TableTypeName ';'             -> TableTypeSpecifier    {cons("TableTypeSpecifierName"), prefer}
 
   Name                            -> TableTypeName         {cons("Name")}
 
