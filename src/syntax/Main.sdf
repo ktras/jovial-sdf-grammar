@@ -1604,6 +1604,11 @@ context-free syntax
   FixedConversion
     '(' Formula         ')'   -> NumericPrimary         {cons("NumericPrimary")}
 
+%% Added new production of NumericPrimary to allow ControlLetter through
+%% Orginally ControlLetter -> NumericConstant -> NamedNumericConstant -> NumericPrimary
+%% However NamedNumericConstant was rejected because of ambiguity
+  ControlLetter               -> NumericPrimary      {cons("ControlLetter")}
+
   IntegerMachineParameter     -> NumericMachineParameter
   FloatingMachineParameter    -> NumericMachineParameter
   FixedMachineParameter       -> NumericMachineParameter

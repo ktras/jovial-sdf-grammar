@@ -129,7 +129,7 @@ Module(
                               BitPrimaryParens(
                                 BitFormula(
                                   RelationalExpression(
-                                    GeneralFormula(ControlLetter("I"))
+                                    NumericFormula(no-sign(), ControlLetter("I"))
                                   , LessOrEqualOp()
                                   , NumericFormula(no-sign(), NumericVariable("ITEM'1"))
                                   )
@@ -148,7 +148,11 @@ Module(
                           LabelList([])
                         , AssignmentStatement(
                             VariableList(
-                              [TableItem("ITEM'2", Subscript([GeneralFormula(ControlLetter("I"))]), no-table-dereference())]
+                              [TableItem(
+                                 "ITEM'2"
+                               , Subscript([NumericFormula(no-sign(), ControlLetter("I"))])
+                               , no-table-dereference()
+                               )]
                             )
                           , NumericFormula(
                               no-sign()
@@ -165,7 +169,11 @@ Module(
                                             [ NumericFormula(
                                                 no-sign()
                                               , NumericVariable(
-                                                  TableItem("ITEM'4", Subscript([GeneralFormula(ControlLetter("I"))]), no-table-dereference())
+                                                  TableItem(
+                                                    "ITEM'4"
+                                                  , Subscript([NumericFormula(no-sign(), ControlLetter("I"))])
+                                                  , no-table-dereference()
+                                                  )
                                                 )
                                               )
                                             ]

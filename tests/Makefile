@@ -77,7 +77,8 @@ PASSING_TESTS = \
   issue_2102.jov                     \
   issue_2104.jov                     \
   issue_2105.jov                     \
-  issue_2106.jov
+  issue_2106.jov                     \
+  issue_2134.jov
 
 FAILING_TESTS =
 

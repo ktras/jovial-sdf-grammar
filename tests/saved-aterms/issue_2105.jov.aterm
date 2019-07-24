@@ -29,7 +29,7 @@ Module(
                               BitPrimaryParens(
                                 BitFormula(
                                   RelationalExpression(
-                                    GeneralFormula(ControlLetter("I"))
+                                    NumericFormula(no-sign(), ControlLetter("I"))
                                   , LessOrEqualOp()
                                   , NumericFormula(
                                       no-sign()
