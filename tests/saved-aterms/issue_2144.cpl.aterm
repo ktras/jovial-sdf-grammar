@@ -1,0 +1,45 @@
+Module(
+  CompoolModule(
+    []
+  , Name("COMPOOL'1")
+  , DeclarationList(
+      [ CompoundDef(
+          [ItemDeclaration("ITEM'1", no-allocation-specifier(), FloatingItemDescription(no-round-or-truncate(), no-precision()), no-item-preset())]
+        )
+      , CompoundDef(
+          [ItemDeclaration("ITEM'2", no-allocation-specifier(), FloatingItemDescription(no-round-or-truncate(), no-precision()), no-item-preset())]
+        )
+      , SimpleDef(
+          TableDeclaration(
+            "TABLE'1"
+          , no-allocation-specifier()
+          , DimensionList(
+              [ Dimension(
+                  LowerBoundOption(NumericFormula(no-sign(), IntegerLiteral("0")))
+                , NumericFormula(no-sign(), IntegerLiteral("10"))
+                )
+              ]
+            )
+          , TableDescription(
+              no-structure-specifier()
+            , OrdinaryEntrySpecifierBody(
+                no-packing-specifier()
+              , no-table-preset()
+              , OrdinaryTableBody(
+                  []
+                , [ OrdinaryTableItemDeclaration(
+                      "ITEM'3"
+                    , BitItemDescription("B", ItemSize(NumericFormula(no-sign(), IntegerLiteral("1"))))
+                    , no-packing-specifier()
+                    , no-table-preset()
+                    )
+                  ]
+                )
+              )
+            )
+          )
+        )
+      ]
+    )
+  )
+)
