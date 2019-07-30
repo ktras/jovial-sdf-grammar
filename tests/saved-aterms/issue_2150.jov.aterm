@@ -1,0 +1,52 @@
+Module(
+  ProcedureModule(
+    []
+  , DeclarationList(
+      [ ItemTypeDeclaration(
+          Name("TYPE'1")
+        , BitItemDescription("B", ItemSize(NumericFormula(no-sign(), IntegerLiteral("32"))))
+        )
+      , ItemDeclaration(
+          "POINTER'1"
+        , no-allocation-specifier()
+        , PointerItemDescription("P", TypeName(Name("TYPE'1")))
+        , no-item-preset()
+        )
+      , ItemDeclaration(
+          "BIT'POS'1"
+        , no-allocation-specifier()
+        , IntegerItemDescriptionU("U", no-round-or-truncate(), ItemSize(NumericFormula(no-sign(), IntegerLiteral("8"))))
+        , no-item-preset()
+        )
+      ]
+    )
+  , NonNestedSubroutineList(
+      [ NonNestedSubroutine(
+          ProcedureDefinition(
+            ProcedureHeading(Name("PROC'1"), RENT(), no-formal-parameter-list())
+          , SubroutineBody(
+              DeclarationList([])
+            , [ SimpleStatement(
+                  LabelList([])
+                , AssignmentStatement(
+                    VariableList(
+                      [ BitFunctionVariable(
+                          BitFormula(BitPrimaryParens(BitVariableFormula(Dereference("POINTER'1"))), no-logical-continuation())
+                        , Fbit(NumericFormula(no-sign(), NumericVariable("BIT'POS'1")))
+                        , Nbit(NumericFormula(no-sign(), IntegerLiteral("1")))
+                        )
+                      ]
+                    )
+                  , BitFormula(BitLiteral("1", ["1"]), no-logical-continuation())
+                  )
+                )
+              ]
+            , []
+            , LabelList([])
+            )
+          )
+        )
+      ]
+    )
+  )
+)

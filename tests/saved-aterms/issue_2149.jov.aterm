@@ -1,0 +1,73 @@
+Module(
+  ProcedureModule(
+    []
+  , DeclarationList(
+      [ ItemDeclaration(
+          "ITEM'1"
+        , no-allocation-specifier()
+        , BitItemDescription("B", ItemSize(NumericFormula(no-sign(), IntegerLiteral("5"))))
+        , no-item-preset()
+        )
+      ]
+    )
+  , NonNestedSubroutineList(
+      [ NonNestedSubroutine(
+          ProcedureDefinition(
+            ProcedureHeading(Name("PROC'1"), RENT(), no-formal-parameter-list())
+          , SubroutineBody(
+              DeclarationList([])
+            , [ SimpleStatement(
+                  ForStatement(
+                    LabelList([])
+                  , ForClause(
+                      "I"
+                    , ControlClause(
+                        NumericFormula(no-sign(), IntegerLiteral("1"))
+                      , Continuation(
+                          ByPhrase(NumericFormula(no-sign(), IntegerLiteral("1")))
+                        , WhilePhrase(
+                            BitFormula(
+                              RelationalExpression(
+                                NumericFormula(no-sign(), ControlLetter("I"))
+                              , LessOrEqualOp()
+                              , NumericFormula(no-sign(), IntegerLiteral("5"))
+                              )
+                            , no-logical-continuation()
+                            )
+                          )
+                        )
+                      )
+                    )
+                  , CompoundStatement(
+                      LabelList([])
+                    , [ SimpleStatement(
+                          LabelList([])
+                        , AssignmentStatement(
+                            VariableList(
+                              [ BitFunctionVariable(
+                                  BitVariable("ITEM'1")
+                                , Fbit(
+                                    NumericFormula(NumericFormula(no-sign(), ControlLetter("I")), SubtractOp(), IntegerLiteral("1"))
+                                  )
+                                , Nbit(NumericFormula(no-sign(), IntegerLiteral("1")))
+                                )
+                              ]
+                            )
+                          , BitFormula(True(), no-logical-continuation())
+                          )
+                        )
+                      ]
+                    , LabelList([])
+                    )
+                  )
+                )
+              ]
+            , []
+            , LabelList([])
+            )
+          )
+        )
+      ]
+    )
+  )
+)

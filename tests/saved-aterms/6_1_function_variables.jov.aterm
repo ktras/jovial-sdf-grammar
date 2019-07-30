@@ -11,10 +11,12 @@ Module(
             VariableList(["ivar"])
           , NumericFormula(
               no-sign()
-            , BitFunction(
-                BitVariableFormula("ivar")
-              , Fbit(NumericFormula(no-sign(), IntegerLiteral("2")))
-              , Fbit(NumericFormula(no-sign(), IntegerLiteral("38")))
+            , NumericVariable(
+                BitFunctionVariable(
+                  BitVariable("ivar")
+                , Fbit(NumericFormula(no-sign(), IntegerLiteral("2")))
+                , Nbit(NumericFormula(no-sign(), IntegerLiteral("38")))
+                )
               )
             )
           )
@@ -29,7 +31,7 @@ Module(
                 ByteFunctionVariable(
                   "ivar"
                 , Fbit(NumericFormula(no-sign(), IntegerLiteral("2")))
-                , Fbit(NumericFormula(no-sign(), IntegerLiteral("38")))
+                , Nbit(NumericFormula(no-sign(), IntegerLiteral("38")))
                 )
               )
             )

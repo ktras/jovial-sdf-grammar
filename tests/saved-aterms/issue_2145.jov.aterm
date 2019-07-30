@@ -1,0 +1,110 @@
+Module(
+  ProcedureModule(
+    []
+  , DeclarationList(
+      [ TableTypeDeclaration(
+          Name("TABLE'TYPE'1")
+        , TableTypeSpecifier(
+            DimensionList(
+              [ Dimension(
+                  LowerBoundOption(NumericFormula(no-sign(), IntegerLiteral("1")))
+                , NumericFormula(no-sign(), IntegerLiteral("10"))
+                )
+              ]
+            )
+          , no-structure-specifier()
+          , no-like-option()
+          , OrdinaryEntrySpecifierBody(
+              no-packing-specifier()
+            , no-table-preset()
+            , OrdinaryTableBody(
+                []
+              , [OrdinaryTableItemDeclaration("TABLE'ITEM'2", FloatingItemDescription(no-round-or-truncate(), no-precision()), no-packing-specifier(), no-table-preset())]
+              )
+            )
+          )
+        )
+      , ItemDeclaration(
+          "POINTER'1"
+        , no-allocation-specifier()
+        , PointerItemDescription("P", TypeName(Name("TABLE'TYPE'1")))
+        , no-item-preset()
+        )
+      , ItemDeclaration("ITEM'1", no-allocation-specifier(), FloatingItemDescription(no-round-or-truncate(), no-precision()), no-item-preset())
+      ]
+    )
+  , NonNestedSubroutineList(
+      [ NonNestedSubroutine(
+          ProcedureDefinition(
+            ProcedureHeading(
+              Name("PROC'1")
+            , RENT()
+            , FormalParameterList([FormalInputParameter(no-parameter-binding(), Name("PARM'1"))], no-formal-output-parameters())
+            )
+          , SubroutineBody(
+              DeclarationList(
+                [ ItemDeclaration(
+                    "PARM'1"
+                  , no-allocation-specifier()
+                  , IntegerItemDescriptionU("U", no-round-or-truncate(), ItemSize(NumericFormula(no-sign(), IntegerLiteral("2"))))
+                  , no-item-preset()
+                  )
+                ]
+              )
+            , [ SimpleStatement(
+                  ForStatement(
+                    LabelList([])
+                  , ForClause(
+                      "I"
+                    , ControlClause(
+                        NumericFormula(no-sign(), IntegerLiteral("1"))
+                      , Continuation(
+                          ByPhrase(NumericFormula(no-sign(), IntegerLiteral("1")))
+                        , WhilePhrase(
+                            BitFormula(
+                              RelationalExpression(
+                                NumericFormula(no-sign(), ControlLetter("I"))
+                              , LessOrEqualOp()
+                              , NumericFormula(no-sign(), IntegerLiteral("10"))
+                              )
+                            , no-logical-continuation()
+                            )
+                          )
+                        )
+                      )
+                    )
+                  , CompoundStatement(
+                      LabelList([])
+                    , [ SimpleStatement(
+                          LabelList([])
+                        , AssignmentStatement(
+                            VariableList(["ITEM'1"])
+                          , NumericFormula(
+                              no-sign()
+                            , NumericVariable(
+                                TableItem(
+                                  "TABLE'ITEM'2"
+                                , Subscript(
+                                    [NumericFormula(NumericFormula(no-sign(), NumericVariable("PARM1")), AddOp(), ControlLetter("I"))]
+                                  )
+                                , Dereference("POINTER'1")
+                                )
+                              )
+                            )
+                          )
+                        )
+                      ]
+                    , LabelList([])
+                    )
+                  )
+                )
+              ]
+            , []
+            , LabelList([])
+            )
+          )
+        )
+      ]
+    )
+  )
+)

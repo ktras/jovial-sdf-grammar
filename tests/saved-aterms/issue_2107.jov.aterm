@@ -1,0 +1,45 @@
+Module(
+  ProcedureModule(
+    []
+  , DeclarationList([])
+  , NonNestedSubroutineList(
+      [ NonNestedSubroutine(
+          ProcedureDefinition(
+            ProcedureHeading(Name("PROC'1"), no-subroutine-attribute(), no-formal-parameter-list())
+          , SubroutineBody(
+              DeclarationList([])
+            , [ SimpleStatement(
+                  ForStatement(
+                    LabelList([])
+                  , ForClause(
+                      "I"
+                    , ControlClause(
+                        NumericFormula(no-sign(), IntegerLiteral("0"))
+                      , Continuation(
+                          ByPhrase(NumericFormula(no-sign(), IntegerLiteral("1")))
+                        , WhilePhrase(
+                            BitFormula(
+                              RelationalExpression(
+                                NumericFormula(no-sign(), ControlLetter("I"))
+                              , LessOrEqualOp()
+                              , NumericFormula(no-sign(), IntegerLiteral("10"))
+                              )
+                            , no-logical-continuation()
+                            )
+                          )
+                        )
+                      )
+                    )
+                  , SimpleStatement(LabelList([]), NullBlockStatement(LabelList([])))
+                  )
+                )
+              ]
+            , []
+            , LabelList([])
+            )
+          )
+        )
+      ]
+    )
+  )
+)

@@ -1,0 +1,126 @@
+Module(
+  ProcedureModule(
+    []
+  , DeclarationList(
+      [ TableTypeDeclaration(
+          Name("TABLE'TYPE'1")
+        , TableTypeSpecifier(
+            no-dimension-list()
+          , no-structure-specifier()
+          , no-like-option()
+          , SpecifiedEntrySpecifierBody(
+              WordsPerEntryW(NumericFormula(no-sign(), IntegerLiteral("27")))
+            , no-table-preset()
+            , SpecifiedTableBody(
+                [ SpecifiedTableItemDeclaration(
+                    "TABLE'ITEM'2"
+                  , SpecifiedItemDescription(
+                      IntegerItemDescriptionU("U", no-round-or-truncate(), ItemSize(NumericFormula(no-sign(), IntegerLiteral("6"))))
+                    , LocationSpecifier(
+                        NumericFormula(no-sign(), IntegerLiteral("0"))
+                      , NumericFormula(no-sign(), IntegerLiteral("21"))
+                      )
+                    )
+                  , no-table-preset()
+                  )
+                ]
+              )
+            )
+          )
+        )
+      , SimpleDef(
+          TableDeclaration(
+            "TABLE'1"
+          , no-allocation-specifier()
+          , DimensionList(
+              [ Dimension(
+                  LowerBoundOption(NumericFormula(no-sign(), IntegerLiteral("0")))
+                , NumericFormula(no-sign(), IntegerLiteral("10"))
+                )
+              ]
+            )
+          , TableDescriptionName(Name("TABLE'TYPE'1"), no-table-preset())
+          )
+        )
+      ]
+    )
+  , NonNestedSubroutineList(
+      [ NonNestedSubroutine(
+          ProcedureDefinition(
+            ProcedureHeading(Name("PROC'1"), RENT(), no-formal-parameter-list())
+          , SubroutineBody(
+              DeclarationList(
+                [ItemDeclaration(
+                   "ITEM'1"
+                 , no-allocation-specifier()
+                 , PointerItemDescription("P", TypeName(Name("TABLE'TYPE'1")))
+                 , no-item-preset()
+                 )]
+              )
+            , [ SimpleStatement(
+                  ForStatement(
+                    LabelList([])
+                  , ForClause(
+                      "J"
+                    , ControlClause(
+                        NumericFormula(no-sign(), IntegerLiteral("1"))
+                      , Continuation(
+                          ByPhrase(NumericFormula(no-sign(), IntegerLiteral("1")))
+                        , WhilePhrase(
+                            BitFormula(
+                              RelationalExpression(
+                                NumericFormula(no-sign(), ControlLetter("J"))
+                              , LessOrEqualOp()
+                              , NumericFormula(no-sign(), IntegerLiteral("10"))
+                              )
+                            , no-logical-continuation()
+                            )
+                          )
+                        )
+                      )
+                    )
+                  , CompoundStatement(
+                      LabelList([])
+                    , [ SimpleStatement(
+                          LabelList([])
+                        , AssignmentStatement(
+                            VariableList([TableItem("TABLE'ITEM'2", no-subscript(), Dereference("ITEM'1"))])
+                          , NumericFormula(
+                              no-sign()
+                            , NumericVariable(
+                                TableItem(
+                                  "TABLE'ITEM'2"
+                                , no-subscript()
+                                , Dereference(
+                                    GeneralFormula(
+                                      LocFunction(
+                                        TableItem(
+                                          "TABLE'1"
+                                        , Subscript(
+                                            [NumericFormula(NumericFormula(no-sign(), ControlLetter("J")), SubtractOp(), IntegerLiteral("1"))]
+                                          )
+                                        , no-table-dereference()
+                                        )
+                                      )
+                                    )
+                                  )
+                                )
+                              )
+                            )
+                          )
+                        )
+                      ]
+                    , LabelList([])
+                    )
+                  )
+                )
+              ]
+            , []
+            , LabelList([])
+            )
+          )
+        )
+      ]
+    )
+  )
+)

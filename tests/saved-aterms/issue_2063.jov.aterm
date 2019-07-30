@@ -5,7 +5,7 @@ Module(
   , NonNestedSubroutineList(
       [ NonNestedSubroutine(
           ProcedureDefinition(
-            ProcedureHeading(Name("rent'1"), no-subroutine-attribute(), no-formal-parameter-list())
+            ProcedureHeading(Name("PROC'1"), RENT(), no-formal-parameter-list())
           , SubroutineBody(
               DeclarationList(
                 [ ItemDeclaration("VAR1", no-allocation-specifier(), BitItemDescription("B", no-item-size()), no-item-preset())

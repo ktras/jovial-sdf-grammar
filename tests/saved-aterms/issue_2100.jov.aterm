@@ -1,0 +1,40 @@
+Module(
+  ProcedureModule(
+    []
+  , DeclarationList(
+      [ ItemTypeDeclaration(
+          Name("TYPE'1")
+        , StatusItemDescription(
+            no-item-size()
+          , DefaultSublist([StatusConstant("ONE"), StatusConstant("TWO"), StatusConstant("THREE")])
+          )
+        )
+      , ItemDeclaration("ITEM'1", no-allocation-specifier(), Name("TYPE'1"), no-item-preset())
+      ]
+    )
+  , NonNestedSubroutineList(
+      [ NonNestedSubroutine(
+          ProcedureDefinition(
+            ProcedureHeading(Name("PROC'1"), RENT(), no-formal-parameter-list())
+          , SubroutineBody(
+              DeclarationList([])
+            , [ SimpleStatement(
+                  LabelList([])
+                , AssignmentStatement(
+                    VariableList(["ITEM'1"])
+                  , NumericFormula(
+                      no-sign()
+                    , NextFunction(GeneralFormula("ITEM'1"), NumericFormula(no-sign(), IntegerLiteral("1")))
+                    )
+                  )
+                )
+              ]
+            , []
+            , LabelList([])
+            )
+          )
+        )
+      ]
+    )
+  )
+)

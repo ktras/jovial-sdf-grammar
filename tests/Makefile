@@ -73,12 +73,19 @@ PASSING_TESTS = \
   8_4_comments.jov                   \
   issue_2063.jov                     \
   issue_2067.jov                     \
+  issue_2100.jov                     \
   issue_2101.jov                     \
   issue_2102.jov                     \
   issue_2104.jov                     \
   issue_2105.jov                     \
   issue_2106.jov                     \
-  issue_2134.jov
+  issue_2107.jov                     \
+  issue_2134.jov                     \
+  issue_2145.jov                     \
+  issue_2146.jov                     \
+  issue_2147.jov                     \
+  issue_2149.jov                     \
+  issue_2150.jov
 
 FAILING_TESTS =
 

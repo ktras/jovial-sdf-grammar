@@ -1885,7 +1885,7 @@ context-free syntax
 
   Dereference                 -> ItemDereference
 
-  Dereference                 -> TableDereference
+  Dereference                 -> TableDereference      {prefer}
 
   '@' PointerItemName         -> Dereference           {cons("Dereference")}
   '@' '(' GeneralFormula ')'  -> Dereference           {cons("Dereference")}
@@ -1901,6 +1901,9 @@ context-free syntax
   GeneralFormula              -> Index
 
   'BIT' '(' BitVariable ','
+            Fbit ',' Nbit ')' -> BitFunctionVariable   {cons("BitFunctionVariable"), prefer}
+
+  'BIT' '(' BitFormula ','
             Fbit ',' Nbit ')' -> BitFunctionVariable   {cons("BitFunctionVariable")}
 
 %%'BYTE'
@@ -1995,10 +1998,10 @@ context-free syntax
 %% 6.3.3 BIT FUNCTION
 %%
   'BIT' '(' BitFormula ','
-    Fbit ',' Nbit ')'         -> BitFunction          {cons("BitFunction"), prefer}
+    Fbit ',' Nbit ')'         -> BitFunction          {cons("BitFunction")}
 
   NumericFormula              -> Fbit                 {cons("Fbit")}
-  NumericFormula              -> Nbit                 {cons("Fbit")}
+  NumericFormula              -> Nbit                 {cons("Nbit")}
 
 %% 6.3.4 BYTE FUNCTION
 %%
