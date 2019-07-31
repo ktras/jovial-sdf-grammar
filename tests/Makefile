@@ -85,6 +85,7 @@ PASSING_TESTS = \
   issue_2145.jov                     \
   issue_2146.jov                     \
   issue_2147.jov                     \
+  issue_2148.jov                     \
   issue_2149.jov                     \
   issue_2150.jov
 

@@ -1,0 +1,64 @@
+Module(
+  ProcedureModule(
+    []
+  , DeclarationList(
+      [ ItemTypeDeclaration(
+          Name("TYPE'1")
+        , FloatingItemDescription(no-round-or-truncate(), NumericFormula(no-sign(), IntegerLiteral("32")))
+        )
+      , ItemDeclaration("ITEM'1", no-allocation-specifier(), IntegerItemDescription("S", no-round-or-truncate(), no-item-size()), no-item-preset())
+      , SimpleRef(
+          ProcedureDeclaration(
+            ProcedureHeading(
+              Name("PROC'1")
+            , RENT()
+            , FormalParameterList([FormalInputParameter(no-parameter-binding(), Name("PARM'1"))], no-formal-output-parameters())
+            )
+          , Declaration([ItemDeclaration("PARM'1", no-allocation-specifier(), Name("TYPE'1"), no-item-preset())])
+          )
+        )
+      ]
+    )
+  , NonNestedSubroutineList(
+      [ NonNestedSubroutine(
+          ProcedureDefinition(
+            ProcedureHeading(Name("PROC'2"), RENT(), no-formal-parameter-list())
+          , SubroutineBody(
+              DeclarationList([])
+            , [ SimpleStatement(
+                  ProcedureCallStatement(
+                    LabelList([])
+                  , Name("PROC'1")
+                  , ActualParameterList(
+                      [ NumericFormula(
+                          no-sign()
+                        , NumericTerm(
+                            NumericPrimaryParens(
+                              NumericFormula(
+                                no-sign()
+                              , NumericPrimary(
+                                  GeneralConversion(TypeName(Name("TYPE'1")))
+                                , NumericFormula(no-sign(), NumericVariable("ITEM'1"))
+                                )
+                              )
+                            )
+                          , MultiplyOp()
+                          , RealLiteralFF(FractionalForm("1", "0"), no-exponent())
+                          )
+                        )
+                      ]
+                    , no-actual-output-parameters()
+                    )
+                  , no-abort-phrase()
+                  )
+                )
+              ]
+            , []
+            , LabelList([])
+            )
+          )
+        )
+      ]
+    )
+  )
+)
