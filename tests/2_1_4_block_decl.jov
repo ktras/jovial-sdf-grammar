@@ -10,7 +10,7 @@ BEGIN
     BEGIN
     END
 
-  BLOCK block3 type3;
+  BLOCK block3 STATIC type3;
 
   BLOCK block4 type4 = 12;
 
