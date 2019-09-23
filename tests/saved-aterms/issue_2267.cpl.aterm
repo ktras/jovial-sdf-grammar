@@ -1,0 +1,24 @@
+Module(
+  CompoolModule(
+    []
+  , Name("COMPOOL'BLOCK")
+  , DeclarationList(
+      [ SimpleDef(
+          BlockDeclarationBodyPart(
+            Name("a'block")
+          , STATIC()
+          , BlockBodyPart(
+              []
+            , [ ConstantDeclaration(
+                  "an'item"
+                , IntegerItemDescriptionU("U", no-round-or-truncate(), ItemSize(NumericFormula(no-sign(), IntegerLiteral("3"))))
+                , ItemPreset(NumericFormula(no-sign(), IntegerLiteral("3")))
+                )
+              ]
+            )
+          )
+        )
+      ]
+    )
+  )
+)
