@@ -1,0 +1,23 @@
+START
+
+TYPE block'type
+ BLOCK
+  BEGIN
+    ITEM item'1 U;
+    ITEM item'2 U;
+  END
+
+PROGRAM main;
+BEGIN
+
+  BLOCK block'1 block'type;
+  ITEM ptr P block'type;
+
+  ptr = LOC(block'1);
+
+  item'1 @ ptr = 1;
+  item'2 @ ptr = 2;
+
+END
+
+TERM

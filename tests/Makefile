@@ -2,6 +2,7 @@ SGLRI = sglri
 SYNTAX = ../src/syntax
 
 PASSING_TESTS = \
+  1_2_1_compool-module_a.jov         \
   1_2_2_non-nested-subroutine_a.jov  \
   1_2_2_non-nested-subroutine_b.jov  \
   1_2_2_procedure-module_a.jov       \
@@ -32,6 +33,8 @@ PASSING_TESTS = \
   2_1_1_6_status_type_desc.jov       \
   2_1_2_1_table_dimension_list_a.jov \
   2_1_2_1_table_dimension_list_b.jov \
+  2_1_4_block_decl_a.jov             \
+  2_1_4_block_decl_b.jov             \
   2_3_stmt_name_decl.jov             \
   4_0_compound_stmt.jov              \
   4_2_loop_stmt_while_a.jov          \

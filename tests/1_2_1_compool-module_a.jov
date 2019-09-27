@@ -1,0 +1,16 @@
+START
+
+COMPOOL table'with'typename;
+
+TYPE type'name STATUS(V(CHECK));
+
+CONSTANT ITEM i1 U = 3;
+CONSTANT ITEM i2 U = 4;
+
+DEF TABLE table'name (1:i1, 0:i2);
+  BEGIN
+    ITEM item'i1 B 32;
+    ITEM item'i2 type'name;
+  END
+
+TERM

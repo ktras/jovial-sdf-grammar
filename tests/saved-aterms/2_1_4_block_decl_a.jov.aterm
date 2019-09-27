@@ -1,0 +1,42 @@
+Module(
+  MainProgramModule(
+    []
+  , DeclarationList([])
+  , Name("testBlockDecl")
+  , ProgramBody(
+      DeclarationList(
+        [ BlockDeclarationBodyPart(
+            Name("block1")
+          , STATIC()
+          , BlockBodyPart(
+              []
+            , [ ItemDeclaration(
+                  "ivar"
+                , no-allocation-specifier()
+                , IntegerItemDescriptionU("U", no-round-or-truncate(), no-item-size())
+                , ItemPreset(NumericFormula(no-sign(), IntegerLiteral("13")))
+                )
+              ]
+            )
+          )
+        , BlockDeclarationBodyPart(Name("block2"), no-allocation-specifier(), NullDeclaration())
+        , BlockDeclarationTypeName(Name("block3"), STATIC(), Name("type3"), no-block-preset())
+        , BlockDeclarationTypeName(
+            Name("block4")
+          , no-allocation-specifier()
+          , Name("type4")
+          , BlockPreset([NumericFormula(no-sign(), IntegerLiteral("12"))])
+          )
+        ]
+      )
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ivar"]), NumericFormula(no-sign(), IntegerLiteral("8")))
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

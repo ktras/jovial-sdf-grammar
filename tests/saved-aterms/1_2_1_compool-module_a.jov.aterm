@@ -1,0 +1,58 @@
+Module(
+  CompoolModule(
+    []
+  , Name("table'with'typename")
+  , DeclarationList(
+      [ ItemTypeDeclaration(
+          Name("type'name")
+        , StatusItemDescription(no-item-size(), DefaultSublist([StatusConstant("CHECK")]))
+        )
+      , ConstantDeclaration(
+          "i1"
+        , IntegerItemDescriptionU("U", no-round-or-truncate(), no-item-size())
+        , ItemPreset(NumericFormula(no-sign(), IntegerLiteral("3")))
+        )
+      , ConstantDeclaration(
+          "i2"
+        , IntegerItemDescriptionU("U", no-round-or-truncate(), no-item-size())
+        , ItemPreset(NumericFormula(no-sign(), IntegerLiteral("4")))
+        )
+      , SimpleDef(
+          TableDeclaration(
+            "table'name"
+          , no-allocation-specifier()
+          , DimensionList(
+              [ Dimension(
+                  LowerBoundOption(NumericFormula(no-sign(), IntegerLiteral("1")))
+                , NumericFormula(no-sign(), NumericVariable("i1"))
+                )
+              , Dimension(
+                  LowerBoundOption(NumericFormula(no-sign(), IntegerLiteral("0")))
+                , NumericFormula(no-sign(), NumericVariable("i2"))
+                )
+              ]
+            )
+          , TableDescription(
+              no-structure-specifier()
+            , OrdinaryEntrySpecifierBody(
+                no-packing-specifier()
+              , no-table-preset()
+              , OrdinaryTableBody(
+                  []
+                , [ OrdinaryTableItemDeclaration(
+                      "item'i1"
+                    , BitItemDescription("B", ItemSize(NumericFormula(no-sign(), IntegerLiteral("32"))))
+                    , no-packing-specifier()
+                    , no-table-preset()
+                    )
+                  , OrdinaryTableItemDeclaration("item'i2", Name("type'name"), no-packing-specifier(), no-table-preset())
+                  ]
+                )
+              )
+            )
+          )
+        )
+      ]
+    )
+  )
+)

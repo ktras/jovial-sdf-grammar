@@ -1,0 +1,52 @@
+Module(
+  MainProgramModule(
+    []
+  , DeclarationList(
+      [ BlockTypeDeclaration(
+          Name("block'type")
+        , BlockBodyPart(
+            []
+          , [ ItemDeclaration("item'1", no-allocation-specifier(), IntegerItemDescriptionU("U", no-round-or-truncate(), no-item-size()), no-item-preset())
+            , ItemDeclaration("item'2", no-allocation-specifier(), IntegerItemDescriptionU("U", no-round-or-truncate(), no-item-size()), no-item-preset())
+            ]
+          )
+        )
+      ]
+    )
+  , Name("main")
+  , ProgramBody(
+      DeclarationList(
+        [ BlockDeclarationTypeName(Name("block'1"), no-allocation-specifier(), Name("block'type"), no-block-preset())
+        , ItemDeclaration(
+            "ptr"
+          , no-allocation-specifier()
+          , PointerItemDescription("P", TypeName(Name("block'type")))
+          , no-item-preset()
+          )
+        ]
+      )
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["ptr"]), NumericFormula(no-sign(), LocFunction("block'1")))
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList([TableItem("item'1", no-subscript(), Dereference("ptr"))])
+          , NumericFormula(no-sign(), IntegerLiteral("1"))
+          )
+        )
+      , SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(
+            VariableList([TableItem("item'2", no-subscript(), Dereference("ptr"))])
+          , NumericFormula(no-sign(), IntegerLiteral("2"))
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)
