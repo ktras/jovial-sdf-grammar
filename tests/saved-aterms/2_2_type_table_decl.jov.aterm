@@ -1,0 +1,253 @@
+Module(
+  MainProgramModule(
+    []
+  , DeclarationList([])
+  , Name("tables'and'pointers")
+  , ProgramBody(
+      DeclarationList(
+        [ TableDeclaration(
+            "table'1"
+          , no-allocation-specifier()
+          , DimensionList(
+              [ Dimension(
+                  LowerBoundOption(NumericFormula(no-sign(), IntegerLiteral("0")))
+                , NumericFormula(no-sign(), IntegerLiteral("10"))
+                )
+              , Dimension(
+                  LowerBoundOption(NumericFormula(no-sign(), IntegerLiteral("0")))
+                , NumericFormula(no-sign(), IntegerLiteral("10"))
+                )
+              ]
+            )
+          , TableDescription(
+              no-structure-specifier()
+            , SpecifiedEntrySpecifierBody(
+                WordsPerEntryW(NumericFormula(no-sign(), IntegerLiteral("27")))
+              , no-table-preset()
+              , SpecifiedTableBody(
+                  [ SpecifiedTableItemDeclaration(
+                      "item'B"
+                    , SpecifiedItemDescription(
+                        BitItemDescription("B", ItemSize(NumericFormula(no-sign(), IntegerLiteral("31"))))
+                      , LocationSpecifier(
+                          NumericFormula(no-sign(), IntegerLiteral("0"))
+                        , NumericFormula(no-sign(), IntegerLiteral("21"))
+                        )
+                      )
+                    , no-table-preset()
+                    )
+                  , SpecifiedTableItemDeclaration(
+                      "item'U"
+                    , SpecifiedItemDescription(
+                        IntegerItemDescriptionU("U", no-round-or-truncate(), no-item-size())
+                      , LocationSpecifier(
+                          NumericFormula(no-sign(), IntegerLiteral("0"))
+                        , NumericFormula(no-sign(), IntegerLiteral("0"))
+                        )
+                      )
+                    , no-table-preset()
+                    )
+                  ]
+                )
+              )
+            )
+          )
+        , TableTypeDeclaration(
+            Name("table'type'2")
+          , TableTypeSpecifier(
+              no-dimension-list()
+            , no-structure-specifier()
+            , no-like-option()
+            , OrdinaryEntrySpecifierBody(
+                no-packing-specifier()
+              , no-table-preset()
+              , OrdinaryTableBody(
+                  []
+                , [ OrdinaryTableItemDeclaration("item'num", IntegerItemDescriptionU("U", no-round-or-truncate(), no-item-size()), no-packing-specifier(), no-table-preset())
+                  , OrdinaryTableItemDeclaration("item'chum", IntegerItemDescriptionU("U", no-round-or-truncate(), no-item-size()), no-packing-specifier(), no-table-preset())
+                  ]
+                )
+              )
+            )
+          )
+        , TableDeclaration(
+            "table'2a"
+          , no-allocation-specifier()
+          , DimensionList([Dimension(no-lower-bound-option(), NumericFormula(no-sign(), IntegerLiteral("3")))])
+          , TableDescriptionName(Name("table'type'2"), no-table-preset())
+          )
+        , TableDeclaration("table'2b", no-allocation-specifier(), no-dimension-list(), TableDescriptionName(Name("table'type'2"), no-table-preset()))
+        , ItemDeclaration(
+            "table'ptr"
+          , no-allocation-specifier()
+          , PointerItemDescription("P", TypeName(Name("table'type'2")))
+          , ItemPreset(
+              LocFunction(
+                TableItem(
+                  "table'2a"
+                , Subscript([NumericFormula(no-sign(), IntegerLiteral("1"))])
+                , no-table-dereference()
+                )
+              )
+            )
+          )
+        ]
+      )
+    , [ SimpleStatement(
+          LabelList([])
+        , AssignmentStatement(VariableList(["table'ptr"]), NumericFormula(no-sign(), LocFunction("table'2b")))
+        )
+      , SimpleStatement(
+          ForStatement(
+            LabelList([])
+          , ForClause(
+              "J"
+            , ControlClause(
+                NumericFormula(no-sign(), IntegerLiteral("1"))
+              , Continuation(
+                  ByPhrase(NumericFormula(no-sign(), IntegerLiteral("1")))
+                , WhilePhrase(
+                    BitFormula(
+                      RelationalExpression(
+                        NumericFormula(no-sign(), ControlLetter("J"))
+                      , LessOrEqualOp()
+                      , NumericFormula(no-sign(), IntegerLiteral("10"))
+                      )
+                    , no-logical-continuation()
+                    )
+                  )
+                )
+              )
+            )
+          , CompoundStatement(
+              LabelList([])
+            , [ SimpleStatement(
+                  IfStatement(
+                    LabelList([])
+                  , BitFormula(
+                      BitPrimaryParens(
+                        BitFormula(
+                          RelationalExpression(
+                            NumericFormula(
+                              no-sign()
+                            , NumericVariable(
+                                TableItem(
+                                  "item'B"
+                                , Subscript(
+                                    [NumericFormula(no-sign(), ControlLetter("J")), NumericFormula(no-sign(), IntegerLiteral("0"))]
+                                  )
+                                , no-table-dereference()
+                                )
+                              )
+                            )
+                          , NotEqualOp()
+                          , BitFormula(
+                              BitLiteral(
+                                "4"
+                              , ["0", "0", "0", "0", "0", "0", "0", "0"]
+                              )
+                            , no-logical-continuation()
+                            )
+                          )
+                        , no-logical-continuation()
+                        )
+                      )
+                    , no-logical-continuation()
+                    )
+                  , SimpleStatement(LabelList([]), NullStatement())
+                  , no-else-clause()
+                  )
+                )
+              , SimpleStatement(
+                  IfStatement(
+                    LabelList([])
+                  , BitFormula(
+                      BitPrimaryParens(
+                        BitFormula(
+                          RelationalExpression(
+                            NumericFormula(
+                              no-sign()
+                            , NumericVariable(
+                                TableItem(
+                                  "item'U"
+                                , Subscript(
+                                    [NumericFormula(no-sign(), ControlLetter("J")), NumericFormula(no-sign(), IntegerLiteral("1"))]
+                                  )
+                                , no-table-dereference()
+                                )
+                              )
+                            )
+                          , EqualityOp()
+                          , NumericFormula(no-sign(), NumericVariable(TableItem("item'num", no-subscript(), Dereference("table'ptr"))))
+                          )
+                        , no-logical-continuation()
+                        )
+                      )
+                    , no-logical-continuation()
+                    )
+                  , SimpleStatement(LabelList([]), NullStatement())
+                  , no-else-clause()
+                  )
+                )
+              , SimpleStatement(
+                  IfStatement(
+                    LabelList([])
+                  , BitFormula(
+                      BitPrimaryParens(
+                        BitFormula(
+                          RelationalExpression(
+                            NumericFormula(
+                              no-sign()
+                            , NumericVariable(
+                                TableItem(
+                                  "item'U"
+                                , Subscript(
+                                    [NumericFormula(no-sign(), ControlLetter("J")), NumericFormula(no-sign(), IntegerLiteral("1"))]
+                                  )
+                                , no-table-dereference()
+                                )
+                              )
+                            )
+                          , EqualityOp()
+                          , NumericFormula(
+                              no-sign()
+                            , NumericVariable(
+                                TableItem(
+                                  "item'num"
+                                , no-subscript()
+                                , Dereference(
+                                    GeneralFormula(
+                                      LocFunction(
+                                        TableItem(
+                                          "table'2a"
+                                        , Subscript([NumericFormula(no-sign(), IntegerLiteral("1"))])
+                                        , no-table-dereference()
+                                        )
+                                      )
+                                    )
+                                  )
+                                )
+                              )
+                            )
+                          )
+                        , no-logical-continuation()
+                        )
+                      )
+                    , no-logical-continuation()
+                    )
+                  , SimpleStatement(LabelList([]), NullStatement())
+                  , no-else-clause()
+                  )
+                )
+              ]
+            , LabelList([])
+            )
+          )
+        )
+      ]
+    , []
+    , LabelList([])
+    )
+  , NonNestedSubroutineList([])
+  )
+)

@@ -35,6 +35,7 @@ PASSING_TESTS = \
   2_1_2_1_table_dimension_list_b.jov \
   2_1_4_block_decl_a.jov             \
   2_1_4_block_decl_b.jov             \
+  2_2_type_table_decl.jov            \
   2_3_stmt_name_decl.jov             \
   4_0_compound_stmt.jov              \
   4_2_loop_stmt_while_a.jov          \
