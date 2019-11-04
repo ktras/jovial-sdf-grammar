@@ -9,7 +9,6 @@ exports
     Name                       %% 8.2.1  
     ReservedWord               %% 8.2.2
     BeadSize Bead              %% 8.3.2
-    Whitespace                 %% 8.5
 
     SignedTypeDesc             %% 2.1.1.1
     UnsignedTypeDesc           %% 2.1.1.1
@@ -47,7 +46,7 @@ exports
 %% 2.4 DEFINE DECLARATIONS
 %%%%%%%%%%
 
-  [\?] (Mark | Digit | Letter | Whitespace)*  [\?]  -> DefString
+  [\?] (Mark | Digit | Letter | [\n\r])*  [\?]  -> DefString
 
 
 %%%%%%%%%%
@@ -239,7 +238,6 @@ exports
 %% 8.5 BLANKS
 %%
   [\ \t\n\r]                -> LAYOUT
-  [\ \t\n\r]                -> Whitespace
 
 
   lexical restrictions
