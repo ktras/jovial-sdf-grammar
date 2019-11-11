@@ -943,12 +943,12 @@ context-free syntax
   'CONSTANT' 'ITEM'
     ConstantItemName
     ItemTypeDescription
-    ItemPreset ';'               -> ConstantDeclaration      {cons("ConstantDeclaration")}
+    ItemPreset ';'               -> ConstantDeclaration      {cons("ConstantItemDeclaration")}
 
   'CONSTANT' 'TABLE'
     ConstantTableName
     OptDimensionList
-    TableDescription             -> ConstantDeclaration      {cons("ConstantDeclaration")}
+    TableDescription             -> ConstantDeclaration      {cons("ConstantTableDeclaration")}
 
   Name                           -> ConstantItemName
   Name                           -> ConstantTableName
