@@ -40,11 +40,11 @@ Module(
             VariableList(["ivar"])
           , NumericFormula(
               no-sign()
-            , NumericVariable(
-                TableItem(
-                  "aTable"
-                , Subscript([StatusFormula(StatusConstant("RED")), StatusFormula(StatusConstant("GREEN"))])
-                , no-table-dereference()
+            , UserDefinedFunctionCall(
+                Name("aTable")
+              , ActualParameterList(
+                  [StatusFormula(StatusConstant("RED")), StatusFormula(StatusConstant("GREEN"))]
+                , no-actual-output-parameters()
                 )
               )
             )

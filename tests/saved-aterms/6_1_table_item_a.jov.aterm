@@ -27,13 +27,11 @@ Module(
             VariableList(["ivar"])
           , NumericFormula(
               no-sign()
-            , NumericVariable(
-                TableItem(
-                  "array"
-                , Subscript(
-                    [NumericFormula(no-sign(), IntegerLiteral("1")), NumericFormula(no-sign(), IntegerLiteral("3"))]
-                  )
-                , no-table-dereference()
+            , UserDefinedFunctionCall(
+                Name("array")
+              , ActualParameterList(
+                  [NumericFormula(no-sign(), IntegerLiteral("1")), NumericFormula(no-sign(), IntegerLiteral("3"))]
+                , no-actual-output-parameters()
                 )
               )
             )

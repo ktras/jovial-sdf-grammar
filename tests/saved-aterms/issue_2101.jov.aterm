@@ -2,7 +2,7 @@ Module(
   ProcedureModule(
     []
   , DeclarationList(
-      [ ConstantDeclaration(
+      [ ConstantItemDeclaration(
           "ITEM'1"
         , IntegerItemDescriptionU("U", no-round-or-truncate(), ItemSize(NumericFormula(no-sign(), IntegerLiteral("4"))))
         , ItemPreset(NumericFormula(no-sign(), IntegerLiteral("10")))
@@ -168,12 +168,9 @@ Module(
                                         , Subscript(
                                             [ NumericFormula(
                                                 no-sign()
-                                              , NumericVariable(
-                                                  TableItem(
-                                                    "ITEM'4"
-                                                  , Subscript([NumericFormula(no-sign(), ControlLetter("I"))])
-                                                  , no-table-dereference()
-                                                  )
+                                              , UserDefinedFunctionCall(
+                                                  Name("ITEM'4")
+                                                , ActualParameterList([NumericFormula(no-sign(), ControlLetter("I"))], no-actual-output-parameters())
                                                 )
                                               )
                                             ]

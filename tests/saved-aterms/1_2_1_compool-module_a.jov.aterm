@@ -7,12 +7,12 @@ Module(
           Name("type'name")
         , StatusItemDescription(no-item-size(), DefaultSublist([StatusConstant("CHECK")]))
         )
-      , ConstantDeclaration(
+      , ConstantItemDeclaration(
           "i1"
         , IntegerItemDescriptionU("U", no-round-or-truncate(), no-item-size())
         , ItemPreset(NumericFormula(no-sign(), IntegerLiteral("3")))
         )
-      , ConstantDeclaration(
+      , ConstantItemDeclaration(
           "i2"
         , IntegerItemDescriptionU("U", no-round-or-truncate(), no-item-size())
         , ItemPreset(NumericFormula(no-sign(), IntegerLiteral("4")))

@@ -13,12 +13,9 @@ Module(
             VariableList(["ivar"])
           , NumericFormula(
               no-sign()
-            , NumericVariable(
-                TableItem(
-                  "aBlock"
-                , Subscript([NumericFormula(no-sign(), IntegerLiteral("1"))])
-                , no-table-dereference()
-                )
+            , UserDefinedFunctionCall(
+                Name("aBlock")
+              , ActualParameterList([NumericFormula(no-sign(), IntegerLiteral("1"))], no-actual-output-parameters())
               )
             )
           )
@@ -97,11 +94,11 @@ Module(
             VariableList(["ivar"])
           , NumericFormula(
               no-sign()
-            , NumericVariable(
-                TableItem(
-                  "aBlock"
-                , Subscript([StatusFormula(StatusConstant("RED")), StatusFormula(StatusConstant("GREEN"))])
-                , no-table-dereference()
+            , UserDefinedFunctionCall(
+                Name("aBlock")
+              , ActualParameterList(
+                  [StatusFormula(StatusConstant("RED")), StatusFormula(StatusConstant("GREEN"))]
+                , no-actual-output-parameters()
                 )
               )
             )
@@ -113,17 +110,15 @@ Module(
             VariableList(["ivar"])
           , NumericFormula(
               no-sign()
-            , NumericVariable(
-                TableItem(
-                  "aBlock"
-                , Subscript(
-                    [ StatusFormula(StatusConstant("RED"))
-                    , StatusFormula(StatusConstant("GREEN"))
-                    , NumericFormula(no-sign(), NumericVariable("iv"))
-                    , NumericFormula(no-sign(), NumericVariable("jv"))
-                    ]
-                  )
-                , no-table-dereference()
+            , UserDefinedFunctionCall(
+                Name("aBlock")
+              , ActualParameterList(
+                  [ StatusFormula(StatusConstant("RED"))
+                  , StatusFormula(StatusConstant("GREEN"))
+                  , NumericFormula(no-sign(), NumericVariable("iv"))
+                  , NumericFormula(no-sign(), NumericVariable("jv"))
+                  ]
+                , no-actual-output-parameters()
                 )
               )
             )

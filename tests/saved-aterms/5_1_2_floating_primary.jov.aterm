@@ -132,13 +132,11 @@ Module(
             VariableList(["ivar"])
           , NumericFormula(
               no-sign()
-            , NumericVariable(
-                TableItem(
-                  "floatcon"
-                , Subscript(
-                    [NumericFormula(no-sign(), RealLiteralFF(FractionalForm("2", "2"), no-exponent()))]
-                  )
-                , no-table-dereference()
+            , UserDefinedFunctionCall(
+                Name("floatcon")
+              , ActualParameterList(
+                  [NumericFormula(no-sign(), RealLiteralFF(FractionalForm("2", "2"), no-exponent()))]
+                , no-actual-output-parameters()
                 )
               )
             )

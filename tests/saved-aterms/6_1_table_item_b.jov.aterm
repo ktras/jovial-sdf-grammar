@@ -22,12 +22,9 @@ Module(
             VariableList(["ivar"])
           , NumericFormula(
               no-sign()
-            , NumericVariable(
-                TableItem(
-                  "aTable"
-                , Subscript([NumericFormula(no-sign(), IntegerLiteral("1"))])
-                , no-table-dereference()
-                )
+            , UserDefinedFunctionCall(
+                Name("aTable")
+              , ActualParameterList([NumericFormula(no-sign(), IntegerLiteral("1"))], no-actual-output-parameters())
               )
             )
           )

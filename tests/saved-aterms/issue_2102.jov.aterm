@@ -24,10 +24,13 @@ Module(
                       )
                     , TablePreset(
                         DefaultPresetSublist(
-                          [BitFormula(
-                             BitLiteral("4", ["0", "0", "0", "0"])
-                           , no-logical-continuation()
-                           )]
+                          [ PresetValuesOption(
+                              BitFormula(
+                                BitLiteral("4", ["0", "0", "0", "0"])
+                              , no-logical-continuation()
+                              )
+                            )
+                          ]
                         )
                       )
                     )

@@ -8,7 +8,7 @@ Module(
             ProcedureHeading(Name("PROC'1"), RENT(), no-formal-parameter-list())
           , SubroutineBody(
               DeclarationList(
-                [ ConstantDeclaration(
+                [ ConstantItemDeclaration(
                     "ITEM'1"
                   , IntegerItemDescriptionU("U", no-round-or-truncate(), ItemSize(NumericFormula(no-sign(), IntegerLiteral("8"))))
                   , ItemPreset(NumericFormula(no-sign(), IntegerLiteral("10")))

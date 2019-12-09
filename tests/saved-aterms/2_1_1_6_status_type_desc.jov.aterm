@@ -60,7 +60,7 @@ Module(
             )
           , ItemPreset(StatusFormula(StatusConstant("ENGLISH")))
           )
-        , ConstantDeclaration(
+        , ConstantItemDeclaration(
             "ID"
           , StatusItemDescription(
               no-item-size()
